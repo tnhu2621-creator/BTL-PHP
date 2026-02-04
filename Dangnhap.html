@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochi Pet - Hệ Thống Quản Lý</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="main-wrapper">
+    <div class="login-container active" id="login-form">
+        <div class="form-content">
+            <div class="fixed-header">
+                <div class="logo-circle">
+                    <img src="Anh/LOGO.jpg" alt="Logo">
+                </div>
+                <h1 class="brand-name">MOCHI <span class="pet-text">PET</span></h1>
+                <p class="system-label">HỆ THỐNG QUẢN LÝ</p>
+            </div>
+
+            <div class="scroll-body">
+                <h2 style="text-align:center; margin-bottom: 20px;">Chào mừng bạn quay trở lại</h2>
+                
+                <div id="login-error" class="error-text"></div>
+
+                <div class="input-field">
+                    <label>Tên đăng nhập</label>
+                    <input type="text" id="username" placeholder="Nhập tên tài khoản">
+                </div>
+
+                <div class="input-field">
+                    <label>Mật khẩu</label>
+                    <div class="pass-wrapper" style="position: relative;">
+                        <input type="password" id="password" placeholder="Mật khẩu" style="width: 100%;">
+                        <i class="fas fa-eye icon-right" id="togglePassword" style="position: absolute; right: 10px; top: 12px; cursor: pointer;"></i>
+                    </div>
+                </div>
+
+                <button type="button" id="loginBtn" class="submit-btn btn-orange">
+                    Đăng nhập hệ thống <i class="fas fa-sign-in-alt"></i>
+                </button>
+
+                <div class="form-footer">
+                    <a href="javascript:void(0)" onclick="showForm('register-form')" class="text-green">Yêu cầu cấp tài khoản nhân viên</a>
+                    <p class="link-heading" style="margin-top:15px">HOẶC</p>
+                    <a href="javascript:void(0)" onclick="showForm('admin-form')" class="text-blue">Tạo tài khoản quản lý</a>
+                </div>
+            </div>
+
+            <div class="fixed-footer bg-orange">
+                <span>MOCHIPET v2.0</span>
+                <span><i class="fas fa-check-circle"></i> Hệ thống sẵn sàng</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-container" id="register-form" style="border-color: #4CAF50;">
+        <div class="form-content">
+            <div class="fixed-header">
+                <h2 style="font-size: 22px; margin-bottom: 5px;">ĐĂNG KÝ NHÂN VIÊN</h2>
+                <p style="font-size: 11px; color: #4CAF50;">Vui lòng điền thông tin để gửi yêu cầu gia nhập</p>
+            </div>
+            <div class="scroll-body">
+                <div class="input-field"><label>Họ và tên</label><input type="text" placeholder="Nhập họ và tên"></div>
+                <div class="input-field"><label>Email</label><input type="email" placeholder="email@vi-du.com"></div>
+                <div class="input-field"><label>Số điện thoại</label><input type="tel" placeholder="0xxx xxx xxx"></div>
+                <div class="input-field"><label>Vị trí ứng tuyển</label>
+                    <select class="custom-select">
+                        <option value="ban-hang">Nhân viên bán hàng</option>
+                        <option value="cham-soc">Nhân viên chăm sóc thú cưng</option>
+                    </select>
+                </div>
+                <button class="submit-btn btn-green" onclick="alert('Đã gửi yêu cầu đăng ký!'); showForm('login-form')">Gửi yêu cầu gia nhập</button>
+                <center><a href="javascript:void(0)" onclick="showForm('login-form')" style="font-size: 12px; color: #666; display: block; margin-top: 15px;">Quay lại đăng nhập</a></center>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-container" id="admin-form" style="border-color: #2196F3;">
+        <div class="form-content">
+            <div class="fixed-header">
+                <div class="logo-circle"><img src="Anh/LOGO.jpg" alt="Logo"></div>
+                <h1 class="brand-name">MOCHI <span class="pet-text">PET</span></h1>
+                <p class="system-label blue-label">HỆ THỐNG QUẢN LÝ</p>
+            </div>
+            <div class="scroll-body">
+                <div id="admin-error" class="error-text"></div>
+                <div class="input-field"><label>Tên đăng nhập mới</label><input type="text" id="admin-user" placeholder="Nhập tên tài khoản"></div>
+                <div class="input-field"><label>Mật khẩu</label><input type="password" id="admin-pass" placeholder="********"></div>
+                <div class="input-field"><label>Mã Quản Lý Cấp Cao</label><input type="password" id="adminCode" placeholder="Nhập mã MOCHI2026"></div>
+
+                <button class="submit-btn btn-blue" id="registerBtn">Tạo tài khoản <i class="fas fa-user-shield"></i></button>
+                <center><a href="javascript:void(0)" onclick="showForm('login-form')" style="font-size: 12px; color: #666; display: block; margin-top: 15px;">Quay lại đăng nhập</a></center>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 1. Chuyển đổi Form
+    function showForm(formId) {
+        document.querySelectorAll('.login-container').forEach(form => form.classList.remove('active'));
+        document.getElementById(formId).classList.add('active');
+    }
+
+    // 2. Kiểm tra đăng nhập Quản lý
+    document.getElementById('loginBtn').addEventListener('click', function() {
+        const user = document.getElementById('username').value.trim();
+        const pass = document.getElementById('password').value.trim();
+        const errorBox = document.getElementById('login-error');
+
+        // QUY ĐỊNH TÀI KHOẢN TẠI ĐÂY
+        const validUser = "admin";
+        const validPass = "123456";
+
+        if (user === "" || pass === "") {
+            errorBox.innerText = "Vui lòng nhập đầy đủ thông tin!";
+            errorBox.style.display = "block";
+        } else if (user === validUser && pass === validPass) {
+            errorBox.style.display = "none";
+            window.location.href = 'Tongquan.html';
+        } else {
+            errorBox.innerText = "Tên đăng nhập hoặc mật khẩu không đúng!";
+            errorBox.style.display = "block";
+        }
+    });
+
+    // 3. Kiểm tra tạo tài khoản Admin
+    document.getElementById('registerBtn').addEventListener('click', function() {
+        const user = document.getElementById('admin-user').value.trim();
+        const pass = document.getElementById('admin-pass').value.trim();
+        const code = document.getElementById('adminCode').value.trim();
+        const errorBox = document.getElementById('admin-error');
+
+        if (user === "" || pass === "" || code === "") {
+            errorBox.innerText = "Không được để trống!";
+            errorBox.style.display = "block";
+        } else if (code !== "MOCHI2026") {
+            errorBox.innerText = "Mã Quản Lý cấp cao không đúng!";
+            errorBox.style.display = "block";
+        } else {
+            alert("Tạo tài khoản quản lý thành công!");
+            showForm('login-form');
+        }
+    });
+
+    // 4. Ẩn/Hiện mật khẩu
+    document.getElementById('togglePassword').addEventListener('click', function() {
+        const passInput = document.getElementById('password');
+        const type = passInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passInput.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
+
+</body>
+</html>

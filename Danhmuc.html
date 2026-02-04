@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochi Pet - Dashboard Danh mục</title>
+    <link rel="stylesheet" href="Danhmuc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="top-header">
+        <background></background>
+        <div class="header-left">
+            <div class="logo-circle">
+                <img src="Anh/LOGO.jpg" alt="Mochi Pet Logo" class="main-logo">
+            </div>
+            <h1 class="brand-name linear-gradient-text">MOCHI PET</h1>
+        </div>
+
+        <nav class="main-menu">
+            <ul>
+                <li><a href="Tongquan.html">Tổng quan</a></li>
+                <li><a href="Danhmuc.html" class="active">Danh mục</a></li>
+                <li><a href="Sanpham.html">Sản phẩm</a></li>
+                <li><a href="Khohang.html">Kho hàng</a></li>
+                <li><a href="Nhanvien.html">Nhân viên</a></li>
+                <li><a href="Khachhang.html">Khách hàng</a></li>
+                <li><a href="Dichvu.html">Dịch vụ chăm sóc</a></li>
+            </ul>
+        </nav>
+
+        <div class="user-profile">
+            <img src="Anh/AvatarQL.jpg" alt="Avatar" class="avatar">
+            <div class="user-info">
+                <span class="user-name">Thanh An</span>
+                <span class="user-role">Quản lý cửa hàng</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-container no-menu">
+    <div class="page-header">
+        <h2>Quản lý danh mục sản phẩm</h2>
+        <div class="header-side-actions">
+            <div class="trash-bin-btn"><i class="fas fa-trash-alt"></i></div>
+            <div class="button-group">
+                <button class="btn btn-green-view">Xem danh mục dịch vụ</button>
+                <button class="btn btn-orange-add"><i class="fas fa-plus-circle"></i> Thêm danh mục mới</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="search-section">
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="Tìm kiếm danh mục theo tên">
+        </div>
+    </div>
+
+    <div class="content-main-grid">
+        <div class="card table-card paw-decor">
+            <table class="category-table">
+                <thead>
+                    <tr>
+                        <th>ICON</th>
+                        <th>TÊN DANH MỤC</th>
+                        <th>MÔ TẢ</th>
+                        <th>SẢN PHẨM</th>
+                        <th>THAO TÁC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div class="icon-frame"><img src="icon-thuc-an.png"></div></td>
+                        <td><strong>Thức ăn</strong></td>
+                        <td class="text-description">Các loại hạt, pate và thực phẩm chức năng</td>
+                        <td><strong>60</strong></td>
+                        <td class="action-cell"><i class="fas fa-pencil-alt"></i> <i class="fas fa-trash-alt"></i></td>
+                    </tr>
+                    <tr>
+                        <td><div class="icon-frame"><img src="icon-thuc-an.png"></div></td>
+                        <td><strong>Thức ăn</strong></td>
+                        <td class="text-description">Các loại hạt, pate và thực phẩm chức năng</td>
+                        <td><strong>60</strong></td>
+                        <td class="action-cell"><i class="fas fa-pencil-alt"></i> <i class="fas fa-trash-alt"></i></td>
+                    </tr>
+                    <tr>
+                        <td><div class="icon-frame"><img src="icon-thuc-an.png"></div></td>
+                        <td><strong>Thức ăn</strong></td>
+                        <td class="text-description">Các loại hạt, pate và thực phẩm chức năng</td>
+                        <td><strong>60</strong></td>
+                        <td class="action-cell"><i class="fas fa-pencil-alt"></i> <i class="fas fa-trash-alt"></i></td>
+                    </tr>
+                    <tr>
+                        <td><div class="icon-frame"><img src="icon-thuc-an.png"></div></td>
+                        <td><strong>Thức ăn</strong></td>
+                        <td class="text-description">Các loại hạt, pate và thực phẩm chức năng</td>
+                        <td><strong>60</strong></td>
+                        <td class="action-cell"><i class="fas fa-pencil-alt"></i> <i class="fas fa-trash-alt"></i></td>
+                    </tr>
+                    <tr>
+                        <td><div class="icon-frame"><img src="icon-thuc-an.png"></div></td>
+                        <td><strong>Thức ăn</strong></td>
+                        <td class="text-description">Các loại hạt, pate và thực phẩm chức năng</td>
+                        <td><strong>60</strong></td>
+                        <td class="action-cell"><i class="fas fa-pencil-alt"></i> <i class="fas fa-trash-alt"></i></td>
+                    </tr>
+                    </tbody>
+            </table>
+            <div class="custom-pagination">
+                <span>&lt;</span> <span class="page-active">1</span> <span>2</span> <span>&gt;</span>
+            </div>
+        </div>
+
+        <div class="card edit-panel">
+            <div class="edit-header">
+                <h3>Sửa danh mục</h3>
+                <p class="sub-text">Cập nhật thông tin chi tiết</p>
+            </div>
+            <div class="edit-form">
+                <div class="form-group">
+                    <label>Tên danh mục:</label>
+                    <div class="input-container">
+                        <i class="fas fa-briefcase"></i>
+                        <input type="text" value="Đồ chơi">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Chọn Icon:</label>
+                    <div class="icon-selector-grid">
+                        <div class="icon-item active"><img src="toy.png"></div>
+                        <div class="icon-item"><img src="icon-thuc-an.png"></div>
+                        <div class="icon-item"><img src="pets.png"></div>
+                        <div class="icon-item"><img src="Ve-sinh-cham-soc.png"></div>
+                        <div class="icon-item"><img src="cat.png"></div>
+                        <div class="icon-item">...</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Mô tả:</label>
+                    <textarea rows="4">Các loại đồ chơi giải trí, huấn luyện...</textarea>
+                </div>
+                <div class="edit-actions">
+                    <button class="btn-submit"><i class="fas fa-save"></i> Lưu thay đổi</button>
+                    <button class="btn-cancel"><i class="fas fa-times"></i> Hủy bỏ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

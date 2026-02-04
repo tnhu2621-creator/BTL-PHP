@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochi Pet - Dashboard Danh mục</title>
+    <link rel="stylesheet" href="Tongquan.css">
+</head>
+<body>
+
+    <header class="top-header">
+        <background></background>
+        <div class="header-left">
+            <div class="logo-circle">
+                <img src="Anh/LOGO.jpg" alt="Mochi Pet Logo" class="main-logo">
+            </div>
+            <h1 class="brand-name linear-gradient-text">MOCHI PET</h1>
+        </div>
+
+        <nav class="main-menu">
+            <ul>
+                <li><a href="Tongquan.html" class="active">Tổng quan</a></li>
+                <li><a href="Danhmuc.html">Danh mục</a></li>
+                <li><a href="Sanpham.html">Sản phẩm</a></li>
+                <li><a href="Khohang.html">Kho hàng</a></li>
+                <li><a href="Nhanvien.html">Nhân viên</a></li>
+                <li><a href="Khachhang.html">Khách hàng</a></li>
+                <li><a href="Dichvu.html">Dịch vụ chăm sóc</a></li>
+            </ul>
+        </nav>
+
+        <div class="user-profile">
+            <img src="Anh/AvatarQL.jpg" alt="Avatar" class="avatar">
+            <div class="user-info">
+                <span class="user-name">Thanh An</span>
+                <span class="user-role">Quản lý cửa hàng</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        <div class="stats-row">
+    <div class="card stat-card">
+        <div class="stat-header">
+            <span class="stat-label">DOANH THU TRONG NGÀY</span>
+            <div class="icon-box bg-green-light"><i class="fas fa-wallet text-green"></i></div>
+        </div>
+        <div class="stat-content-inline">
+            <span class="stat-value">8.560.000 <small>VNĐ</small></span>
+            <span class="stat-trend text-green">12.5%</span>
+        </div>
+    </div>
+
+    <div class="card stat-card">
+        <div class="stat-header">
+            <span class="stat-label">LỊCH HẸN HÔM NAY</span>
+            <div class="icon-box bg-purple-light"><i class="fas fa-calendar-alt text-purple"></i></div>
+        </div>
+        <div class="stat-content-inline">
+            <span class="stat-value">15</span>
+            <button class="btn-xs">Xem chi tiết</button>
+        </div>
+        <div class="stat-sub">Có <span class="text-red">4 lịch hẹn</span> mới</div>
+    </div>
+
+    <div class="card stat-card">
+        <div class="stat-header">
+            <span class="stat-label">SẮP HẾT HÀNG</span>
+            <div class="icon-box bg-red-light"><i class="fas fa-exclamation-triangle text-red"></i></div>
+        </div>
+        <div class="stat-content-inline">
+            <span class="stat-value text-red">3 <small>sản phẩm</small></span>
+            <button class="btn-xs">Xem chi tiết</button>
+        </div>
+    </div>
+
+    <div class="card stat-card">
+        <div class="stat-header">
+            <span class="stat-label">TÌNH TRẠNG KHO</span>
+            <div class="icon-box bg-orange-light"><i class="fas fa-boxes text-orange"></i></div>
+        </div>
+        <div class="stat-content-inline">
+            <span class="stat-value text-green">94%</span>
+            <button class="btn-xs">Xem chi tiết</button>
+        </div>
+    </div>
+</div>
+
+        <div class="main-grid">
+            
+            <div class="card chart-section">
+                <div class="chart-header">
+                    <h3>Biểu đồ doanh thu tuần</h3>
+                    <div class="chart-toggles">
+                        <button class="toggle-btn active">Tuần này</button>
+                        <button class="toggle-btn">Tuần trước</button>
+                    </div>
+                </div>
+                
+                <div class="chart-legend">
+                    <span class="legend-item"><span class="dot blue"></span> Bán sản phẩm</span>
+                    <span class="legend-item"><span class="dot red"></span> Dịch vụ chăm sóc</span>
+                </div>
+
+                <div class="bar-chart">
+                    <div class="y-axis">
+                        <span>9Tr</span><span>6Tr</span><span>3Tr</span>
+                    </div>
+                    <div class="chart-area">
+                        <div class="bar-group">
+                            <div class="bar blue" style="height: 60%;"></div>
+                            <div class="bar red" style="height: 30%;"></div>
+                            <span class="label">T2</span>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar blue" style="height: 45%;"></div>
+                            <div class="bar red" style="height: 40%;"></div>
+                            <span class="label">T3</span>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar blue" style="height: 55%;"></div>
+                            <div class="bar red" style="height: 50%;"></div>
+                            <span class="label">T4</span>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar blue" style="height: 80%;"></div>
+                            <div class="bar red" style="height: 25%;"></div>
+                            <span class="label">T5</span>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar blue" style="height: 55%;"></div>
+                            <div class="bar red" style="height: 25%;"></div>
+                            <span class="label">T6</span>
+                        </div>
+                        <div class="bar-group highlight">
+                            <div class="bar blue" style="height: 60%;"></div>
+                            <div class="bar red" style="height: 25%;"></div>
+                            <span class="label text-green">T7</span>
+                        </div>
+                        <div class="bar-group">
+                            <span class="label">CN</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card top-products">
+                <h3>Top bán chạy</h3>
+                <ul class="product-list">
+                    <li>
+                        <span class="rank rank-1">1</span>
+                        <img src="Anh/cat-dau-nanh-cho-meo-cature-tofu.webp" alt="SP">
+                        <div class="prod-info">
+                            <h4>Cát Đậu Nành Cho Mèo Cature Tofu</h4>
+                            <div class="progress-wrapper">
+                                <div class="progress-bar"><div class="fill" style="width: 90%; background: #00e676;"></div></div>
+                                <span class="count">620</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="rank rank-2">2</span>
+                        <img src="Anh/sua-tam-yu-cho-cho-meo-sieu-thom.webp" alt="SP">
+                        <div class="prod-info">
+                            <h4>Sữa Tắm Chó Mèo Yu' Siêu Thơm</h4>
+                            <div class="progress-wrapper">
+                                <div class="progress-bar"><div class="fill" style="width: 70%; background: #2196F3;"></div></div>
+                                <span class="count">495</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="rank rank-3">3</span>
+                        <img src="Anh/Pate-meo.webp" alt="SP">
+                        <div class="prod-info">
+                            <h4>Pate mèo dạng sốt Nekko</h4>
+                            <div class="progress-wrapper">
+                                <div class="progress-bar"><div class="fill" style="width: 50%; background: #4CAF50;"></div></div>
+                                <span class="count">340</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                
+                <button class="btn-full-green">Xem báo cáo chi tiết</button>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
