@@ -85,9 +85,13 @@ body {
     text-decoration: none; color: #407A08; font-weight: 600; font-size: 14px; 
     padding-bottom: 5px; transition: 0.3s;
 }
-.main-menu a:hover, .main-menu a.active { color: #ff5722; border-bottom: 2px solid #ff5722; }
+.main-menu a:hover, .main-menu a.active { 
+    color: #ff5722;
+    border-bottom: 2px solid #ff5722;
+    padding-left: 2px;
+    letter-spacing: 0.5px;
+}
 
-.user-profile { display: flex; align-items: center; gap: 10px; text-align: right; }
 .avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
 .user-name { display: block; font-weight: bold; font-size: 14px; }
 .user-role { display: block; font-size: 11px; color: #888; }
@@ -327,3 +331,23 @@ textarea {
 
 .btn-cancel { color: #dc3545; border: 1.5px solid #dc3545; }
 .btn-cancel:hover { background: #dc3545; color: white; }
+
+/* Hiệu ứng cho avatar ở header */
+.user-profile a:hover img {
+    opacity: 0.8;
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+}
+
+.user-profile a:hover span {
+    color: #31A600; /* Đổi tên sang xanh khi di chuột vào */
+}
+
+/* Đảm bảo ảnh avatar luôn tròn */
+.avatar-small {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #eee;
+}

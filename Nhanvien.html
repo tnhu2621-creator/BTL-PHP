@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mochi Pet - Dashboard Danh mục</title>
-    <link rel="stylesheet" href="baimau.css">
+    <title>Mochi Pet - Quản lý Nhân viên</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="Nhanvien.css">
 </head>
 <body>
 
@@ -30,58 +31,62 @@
         </nav>
 
         <div class="user-profile">
-            <img src="Anh/AvatarQL.jpg" alt="Avatar" class="avatar">
-            <div class="user-info">
-                <span class="user-name">Thanh An</span>
-                <span class="user-role">Quản lý cửa hàng</span>
-            </div>
+            <a href="Thong-tin-QL.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                <img src="Anh/AvatarQL.jpg" alt="Avatar" class="avatar-small">
+                    <div class="user-name">
+                        <span style="font-weight: bold; color: #333;">Thanh An</span>
+                        <br>
+                        <small style="color: #777;">Quản lý cửa hàng</small>
+                    </div>
+            </a>
         </div>
     </header>
 
-    <div class="staff-wrapper">
-        <header class="staff-header">
-            <h2 class="page-title">Quản lý Nhân viên</h2>
-            <button class="btn-add-staff"><i class="fas fa-plus"></i> Thêm nhân viên</button>
-        </header>
+    <main class="management-container">
+        <div class="page-header">
+            <h2 class="page-title">Quản lý Nhân viên</h2> <button class="btn-add-staff">
+                <i class="fas fa-plus-circle"></i> Thêm nhân viên
+            </button>
+        </div>
 
         <div class="stats-grid">
-            <div class="stat-box">
-                <div class="stat-icon-wrap bg-light-blue"><i class="fas fa-users"></i></div>
-                <div class="stat-data">
-                    <p>TỔNG NHÂN VIÊN</p>
-                    <h3>12</h3>
+            <div class="card-mini">
+                <div class="mini-icon blue"><i class="fas fa-users"></i></div>
+                <div class="mini-info">
+                    <span>TỔNG NHÂN VIÊN</span>
+                    <strong>12</strong>
                 </div>
             </div>
-            <div class="stat-box">
-                <div class="stat-icon-wrap bg-light-green"><i class="fas fa-user-check"></i></div>
-                <div class="stat-data">
-                    <p>ĐANG LÀM VIỆC</p>
-                    <h3>4</h3>
+            <div class="card-mini">
+                <div class="mini-icon green"><i class="fas fa-user-check"></i></div>
+                <div class="mini-info">
+                    <span>ĐANG LÀM VIỆC</span>
+                    <strong>4</strong>
                 </div>
             </div>
-            <div class="stat-box">
-                <div class="stat-icon-wrap bg-light-red"><i class="fas fa-envelope"></i></div>
-                <div class="stat-data">
-                    <p>YÊU CẦU CHỜ DUYỆT</p>
-                    <h3 class="text-red">3</h3>
+            <div class="card-mini">
+                <div class="mini-icon orange"><i class="fas fa-envelope"></i></div>
+                <div class="mini-info">
+                    <span>YÊU CẦU CHỜ DUYỆT</span>
+                    <strong class="text-orange">3</strong>
                 </div>
             </div>
-            <div class="stat-box">
-                <div class="stat-icon-wrap bg-light-gray"><i class="fas fa-user-slash"></i></div>
-                <div class="stat-data">
-                    <p>TÀI KHOẢN BỊ KHÓA</p>
-                    <h3 class="text-red">1</h3>
+            <div class="card-mini">
+                <div class="mini-icon red"><i class="fas fa-user-times"></i></div>
+                <div class="mini-info">
+                    <span>TÀI KHOẢN BỊ KHÓA</span>
+                    <strong class="text-red">1</strong>
                 </div>
             </div>
         </div>
 
-        <div class="staff-card">
-            <div class="card-tabs">
-                <div class="tab active">Danh sách nhân viên</div>
-                <div class="tab">Yêu cầu đăng ký <span class="badge-count">3</span></div>
+        <div class="main-card table-section">
+            <div class="tab-menu">
+                <div class="tab-item active">Danh sách nhân viên</div>
+                <div class="tab-item">Yêu cầu đăng ký <span class="badge">3</span></div>
             </div>
 
-            <div class="search-container">
+            <div class="search-bar">
                 <input type="text" placeholder="Tìm kiếm nhân viên theo tên nhân viên...">
             </div>
 
@@ -99,31 +104,52 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="user-info">
-                            <img src="https://via.placeholder.com/40" class="avatar">
+                        <td class="user-cell">
+                            <img src="https://i.pravatar.cc/150?u=1" alt="avatar">
                             <div>
-                                <p class="name">Nguyễn Văn An</p>
+                                <strong>Nguyễn Văn An</strong><br>
                                 <small>NV001</small>
                             </div>
                         </td>
-                        <td class="contact-info">
-                            <p><i class="fas fa-envelope"></i> nguyenvana01@gmail.com</p>
-                            <p><i class="fas fa-phone"></i> 0918234789</p>
+                        <td class="contact-cell">
+                            <i class="fas fa-envelope"></i> nguyenvana01@gmail.com<br>
+                            <i class="fas fa-phone"></i> 0918234789
                         </td>
-                        <td class="text-blue">Nhân viên chăm sóc</td>
+                        <td><span class="pos-tag">Nhân viên chăm sóc</span></td>
                         <td>9:00 - 17:00</td>
-                        <td class="bold">234</td>
-                        <td><span class="status-tag green">Đang làm</span></td>
-                        <td class="actions">
-                            <i class="fas fa-pencil-alt edit"></i>
-                            <i class="fas fa-lock lock"></i>
-                            <i class="fas fa-trash-alt delete"></i>
+                        <td class="text-center"><strong>234</strong></td>
+                        <td><span class="status-tag working">Đang làm</span></td>
+                        <td class="action-btns">
+                            <i class="fas fa-edit text-green"></i>
+                            <i class="fas fa-lock text-orange"></i>
+                            <i class="fas fa-trash text-gray"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="user-cell">
+                            <img src="https://i.pravatar.cc/150?u=6" alt="avatar">
+                            <div>
+                                <strong>Nguyễn Văn A</strong><br>
+                                <small>NV001</small>
+                            </div>
+                        </td>
+                        <td class="contact-cell">
+                            <i class="fas fa-envelope"></i> nguyenvana01@gmail.com<br>
+                            <i class="fas fa-phone"></i> 0918234789
+                        </td>
+                        <td><span class="pos-tag">Nhân viên chăm sóc</span></td>
+                        <td>13:00 - 20:00</td>
+                        <td class="text-center"><strong>234</strong></td>
+                        <td><span class="status-tag locked">Đã khóa</span></td>
+                        <td class="action-btns">
+                            <i class="fas fa-edit text-green"></i>
+                            <i class="fas fa-lock text-orange"></i>
+                            <i class="fas fa-trash text-gray"></i>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
-    </div>
-
+    </main>
 </body>
 </html>
