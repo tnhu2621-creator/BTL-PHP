@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đặt lại mật khẩu | Mochi Pet</title>
+    <link rel="stylesheet" href="Datlaimk.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="auth-header">
+    <div class="logo">
+        <img src="LOGO.png" alt="Mochi Pet">
+        <span>MOCHI PET</span>
+    </div>
+
+    <a href="User.html" class="back-shop">
+    <i class="fa-solid fa-arrow-left"></i> Quay lại cửa hàng
+</a>
+</header>
+
+<section class="auth-page">
+
+    <!-- LEFT -->
+    <div class="auth-left">
+        <h1>Đặt lại <span>mật khẩu</span></h1>
+        <p>
+            Hãy nhập mật khẩu mới của bạn để đặt lại mật khẩu cho tài khoản.
+        </p>
+
+        <div class="pet-frame">
+            <img src="taikhoan.jpg" alt="Pet">
+        </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="auth-box">
+        <h2>Đặt lại mật khẩu</h2>
+        <span class="subtitle">
+            Tạo mật khẩu mới cho tài khoản của bạn
+        </span>
+
+        <label>Mật khẩu mới</label>
+        <div class="input-box">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="new-password" placeholder="Nhập mật khẩu mới">
+
+        </div>
+
+        <label>Nhập lại mật khẩu</label>
+        <div class="input-box">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="confirm-password" placeholder="Nhập lại mật khẩu">
+
+        </div>
+
+        <button class="btn-login" onclick="resetPassword()">Đặt lại mật khẩu</button>
+
+
+        <div class="auth-switch">
+    <a href="Dangnhap.html">
+        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+        Quay lại đăng nhập
+    </a>
+</div>
+
+    </div>
+
+</section>
+
+<footer class="auth-footer">
+    <a href="#">Chính sách bảo mật</a>
+    <a href="#">Điều khoản dịch vụ</a>
+</footer>
+
+
+<script src="auth.js"></script>
+
+</body>
+</html>

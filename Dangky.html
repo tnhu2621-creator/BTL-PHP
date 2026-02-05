@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký | Mochi Pet</title>
+    <link rel="stylesheet" href="Dangky.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header class="auth-header">
+    <div class="logo">
+        <img src="LOGO.png">
+        <span>MOCHI PET</span>
+    </div>
+
+    <a href="User.html" class="back-shop">
+        <i class="fa-solid fa-arrow-left"></i>
+        Quay lại cửa hàng
+    </a>
+</header>
+
+<section class="register-page">
+
+    <!-- LEFT -->
+    <div class="register-left">
+        <h1>
+            Bắt đầu hành trình<br>
+            cùng <span>Mochi Pet!</span>
+        </h1>
+
+        <p>
+            Đăng ký Mochi Pet để đồng hành cùng bạn trong hành trình
+            chăm sóc, yêu thương và mang đến những điều tốt nhất cho thú cưng.
+        </p>
+
+        <div class="pet-image">
+            <img src="taikhoan.jpg">
+        </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="register-box">
+        <h2>Đăng ký</h2>
+        <span class="subtitle">Tạo tài khoản để cùng chăm sóc thú cưng</span>
+
+        <label>Tên đăng nhập</label>
+        <div class="input-box">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" id="reg-username" placeholder="Nhập tên đăng nhập">
+
+        </div>
+
+        <label>Email</label>
+        <div class="input-box">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" id="reg-email" placeholder="Nhập địa chỉ email">
+
+        </div>
+
+        <label>Tạo mật khẩu</label>
+        <div class="input-box">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="reg-password" placeholder="Nhập mật khẩu">
+        </div>
+
+        <label>Nhập lại mật khẩu</label>
+        <div class="input-box">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="reg-repassword" placeholder="Nhập lại mật khẩu">
+        </div>
+
+        <button class="btn-register" onclick="dangKy()">Đăng ký</button>
+
+
+        <p class="policy">
+            Bằng cách đăng ký, bạn hãy đồng ý với
+            <a href="#">Điều khoản dịch vụ</a> và
+            <a href="#">Chính sách bảo mật</a>
+        </p>
+
+        <p class="login-link">
+            Đã có tài khoản?
+            <a href="Dangnhap.html">Đăng nhập</a>
+        </p>
+    </div>
+
+</section>
+
+
+<script>
+function dangKy(){
+    const username = document.getElementById("reg-username").value.trim();
+    const email = document.getElementById("reg-email").value.trim();
+    const password = document.getElementById("reg-password").value;
+    const repassword = document.getElementById("reg-repassword").value;
+
+    if(username === "" || email === "" || password === "" || repassword === ""){
+        alert("Vui lòng nhập đầy đủ thông tin");
+        return;
+    }
+
+    if(password !== repassword){
+        alert("Mật khẩu nhập lại không khớp");
+        return;
+    }
+
+    // Lưu user (demo 1 tài khoản)
+    localStorage.setItem("user", JSON.stringify({
+        username: username,
+        email: email,
+        password: password
+    }));
+
+    alert("Đăng ký thành công! Vui lòng đăng nhập.");
+    window.location.href = "Dangnhap.html";
+}
+</script>
+
+</body>
+</html>

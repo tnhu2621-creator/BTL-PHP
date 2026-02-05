@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Xác nhận OTP | Mochi Pet</title>
+    <link rel="stylesheet" href="OTP.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="auth-header">
+    <div class="logo">
+        <img src="LOGO.png" alt="Mochi Pet">
+        <span>MOCHI PET</span>
+    </div>
+
+    <a href="User.html" class="back-shop">
+    <i class="fa-solid fa-arrow-left"></i> Quay lại cửa hàng
+</a>
+</header>
+
+<!-- PAGE -->
+<section class="auth-page">
+
+    <!-- LEFT -->
+    <div class="auth-left">
+        <h1>Xác nhận <span>mã OTP</span></h1>
+        <p>
+            Vui lòng nhập mã xác nhận gồm 6 chữ số đã được gửi đến email của bạn.
+        </p>
+
+        <div class="pet-frame">
+            <img src="taikhoan.jpg" alt="Pet">
+        </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="auth-box">
+        <h2>Quên mật khẩu?</h2>
+        <span class="subtitle">
+            Vui lòng nhập mã OTP đã được gửi về email của bạn để tiếp tục quá trình đặt lại mật khẩu.
+        </span>
+
+        <div class="otp-group">
+            <input type="text" maxlength="1" class="otp-input">
+            <input type="text" maxlength="1" class="otp-input">
+            <input type="text" maxlength="1" class="otp-input">
+            <input type="text" maxlength="1" class="otp-input">
+            <input type="text" maxlength="1" class="otp-input">
+            <input type="text" maxlength="1" class="otp-input">
+        </div>
+
+
+        <button class="btn-login" onclick="verifyOTP()">Xác nhận</button>
+
+
+        <div class="auth-switch">
+            <a href="#" onclick="resendOTP()">
+                <i class="fa-solid fa-rotate-right"></i> Gửi lại mã
+            </a>
+        </div>
+
+        <div class="auth-switch">
+    <a href="Dangnhap.html">
+        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+        Quay lại đăng nhập
+    </a>
+</div>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="auth-footer">
+    <a href="#">Chính sách bảo mật</a>
+    <a href="#">Điều khoản dịch vụ</a>
+</footer>
+
+<script src="auth.js"></script>
+
+</body>
+</html>

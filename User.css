@@ -1,0 +1,1327 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #fff;
+}
+
+/* ================= HEADER ================= */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 40px;
+    background:white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.logo img {
+    width: 45px;
+}
+
+.logo-text {
+    font-size: 26px;
+    font-weight: bold;
+    background: linear-gradient(to right, #2f7d1a, #7fbf2f, #f4a300);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.25);
+}
+
+/* MENU */
+.menu {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #2f7d1a;
+
+    font-weight: 800;       
+    font-size: 20px;        
+
+    letter-spacing: 0.4px; 
+    position: relative;
+}
+
+/* RIGHT */
+.right-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* SEARCH */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #e5f2d5;
+    border-radius: 30px;
+    padding: 3px;
+}
+
+.search-box input {
+    padding: 8px 15px;
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 220px;
+}
+
+.search-box button {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background: #2f7d1a;
+    color: white;
+    cursor: pointer;
+}
+
+/* ICON */
+.icon-circle {
+    width: 40px;
+    height: 40px;
+    background: #2f7d1a;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* LOGIN */
+.login-btn {
+    background: orange;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ================= HERO ================= */
+.hero {
+    position: relative;
+    height: 500px;
+    background: url("main_user.jpg") no-repeat center/cover;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+.hero-text {
+    color: white;
+    max-width: 520px;
+}
+
+.hero-text h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.hero-btn {
+    background: orange;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* WAVE */
+.wave {
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* ================= SECTION ================= */
+.section {
+    padding: 60px 80px;
+    text-align: center;
+}
+
+.section h2 {
+    color: green;
+    margin-bottom: 40px;
+    font-size: 28px;
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.section h2::before,
+.section h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 80px;
+    height: 2px;
+    background: green;
+}
+
+.section h2::before {
+    left: -90px;
+}
+
+.section h2::after {
+    right: -90px;
+}
+
+/* ================= GRID ================= */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* ================= CARD ================= */
+.card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    background: white;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card p {
+    padding: 12px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* ================= WHY CHOOSE ================= */
+.why {
+    padding: 60px 80px;
+    text-align: center;
+}
+
+.why h2 {
+    color: green;
+    margin-bottom: 15px;
+    font-size: 28px;
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.why h2::before,
+.why h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 80px;
+    height: 2px;
+    background: green;
+}
+
+.why h2::before {
+    left: -90px;
+}
+
+.why h2::after {
+    right: -90px;
+}
+
+.why-desc {
+    max-width: 700px;
+    margin: 20px auto 50px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.why-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+}
+
+.why-card:hover {
+    transform: translateY(-5px);
+}
+
+.why-icon {
+    width: 60px;
+    height: 60px;
+    background: #e5f2d5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+.why-icon i {
+    font-size: 26px;
+    color: #2f7d1a;
+}
+
+.why-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.why-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ================= SERVICE DETAIL ================= */
+.service-detail{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:80px 8%;
+    background:#E3EBDA;
+    gap:40px;
+}
+
+
+/* LEFT */
+.service-left{
+    position:relative;
+}
+
+.service-card{
+    background:#fdebe1;
+    padding:60px 40px 90px;
+    border-radius:35px;
+    width:480px;
+    min-height:480px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+
+/* TITLE */
+.title-top{
+    font-size:22px;
+    font-weight:bold;
+    background: linear-gradient(90deg, #65BBAB, #2E554E);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title-line{
+    width:200px;
+    height:2px;
+    margin:12px auto 18px;
+    border-radius:10px;
+    background: linear-gradient(90deg, #65BBAB, #2E554E);
+}
+
+.title-main{
+    font-size:30px;
+    font-weight:bold;
+    margin-bottom:22px;
+    background: linear-gradient(90deg, #65BBAB, #2E554E);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+
+.service-desc{
+    color:#6cc5b8; 
+    margin-bottom:35px;
+    font-size:15px;
+    line-height:1.6;
+}
+
+
+/* ICON ROW */
+.service-icons{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+
+
+/* LEFT & RIGHT ICON */
+.icon-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+}
+
+.icon-item i{
+    background:#6cc5b8;
+    color:#fff;
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+}
+
+
+.icon-item span{
+    color:#6cc5b8;
+    font-weight:600;
+}
+
+
+/* CENTER BOOK */
+.center-book{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:3px;
+}
+
+/* icon paw */
+.center-book i{
+    color:#6cc5b8;
+}
+.paw-row i:first-child{
+    font-size:24px;   /* dấu chân bên trái to hơn */
+}
+
+.paw-row i:last-child{
+    font-size:16px;   /* dấu chân bên phải nhỏ lại */
+}
+
+
+/* chữ MOCHI PET (to hơn xíu) */
+.center-book span{
+    font-weight:bold;
+    color:#6cc5b8;
+    font-size:14px;       /* tăng từ 12px lên 14px */
+}
+
+/* nút BOOK NOW (nhỏ lại) */
+.center-book button{
+    background:#6cc5b8;
+    color:white;
+    border:none;
+    padding:3px 10px;     /* nhỏ hơn nữa */
+    border-radius:12px;
+    font-size:9px;        /* chữ nhỏ lại */
+    cursor:pointer;
+}
+
+/* RATE BOX */
+.rate-box{
+    position:absolute;
+    right:-40px;
+    bottom:-30px;
+    background:#fff;
+    padding:15px 22px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.rate-box i{
+    background:#4caf50;
+    color:#fff;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.rate-box b{
+    font-size:18px;
+}
+
+
+/* RIGHT */
+.service-right{
+    max-width:500px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start; /* canh trái cùng hàng với h2 */
+}
+
+
+.service-tag{
+    color:#4a7c1b;          
+    font-weight:800;        /* đậm hơn */
+    font-size:14px;
+    margin-bottom:10px;
+    letter-spacing:1px;     /* nhìn chuyên nghiệp hơn */
+}
+
+
+
+.service-right h2{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.service-right p{
+    color:#555;
+    margin-bottom:20px;
+}
+
+.service-list{
+    list-style:none;
+    padding:0;
+    margin-bottom:25px;
+}
+
+.service-list li{
+    margin-bottom:10px;
+    color:#333;
+}
+
+.service-list i{
+    color:#4caf50;
+    margin-right:8px;
+}
+
+.btn-green{
+    background:#4a7c1b;     /* xanh đậm như hình mẫu */
+    color:#fff;
+    border:none;
+    padding:12px 26px;
+    border-radius:25px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.btn-green:hover{
+    background:#3b6415;     /* hover đậm hơn xíu */
+}
+
+
+
+/* ================= HOTEL ================= */
+/* ================= HOTEL (STYLE GIỐNG SERVICE-RIGHT) ================= */
+.hotel{
+    background:#E3EBDA;
+    padding:80px 8%;
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+/* LEFT TEXT */
+.hotel-left{
+    max-width:500px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+/* TAG */
+.hotel-tag{
+    color:#E84C01;
+    font-weight:800;
+    font-size:14px;
+    margin-bottom:10px;
+    letter-spacing:1px;
+}
+
+/* TITLE */
+.hotel-left h2{
+    font-size:28px;
+    margin-bottom:15px;
+    line-height:1.3;
+}
+
+/* DESCRIPTION */
+.hotel-left p{
+    color:#555;
+    margin-bottom:20px;
+    line-height:1.6;
+    font-size:15px;
+}
+
+/* INFO ROW */
+.hotel-info{
+    display:flex;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+/* INFO BOX */
+.hotel-info div{
+    background:white;
+    padding:10px 16px;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:14px;
+    font-weight: bold;
+}
+
+/* ICON */
+.hotel-info i{
+    color:#E84C01;
+}
+
+/* BUTTON */
+.btn-orange{
+    background: transparent;        /* bỏ nền cam */
+    border: 3px solid #E84C01;      /* viền cam */
+    padding: 14px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 22px;
+    color: #000;                    /* chữ đen */
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* hover cho đẹp */
+.btn-orange:hover{
+    background: #E84C01;
+    color: white;
+}
+
+
+/* RIGHT BOX */
+.hotel-right{
+    position:relative;
+    background:#f7e3c6;
+    border-radius:25px;
+    width:480px;    
+    min-height:480px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* DISCOUNT */
+.discount-badge{
+    position:absolute;
+    top:-25px;
+    left:30px;
+    background:#E84C01;
+    color:white;
+    padding:18px 28px;     /* khung to hơn */
+    border-radius:18px;
+    font-size:16px;
+    line-height:1.2;
+}
+
+/* làm GIẢM 20% to và đậm hơn */
+.discount-badge b{
+    font-size:24px;       /* TĂNG size GIẢM 20% */
+    font-weight:800;
+}
+
+
+/* CIRCLE LOGO */
+.hotel-circle{
+    width:200px;
+    height:200px;
+    background: transparent;
+    border-radius:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hotel-circle img{
+    width:180px;
+}
+
+/* ================= TESTIMONIAL ================= */
+.testimonial{
+    padding:80px 8%;
+    background:#fff;
+    text-align:center;
+}
+
+.testimonial h2{
+    font-size:32px;
+    font-weight:bold;
+    margin-bottom:50px;
+}
+
+/* GRID */
+.testimonial-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:30px;
+}
+
+/* CARD */
+.testimonial-card{
+    background:#fff;
+    border-radius:20px;
+    padding:25px 25px 30px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    text-align:left;
+
+    display:flex;
+    flex-direction:column; 
+    height:100%;           
+}
+
+
+/* STARS */
+.stars{
+    color:#FFA500;
+    font-size:20px;
+    margin-bottom:12px;
+}
+
+/* TEXT */
+.testimonial-text{
+    font-style:italic;
+    color:#555;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+/* USER */
+.testimonial-user{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:auto;
+}
+
+.testimonial-user img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.testimonial-user b{
+    display:block;
+}
+
+.testimonial-user span{
+    font-size:13px;
+    color:#777;
+}
+/* ================= CTA ================= */
+.cta{
+    background:#4a7c1b;
+    padding:70px 10%;
+    border-radius:40px;
+    margin:60px auto;
+    text-align:center;
+    color:white;
+
+    max-width:1000px;   /* rút ngắn 2 bên */
+    width:80%;          /* không full màn hình */
+}
+
+
+.cta h2{
+    font-size:32px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.cta p{
+    max-width:800px;
+    margin:0 auto 40px;
+    font-size:16px;
+    line-height:1.6;
+}
+
+/* BUTTON GROUP */
+.cta-buttons{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+}
+
+/* BUTTON WHITE */
+.btn-white{
+    background:white;
+    color:#4a7c1b;
+    border:none;
+    padding:14px 36px;
+    border-radius:40px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-white:hover{
+    background:#f2f2f2;
+}
+
+/* BUTTON ORANGE */
+.btn-orange-cta{
+    background:#f05a00;
+    color:white;
+    border:none;
+    padding:14px 36px;
+    border-radius:40px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-orange-cta:hover{
+    background:#d94f00;
+}
+
+/* ================= FOOTER ================= */
+.footer{
+    background:#f5f5f5;
+    padding:60px 8%;
+    margin-top:80px;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1.5fr;
+    gap:40px;
+}
+
+/* BRAND */
+.footer-brand p{
+    color:#666;
+    line-height:1.6;
+    font-size:14px;
+}
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.footer-logo img{
+    width:45px;
+}
+
+.footer-logo h3{
+    font-size:22px;
+    font-weight:bold;
+    background: linear-gradient(to right, #2f7d1a, #7fbf2f, #f4a300);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* TITLE */
+.footer-col h4{
+    margin-bottom:15px;
+    font-size:18px;
+    color:#000;
+}
+
+/* LIST */
+.footer-col ul{
+    list-style:none;
+    padding:0;
+}
+
+.footer-col ul li{
+    margin-bottom:10px;
+    color:#555;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.footer-col ul li:hover{
+    color:#2f7d1a;
+}
+
+/* SUBSCRIBE */
+.footer-col p{
+    color:#666;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.footer-subscribe{
+    display:flex;
+    background:white;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.footer-subscribe input{
+    flex:1;
+    padding:10px 12px;
+    border:none;
+    outline:none;
+    font-size:14px;
+}
+
+.footer-subscribe button{
+    background:#4caf50;
+    border:none;
+    padding:0 18px;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+/* ================= RELATED PRODUCTS ================= */
+.related-products{
+    background:#fff;          
+    padding:70px 8%;
+}
+
+.related-products{
+    background:#E3EBDA;
+    padding:70px 8%;
+    position:relative;
+}
+
+
+/* khung chữ */
+.related-products h2{
+    color: #407A08;
+    font-size: 18px;
+    font-weight: 800;
+
+    padding: 14px 30px;
+    border-radius: 999px;
+
+    width: 100%;
+    text-align: left;
+
+    margin-top: -35px;
+    margin-bottom: 25px;
+
+    /* 🌿 TRẮNG NHẸ – KHÔNG GẮT */
+    background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0.85) 0%,
+        rgba(255,255,255,0.6) 35%,
+        rgba(227,235,218,0.9) 70%,
+        rgba(227,235,218,1) 100%
+    );
+}
+
+
+
+
+/* PRODUCT GRID */
+.product-list{
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+}
+
+.product-list::-webkit-scrollbar{
+    height: 10px;
+}
+
+.product-list::-webkit-scrollbar-track{
+    background: #dfe8d5;         
+    border-radius: 10px;
+}
+
+.product-list::-webkit-scrollbar-thumb{
+    background: #407A08;         
+    border-radius: 10px;
+}
+
+.product-list::-webkit-scrollbar-thumb:hover{
+    background: #2f5f05;         
+}
+
+
+
+/* PRODUCT CARD */
+.product-card{
+    flex: 0 0 25%;
+    max-width: 25%;
+    background:white;
+    border-radius:22px;
+    padding:22px;
+    box-shadow:none;
+    transition:0.3s ease;
+    scroll-snap-align:start;
+    border:1px solid #e6e6e6;
+    position: relative;
+    z-index: 2;
+}
+.product-card:hover{
+    transform:translateY(-8px);
+    box-shadow:
+        0 18px 40px rgba(0,0,0,0.18),
+        0 6px 12px rgba(0,0,0,0.12);
+}
+
+.product-card img{
+    width:100%;
+    height:200px;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+
+
+.product-card h3{
+    font-size:16px;          
+    font-weight:600;        
+    min-height:48px;
+    margin-bottom:10px;
+    line-height:1.4;
+}
+
+.price{
+    color:#2f7d1a;
+    font-weight:900;
+    font-size:20px;
+    text-align:center;
+    margin:10px 0 16px;
+}
+
+/* BUTTONS */
+.btn-detail{
+    width:100%;
+    border:none;
+    background:#e9e9e9;
+    padding:8px;
+    border-radius:8px;
+    font-size:13px;
+    cursor:pointer;
+    margin-bottom:8px;
+}
+
+.btn-cart{
+    width:100%;
+    border:none;
+    background:#f05a00;
+    color:white;
+    padding:9px;
+    border-radius:8px;
+    font-size:13px;
+    cursor:pointer;
+}
+
+.btn-cart:hover{
+    background:#d94f00;
+}
+
+
+.mega-menu{
+    position:absolute;
+    top:80px;
+    left:50%;
+    transform:translateX(-50%);
+    width:1100px;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.18);
+    padding:30px 40px;
+    display:none;
+    z-index:999;
+}
+
+.mega-menu.show{
+    display:block;
+}
+
+.mega-box{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:40px 60px;
+}
+.mega-col{
+    padding:10px 0;
+}
+.mega-col h4{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:#e5f2d5;
+    padding:14px 20px;
+    border-radius:14px;
+    margin-bottom:12px;
+    font-size:18px;
+    font-weight:900;      
+    color:#407A08;
+}
+.icon-wrap{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:20px;
+    border-radius:10px;
+}
+
+.mega-col.food .icon-wrap{
+    background:#e8f5e9;
+    color:#407A08;
+}
+
+.mega-col.toy .icon-wrap{
+   background:#fff1f2;
+    color:#e11d48;
+}
+
+.mega-col.accessory .icon-wrap{
+    background:#fff7ed;
+    color:#f59e0b;
+}
+
+.mega-col.care .icon-wrap{
+    background:#ecfeff;
+    color:#0ea5e9;
+}
+
+.mega-col ul{
+    padding:0;
+    margin-top:10px;
+    list-style: none;
+}
+.mega-col ul li a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:8px 12px;
+    border-radius:8px;
+
+    text-decoration:none;
+    color:#000;
+    font-size:15px;
+
+    transition:0.25s ease;
+}
+
+.mega-col ul li a i{
+    width:22px;
+    height:22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:13px;
+    background:#fff;
+    color:#000;
+    border:1.5px solid #000;
+    border-radius:6px;
+}
+
+.mega-col ul li a:hover{
+    background:#e5f2d5;
+    transform:translateX(4px);
+}
+
+.mega-col ul li a:hover i{
+    background:#2f7d1a;
+    color:#fff;
+    border-color:#2f7d1a;
+}
+
+.menu a.active{
+    color: #f05a00;         
+    font-weight: 900;
+}
+
+
+/* ================= SERVICE MENU ================= */
+.service-menu{
+    position:absolute;
+    top:80px;
+    left:50%;
+    transform:translateX(-50%);
+    width:800px;
+    background:white;
+    border-radius:22px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.18);
+    padding:30px 40px;
+    display:none;
+    z-index:999;
+}
+
+.service-menu.show{
+    display:block;
+}
+
+.service-box{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.service-col h4{
+    background:#e5f2d5;
+    padding:14px 20px;
+    border-radius:14px;
+    font-size:18px;
+    font-weight:900;
+    color:#407A08;
+    margin-bottom:15px;
+}
+
+.service-col ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.service-col li{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:10px 14px;
+    border-radius:10px;
+    font-size:15px;
+    cursor:pointer;
+    transition:0.25s;
+}
+
+.service-col li i{
+    width:26px;
+    height:26px;
+    border-radius:6px;
+
+    background:#fff;          
+    border:1.5px solid #000; 
+    color:#000;               
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+}
+
+.service-col li:hover{
+    background:#e5f2d5;
+    transform:translateX(4px);
+}
+
+.service-col li:hover i{
+    background:#407A08;
+    color:white;
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        padding-left: 30px;
+    }
+
+    .hero-text h1 {
+        font-size: 30px;
+    }
+
+    .service-detail,
+    .hotel{
+        grid-template-columns:1fr;
+        padding:40px;
+    }
+
+    .rate-box{
+        position:static;
+        margin-top:20px;
+    }
+
+    .testimonial-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cta-buttons{
+        flex-direction:column;
+    }
+
+    .footer-container{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:1100px){
+    .product-card{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media(max-width:600px){
+    .product-card{
+        flex: 0 0 90%;
+        max-width: 90%;
+    }
+}
