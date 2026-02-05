@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý nhân viên - Mochi Pet</title>
+    <link rel="stylesheet" href="Thong-tin-QL.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="card header-profile">
+            <div class="user-main-info">
+                <a href="Tongquan.html" class="btn-back">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+        
+                <img src="Anh/AvatarQL.jpg" alt="Avatar" class="avatar">
+        
+            <div class="name-zone">
+                <h2>Thanh An <span class="badge-role">SENIOR GROOMER</span></h2>
+                <p class="sub-text">ID: MP-2024-001 | Gia nhập: 15/01/2022</p>
+            </div>
+        </div>
+    </header>
+
+        <div class="content-layout">
+            <main class="main-column">
+                <section class="card">
+                    <h3 class="section-title">Hiệu suất công việc (Tháng này)</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <label>LỊCH HẸN HOÀN TẤT</label>
+                            <div class="number">124 <span class="trend-up">+12%</span></div>
+                            <div class="progress-bar"><div class="fill" style="width: 80%"></div></div>
+                        </div>
+                        <div class="stat-item">
+                            <label>SẢN PHẨM ĐÃ BÁN</label>
+                            <div class="number">45 <span class="trend-up">+5%</span></div>
+                            <div class="progress-bar"><div class="fill" style="width: 45%"></div></div>
+                        </div>
+                        <div class="stat-item">
+                            <label>ĐÁNH GIÁ</label>
+                            <div class="number">4.9 <small>/ 5.0</small></div>
+                            <div class="stars">★★★★★ <span class="review-count">(82 đánh giá)</span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h3 class="section-title">Lịch sử hoạt động</h3>
+                    <table class="activity-table">
+                        <thead>
+                            <tr>
+                                <th>THỜI GIAN</th>
+                                <th>HÀNH ĐỘNG</th>
+                                <th>ĐỐI TƯỢNG</th>
+                                <th>TRẠNG THÁI</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hôm nay, 09:45</td>
+                                <td>Cập nhật lịch hẹn</td>
+                                <td class="link-text">Booking #402</td>
+                                <td><span class="status-success">Thành công</span></td>
+                            </tr>
+                            <tr>
+                                <td>Hôm qua, 16:20</td>
+                                <td>Hoàn tất Grooming</td>
+                                <td>Khách: Lê Nam</td>
+                                <td><span class="status-success">Thành công</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+
+            <aside class="side-column">
+                <section class="card">
+                    <h3 class="section-title">Quản lý tài khoản</h3>
+                    <div class="status-toggle">
+                        <span>Trạng thái hoạt động</span>
+                        <div class="toggle-switch active"></div>
+                    </div>
+                    <div class="roles">
+                        <span class="role-tag">Grooming Master</span>
+                        <span class="role-tag">Quản lý kho lẻ</span>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h3 class="section-title">Thông tin cá nhân</h3>
+                    <div class="info-group">
+                        <label>EMAIL</label>
+                        <p>thanhan@mochipet.vn</p>
+                    </div>
+                    <div class="info-group">
+                        <label>SỐ ĐIỆN THOẠI</label>
+                        <p>090 123 4567</p>
+                    </div>
+                    <div class="info-group">
+                        <label>CƠ SỞ LÀM VIỆC</label>
+                        <p><i class="fas fa-map-marker-alt"></i> MochiPet - Chi nhánh Q1</p>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+:root {
+    --green-main: #2ecc71;
+    --green-light: #e8faf0;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --bg-body: #f4f7f6;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-dark);
+    margin: 0; padding: 20px;
+}
+
+.dashboard-container { max-width: 1200px; margin: 0 auto; }
+
+/* Card Common */
+.card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+/* Header */
+.header-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-main-info { display: flex; align-items: center; gap: 20px; }
+.avatar { width: 80px; height: 80px; border-radius: 50%; border: 3px solid var(--green-main); }
+.badge-role {
+    background: var(--green-light);
+    color: var(--green-main);
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+/* Layout */
+.content-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+/* Stats */
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.stat-item label { font-size: 11px; color: var(--text-light); font-weight: bold; }
+.number { font-size: 24px; font-weight: 800; margin: 8px 0; }
+.trend-up { font-size: 12px; color: var(--green-main); background: var(--green-light); padding: 2px 5px; border-radius: 4px; }
+
+.progress-bar { height: 6px; background: #eee; border-radius: 3px; overflow: hidden; }
+.progress-bar .fill { height: 100%; background: var(--green-main); }
+
+/* Table */
+.activity-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+.activity-table th { text-align: left; font-size: 12px; color: var(--text-light); padding: 12px; border-bottom: 1px solid #eee; }
+.activity-table td { padding: 15px 12px; font-size: 14px; border-bottom: 1px solid #f9f9f9; }
+
+.status-success { color: var(--green-main); background: var(--green-light); padding: 4px 10px; border-radius: 20px; font-size: 12px; }
+
+/* Sidebar */
+.section-title { font-size: 16px; margin-top: 0; margin-bottom: 20px; border-left: 4px solid var(--green-main); padding-left: 10px; }
+.info-group { margin-bottom: 15px; }
+.info-group label { font-size: 10px; color: var(--text-light); display: block; }
+.info-group p { margin: 5px 0; font-weight: 500; }
+
+.role-tag { display: inline-block; background: #f0f2f5; padding: 5px 10px; border-radius: 6px; font-size: 12px; margin-right: 5px; }
+
+/* Buttons */
+.btn { border: none; padding: 10px 18px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+.btn-primary { background: var(--green-main); color: white; }
+.btn-secondary { background: #eee; color: var(--text-dark); margin-right: 10px; }
+
+/* Nút quay lại */
+.btn-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: #ffffff; /* Nền trắng để nổi bật viền và icon */
+    border: 2px solid #31A600; /* Màu viền xanh theo yêu cầu */
+    border-radius: 50%;
+    color: #31A600; /* Màu icon xanh */
+    text-decoration: none;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hiệu ứng khi lia chuột vào (Hover) */
+.btn-back:hover {
+    background-color: #FF5500; /* Nền chuyển sang màu cam khi hover */
+    border-color: #FF5500;     /* Viền chuyển sang màu cam */
+    color: #ffffff;            /* Icon chuyển sang màu trắng để dễ nhìn trên nền cam */
+    transform: scale(1.1);     /* Phóng to nhẹ một chút để tạo cảm giác tương tác */
+}
+
+.btn-back i {
+    font-size: 16px;
+}

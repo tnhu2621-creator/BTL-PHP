@@ -1,0 +1,230 @@
+/* --- RESET & FONTS --- */
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+body {
+    background-color: #e6f0dc; /* Màu nền xanh nhạt như ảnh */
+    color: #333;
+}
+
+/* --- HEADER --- */
+.top-header {
+    background: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+
+/* Khung tròn bao quanh logo */
+.logo-circle {
+    width: 40px;          /* Độ rộng vòng tròn */
+    height: 40px;         /* Độ cao vòng tròn */
+    background-color: #fff;
+    border-radius: 50%;   /* Tạo hình tròn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;     /* Cắt bỏ phần ảnh thừa nếu ảnh quá to */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Đổ bóng nhẹ */
+}
+
+/* Tùy chỉnh ảnh logo bên trong */
+.main-logo {
+    width: 100%;           /* Để ảnh nhỏ hơn vòng tròn một chút (tạo khoảng trắng) */
+    height: 100%;
+    object-fit: cover;  /* Giữ nguyên tỷ lệ ảnh, không bị méo */
+}
+
+/* Căn chỉnh chữ bên cạnh logo */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;            /* Khoảng cách giữa logo và chữ */
+}
+
+.linear-gradient-text {
+    /* Font chữ nên chọn font dày để thấy rõ màu gradient */
+    font-family: 'Inknut Antiqua'; 
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin: 0;
+
+    /* Thiết lập dải màu từ Xanh lá sang Cam */
+    background: linear-gradient(to right, #3D730A 0%, #3D730A 50%, #FF9222 50%, #FF9222 100%);
+    
+    /* Màu hòa quyện mượt mà hơn (không chia đôi khựng lại) */
+    background: linear-gradient(to right, #3D730A, #FF9222); 
+
+    /* Kỹ thuật đổ màu vào chữ */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    /* Thêm hiệu ứng bóng đổ nhẹ để tạo cảm giác 3D/Lineart nổi bật */
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.1));
+}
+
+/* Căn chỉnh header-left để logo và chữ nằm ngang */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main-menu ul { list-style: none; display: flex; gap: 25px; }
+.main-menu a { 
+    text-decoration: none; color: #407A08; font-weight: 600; font-size: 14px; 
+    padding-bottom: 5px; transition: 0.3s;
+}
+.main-menu a:hover, .main-menu a.active { 
+    color: #ff5722;
+    border-bottom: 2px solid #ff5722;
+    padding-left: 2px;
+    letter-spacing: 0.5px; }
+
+.user-profile { display: flex; align-items: center; gap: 10px; text-align: right; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+.user-name { display: block; font-weight: bold; font-size: 14px; }
+.user-role { display: block; font-size: 11px; color: #888; }
+
+/* --- DASHBOARD CONTAINER --- */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+:root {
+    --bg-main: #E1EEDD;
+    --table-header-blue: #CCEEFF;
+    --btn-orange: #FF5500;
+    --btn-green: #00CC44;
+    --primary-green: #3D730A;
+}
+
+.dashboard-container {
+    padding: 20px;
+    background-color: var(--bg-light);
+}
+
+.management-container { max-width: 95%; margin: auto; }
+
+/* Header & Buttons */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -50px; /* Đẩy lên cao theo ý bạn */
+    margin-bottom: 20px;
+}
+
+.btn-action {
+    border: 1px solid #ccc;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top:20px;
+}
+
+.btn-blue { border-color: #0000ff; color: #0000ff;}
+.btn-red { border-color: #ff0000; color: #ff0000; }
+.btn-green-light { border-color: #039B21; color:#039B21 }
+
+/* Table Styling */
+.table-container {
+    background: white;
+    border-radius: 20px;
+    padding: 0 0 20px 0;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.main-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.main-table th {
+    background-color: #E0E0E0;
+    padding: 15px;
+    text-align: left;
+    color: #333;
+}
+
+.main-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+/* Specific Columns */
+.product-thumb { width: 50px; height: 50px; border-radius: 8px; }
+
+.supplier-name { font-size: 13px; color: #444; width: 220px; }
+
+.price-value { color: #11CC00; font-weight: bold; }
+
+.action-cell {
+    display: flex !important;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    height: 60px; /* Khớp với td height */
+}
+
+.action-icons i {
+    cursor: pointer;
+    color: #666;
+    font-size: 18px;
+    transition: 0.2s;
+    margin-right:15px;
+}
+
+.action-icons i.fa-pencil-alt:hover { color: var(--btn-green); }
+.action-icons i.fa-trash-alt:hover { color: #dc3545; }
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    gap: 10px;
+}
+
+.page-num.active {
+    background-color: var(--orange-mochi);
+    color: white;
+    border-radius: 6px;
+    padding: 5px 12px;
+}
+
+/* Hiệu ứng cho avatar ở header */
+.user-profile a:hover img {
+    opacity: 0.8;
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+}
+
+.user-profile a:hover span {
+    color: #31A600; /* Đổi tên sang xanh khi di chuột vào */
+}
+
+/* Đảm bảo ảnh avatar luôn tròn */
+.avatar-small {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #eee;
+}

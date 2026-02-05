@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochi Pet - Kho hàng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="Khohang.css">
+</head>
+<body>
+
+    <header class="top-header">
+        <background></background>
+        <div class="header-left">
+            <div class="logo-circle">
+                <img src="Anh/LOGO.jpg" alt="Mochi Pet Logo" class="main-logo">
+            </div>
+            <h1 class="brand-name linear-gradient-text">MOCHI PET</h1>
+        </div>
+
+        <nav class="main-menu">
+            <ul>
+                <li><a href="Tongquan.html">Tổng quan</a></li>
+                <li><a href="Danhmuc.html">Danh mục</a></li>
+                <li><a href="Sanpham.html">Sản phẩm</a></li>
+                <li><a href="Khohang.html" class="active">Kho hàng</a></li>
+                <li><a href="Nhanvien.html">Nhân viên</a></li>
+                <li><a href="Khachhang.html">Khách hàng</a></li>
+                <li><a href="Dichvu.html">Dịch vụ chăm sóc</a></li>
+            </ul>
+        </nav>
+
+        <div class="user-profile">
+            <a href="Thong-tin-QL.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                <img src="Anh/AvatarQL.jpg" alt="Avatar" class="avatar-small">
+                    <div class="user-name">
+                        <span style="font-weight: bold; color: #333;">Thanh An</span>
+                        <br>
+                        <small style="color: #777;">Quản lý cửa hàng</small>
+                    </div>
+            </a>
+        </div>
+    </header>
+
+    <div class="dashboard-wrapper">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-content">
+                    <p class="stat-label">TỔNG GIÁ TRỊ TỒN KHO</p>
+                    <h3 class="stat-value">125.400.000 VNĐ</h3>
+                </div>
+                <div class="stat-icon icon-green"><i class="fas fa-wallet"></i></div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-content">
+                    <p class="stat-label">SẮP HẾT HÀNG</p>
+                    <h3 class="stat-value">12 <small>sản phẩm</small></h3>
+                    <button class="btn-view-detail">Xem chi tiết</button>
+                </div>
+                <div class="stat-icon icon-red"><i class="fas fa-exclamation-triangle"></i></div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-content">
+                    <p class="stat-label">ĐƠN NHẬP THÁNG NÀY</p>
+                    <h3 class="stat-value">156 <small>Kiện hàng</small></h3>
+                </div>
+                <div class="stat-icon icon-blue"><i class="fas fa-box"></i></div>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <div class="search-box">
+                <input type="text" placeholder="Tìm kiếm theo mã sản phẩm, tên sản phẩm...">
+            </div>
+            <select class="filter-select"><option>Tất cả Nhà cung cấp</option></select>
+            <select class="filter-select"><option>Trạng thái kho</option></select>
+            <div class="filter-actions">
+                <button class="btn-export"><i class="fas fa-download"></i> Xuất báo cáo</button>
+                <button class="btn-add-stock"><i class="fas fa-plus"></i> Nhập kho mới</button>
+            </div>
+        </div>
+
+        <div class="inventory-card">
+            <div class="card-header">
+                <h3>Nhập kho gần đây</h3>
+                <a href="#" class="view-all">Xem tất cả</a>
+            </div>
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>MÃ ĐƠN HÀNG</th>
+                        <th>SẢN PHẨM</th>
+                        <th>SỐ LƯỢNG</th>
+                        <th>NHÀ CUNG CẤP</th>
+                        <th>GIÁ NHẬP</th>
+                        <th>GIÁ BÁN</th>
+                        <th>NGÀY NHẬP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="bold">#ORD-8821</td>
+                        <td>Hạt Cho Mèo Mọi Lứa Tuổi Ca...</td>
+                        <td>50 túi</td>
+                        <td>Công ty Paddy</td>
+                        <td class="price-in">80.000đ/Túi</td>
+                        <td class="price-out">90.000đ/Túi</td>
+                        <td>24/01/2026</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pagination">
+                <span>Hiển thị 1 - 5 trên 45 đơn hàng</span>
+                <div class="page-controls">
+                    <span class="p-arrow">&lt;</span>
+                    <span class="p-num active">1</span>
+                    <span class="p-num">2</span>
+                    <span class="p-num">3</span>
+                    <span class="p-arrow">&gt;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

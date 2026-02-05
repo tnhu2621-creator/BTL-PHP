@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochi Pet - Quản lý Nhân viên</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="Nhanvien.css">
+</head>
+<body>
+
+    <header class="top-header">
+        <background></background>
+        <div class="header-left">
+            <div class="logo-circle">
+                <img src="Anh/LOGO.jpg" alt="Mochi Pet Logo" class="main-logo">
+            </div>
+            <h1 class="brand-name linear-gradient-text">MOCHI PET</h1>
+        </div>
+
+        <nav class="main-menu">
+            <ul>
+                <li><a href="Tongquan.html">Tổng quan</a></li>
+                <li><a href="Danhmuc.html">Danh mục</a></li>
+                <li><a href="Sanpham.html">Sản phẩm</a></li>
+                <li><a href="Khohang.html">Kho hàng</a></li>
+                <li><a href="Nhanvien.html" class="active">Nhân viên</a></li>
+                <li><a href="Khachhang.html">Khách hàng</a></li>
+                <li><a href="Dichvu.html">Dịch vụ chăm sóc</a></li>
+            </ul>
+        </nav>
+
+        <div class="user-profile">
+            <a href="Thong-tin-QL.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                <img src="Anh/AvatarQL.jpg" alt="Avatar" class="avatar-small">
+                    <div class="user-name">
+                        <span style="font-weight: bold; color: #333;">Thanh An</span>
+                        <br>
+                        <small style="color: #777;">Quản lý cửa hàng</small>
+                    </div>
+            </a>
+        </div>
+    </header>
+
+    <main class="management-container">
+        <div class="page-header">
+            <h2 class="page-title">Quản lý Nhân viên</h2> <button class="btn-add-staff">
+                <i class="fas fa-plus-circle"></i> Thêm nhân viên
+            </button>
+        </div>
+
+        <div class="stats-grid">
+            <div class="card-mini">
+                <div class="mini-icon blue"><i class="fas fa-users"></i></div>
+                <div class="mini-info">
+                    <span>TỔNG NHÂN VIÊN</span>
+                    <strong>12</strong>
+                </div>
+            </div>
+            <div class="card-mini">
+                <div class="mini-icon green"><i class="fas fa-user-check"></i></div>
+                <div class="mini-info">
+                    <span>ĐANG LÀM VIỆC</span>
+                    <strong>4</strong>
+                </div>
+            </div>
+            <div class="card-mini">
+                <div class="mini-icon orange"><i class="fas fa-envelope"></i></div>
+                <div class="mini-info">
+                    <span>YÊU CẦU CHỜ DUYỆT</span>
+                    <strong class="text-orange">3</strong>
+                </div>
+            </div>
+            <div class="card-mini">
+                <div class="mini-icon red"><i class="fas fa-user-times"></i></div>
+                <div class="mini-info">
+                    <span>TÀI KHOẢN BỊ KHÓA</span>
+                    <strong class="text-red">1</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-card table-section">
+            <div class="tab-menu">
+                <div class="tab-item active">Danh sách nhân viên</div>
+                <div class="tab-item">Yêu cầu đăng ký <span class="badge">3</span></div>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm nhân viên theo tên nhân viên...">
+            </div>
+
+            <table class="staff-table">
+                <thead>
+                    <tr>
+                        <th>NHÂN VIÊN</th>
+                        <th>LIÊN HỆ</th>
+                        <th>VỊ TRÍ</th>
+                        <th>CA LÀM VIỆC</th>
+                        <th>DỊCH VỤ HOÀN THÀNH</th>
+                        <th>TRẠNG THÁI</th>
+                        <th>THAO TÁC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="user-cell">
+                            <img src="https://i.pravatar.cc/150?u=1" alt="avatar">
+                            <div>
+                                <strong>Nguyễn Văn An</strong><br>
+                                <small>NV001</small>
+                            </div>
+                        </td>
+                        <td class="contact-cell">
+                            <i class="fas fa-envelope"></i> nguyenvana01@gmail.com<br>
+                            <i class="fas fa-phone"></i> 0918234789
+                        </td>
+                        <td><span class="pos-tag">Nhân viên chăm sóc</span></td>
+                        <td>9:00 - 17:00</td>
+                        <td class="text-center"><strong>234</strong></td>
+                        <td><span class="status-tag working">Đang làm</span></td>
+                        <td class="action-btns">
+                            <i class="fas fa-edit text-green"></i>
+                            <i class="fas fa-lock text-orange"></i>
+                            <i class="fas fa-trash text-gray"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="user-cell">
+                            <img src="https://i.pravatar.cc/150?u=6" alt="avatar">
+                            <div>
+                                <strong>Nguyễn Văn A</strong><br>
+                                <small>NV001</small>
+                            </div>
+                        </td>
+                        <td class="contact-cell">
+                            <i class="fas fa-envelope"></i> nguyenvana01@gmail.com<br>
+                            <i class="fas fa-phone"></i> 0918234789
+                        </td>
+                        <td><span class="pos-tag">Nhân viên chăm sóc</span></td>
+                        <td>13:00 - 20:00</td>
+                        <td class="text-center"><strong>234</strong></td>
+                        <td><span class="status-tag locked">Đã khóa</span></td>
+                        <td class="action-btns">
+                            <i class="fas fa-edit text-green"></i>
+                            <i class="fas fa-lock text-orange"></i>
+                            <i class="fas fa-trash text-gray"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

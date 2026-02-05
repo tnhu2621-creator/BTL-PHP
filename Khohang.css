@@ -1,0 +1,221 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+body {
+    background-color: #e6f0dc; /* Màu nền xanh nhạt như ảnh */
+    color: #333;
+}
+
+/* --- HEADER --- */
+.top-header {
+    background: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+
+/* Khung tròn bao quanh logo */
+.logo-circle {
+    width: 40px;          /* Độ rộng vòng tròn */
+    height: 40px;         /* Độ cao vòng tròn */
+    background-color: #fff;
+    border-radius: 50%;   /* Tạo hình tròn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;     /* Cắt bỏ phần ảnh thừa nếu ảnh quá to */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Đổ bóng nhẹ */
+}
+
+/* Tùy chỉnh ảnh logo bên trong */
+.main-logo {
+    width: 100%;           /* Để ảnh nhỏ hơn vòng tròn một chút (tạo khoảng trắng) */
+    height: 100%;
+    object-fit: cover;  /* Giữ nguyên tỷ lệ ảnh, không bị méo */
+}
+
+/* Căn chỉnh chữ bên cạnh logo */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;            /* Khoảng cách giữa logo và chữ */
+}
+
+.linear-gradient-text {
+    /* Font chữ nên chọn font dày để thấy rõ màu gradient */
+    font-family: 'Inknut Antiqua'; 
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin: 0;
+
+    /* Thiết lập dải màu từ Xanh lá sang Cam */
+    background: linear-gradient(to right, #3D730A 0%, #3D730A 50%, #FF9222 50%, #FF9222 100%);
+    
+    /* Màu hòa quyện mượt mà hơn (không chia đôi khựng lại) */
+    background: linear-gradient(to right, #3D730A, #FF9222); 
+
+    /* Kỹ thuật đổ màu vào chữ */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    /* Thêm hiệu ứng bóng đổ nhẹ để tạo cảm giác 3D/Lineart nổi bật */
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.1));
+}
+
+/* Căn chỉnh header-left để logo và chữ nằm ngang */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main-menu ul { list-style: none; display: flex; gap: 25px; }
+.main-menu a { 
+    text-decoration: none; color: #407A08; font-weight: 600; font-size: 14px; 
+    padding-bottom: 5px; transition: 0.3s;
+}
+.main-menu a:hover, .main-menu a.active { 
+    color: #ff5722;
+    border-bottom: 2px solid #ff5722;
+    padding-left: 2px;
+    letter-spacing: 0.5px;
+}
+
+.avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+.user-name { display: block; font-weight: bold; font-size: 14px; }
+.user-role { display: block; font-size: 11px; color: #888; }
+
+/* --- DASHBOARD CONTAINER --- */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+:root {
+    --bg-main: #E1EEDD;
+    --table-header-blue: #CCEEFF;
+    --btn-orange: #FF5500;
+    --btn-green: #00CC44;
+    --primary-green: #3D730A;
+}
+
+.dashboard-wrapper { max-width: 1250px; margin: 0 auto; padding: 25px; }
+
+/* 3 Thẻ thống kê */
+.stats-container { display: flex; gap: 20px; margin-bottom: 25px; }
+
+.stat-card {
+    background: white;
+    flex: 1;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.stat-value { font-size: 24px; margin: 10px 0; }
+.stat-label { color: #888; font-size: 12px; font-weight: bold; }
+
+.stat-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; }
+.icon-green { background: #81C784; }
+.icon-red { background: #E57373; }
+.icon-blue { background: #64B5F6; }
+
+.search-box input { padding: 10px 15px; border-radius: 10px; border: 1px solid #eee; width: 500px; background: #f9f9f9; }
+
+.btn-add-stock { background: #4CAF50; color: white; border: none; padding: 10px 20px; border-radius: 10px; font-weight: bold; cursor: pointer;}
+
+/* Table */
+.inventory-card { background: white; border-radius: 20px; padding: 20px; overflow: hidden; }
+
+.inventory-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+.inventory-table th { background: #f8f8f8; padding: 15px; text-align: left; font-size: 12px; color: #666; }
+.inventory-table td { padding: 15px; border-bottom: 1px solid #eee; font-size: 13px; }
+
+.price-in { color: #4CAF50; font-weight: bold; }
+.price-out { color: #4CAF50; font-weight: bold; }
+
+/* Pagination */
+.pagination { display: flex; justify-content: space-between; padding-top: 20px; color: #888; font-size: 13px; }
+.p-num.active { background: #FF5500; color: white; padding: 4px 10px; border-radius: 6px; }
+
+/* Container chính của thanh lọc */
+.filter-section {
+    background: white;
+    padding: 12px 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between; /* Đẩy filter-left sang trái, filter-right sang phải */
+    align-items: center;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Nhóm bên trái (Search + Select) */
+.filter-left {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Nhóm bên phải (Nút bấm) */
+.filter-right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Style cho các nút bấm nhỏ gọn */
+.btn-export {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-size: 13px;
+    cursor: pointer;
+    color: #555;
+}
+
+/* Hiệu ứng khi lia chuột */
+.btn-add-stock:hover {
+    background: #45a049;
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+/* Hiệu ứng cho avatar ở header */
+.user-profile a:hover img {
+    opacity: 0.8;
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+}
+
+
+
+.user-profile a:hover span {
+    color: #31A600; /* Đổi tên sang xanh khi di chuột vào */
+}
+
+/* Đảm bảo ảnh avatar luôn tròn */
+.avatar-small {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #eee;
+}
+
+

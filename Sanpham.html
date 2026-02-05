@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochi Pet - Dashboard Sản phẩm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="Sanpham.css">
+</head>
+<body>
+
+    <header class="top-header">
+        <background></background>
+        <div class="header-left">
+            <div class="logo-circle">
+                <img src="Anh/LOGO.jpg" alt="Mochi Pet Logo" class="main-logo">
+            </div>
+            <h1 class="brand-name linear-gradient-text">MOCHI PET</h1>
+        </div>
+
+        <nav class="main-menu">
+            <ul>
+                <li><a href="Tongquan.html">Tổng quan</a></li>
+                <li><a href="Danhmuc.html">Danh mục</a></li>
+                <li><a href="Sanpham.html" class="active">Sản phẩm</a></li>
+                <li><a href="Khohang.html">Kho hàng</a></li>
+                <li><a href="Nhanvien.html">Nhân viên</a></li>
+                <li><a href="Khachhang.html">Khách hàng</a></li>
+                <li><a href="Dichvu.html">Dịch vụ chăm sóc</a></li>
+            </ul>
+        </nav>
+
+        <div class="user-profile">
+            <a href="Thong-tin-QL.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                <img src="Anh/AvatarQL.jpg" alt="Avatar" class="avatar-small">
+                    <div class="user-name">
+                        <span style="font-weight: bold; color: #333;">Thanh An</span>
+                        <br>
+                        <small style="color: #777;">Quản lý cửa hàng</small>
+                    </div>
+            </a>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+    <div class="page-header">
+        <h2 class="page-title">Quản lý Sản phẩm</h2>
+        <div class="header-actions">
+            <button class="btn-action btn-blue"><i class="fas fa-file-alt"></i> Đơn hàng</button>
+            <button class="btn-action btn-red"><i class="fas fa-chart-line"></i> Thống kê doanh thu</button>
+            <button class="btn-action btn-green-light"><i class="fas fa-plus-circle"></i> Đăng bán sản phẩm</button>
+        </div>
+    </div>
+
+    <div class="search-section">
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="Tìm kiếm sản phẩm theo tên">
+        </div>
+    </div>
+
+    <div class="table-container">
+        <table class="main-table">
+            <thead>
+                <tr>
+                    <th>Hình Ảnh</th>
+                    <th>Danh Mục</th>
+                    <th>Tên SP</th>
+                    <th>Nhà Cung Cấp</th>
+                    <th>Giá Bán</th>
+                    <th>Lượt bán</th>
+                    <th>Thao Tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="Anh/pate-meo.webp" class="product-thumb"></td>
+                    <td><strong>Thức ăn</strong></td>
+                    <td class="product-name">Pate mèo dạng sốt Nekko</td>
+                    <td class="supplier-name">Công ty Cổ phần Thương mại & Dịch vụ Paddy</td>
+                    <td class="price-value">16.000đ</td>
+                    <td>340</td>
+                    <td class="action-icons">
+                        <i class="fas fa-pencil-alt"></i>
+                        <i class="fas fa-trash-alt"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="Anh/pate-meo.webp" class="product-thumb"></td>
+                    <td><strong>Thức ăn</strong></td>
+                    <td class="product-name">Pate mèo dạng sốt Nekko</td>
+                    <td class="supplier-name">Công ty Cổ phần Thương mại & Dịch vụ Paddy</td>
+                    <td class="price-value">16.000đ</td>
+                    <td>340</td>
+                    <td class="action-icons">
+                        <i class="fas fa-pencil-alt"></i>
+                        <i class="fas fa-trash-alt"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="Anh/pate-meo.webp" class="product-thumb"></td>
+                    <td><strong>Thức ăn</strong></td>
+                    <td class="product-name">Pate mèo dạng sốt Nekko</td>
+                    <td class="supplier-name">Công ty Cổ phần Thương mại & Dịch vụ Paddy</td>
+                    <td class="price-value">16.000đ</td>
+                    <td>340</td>
+                    <td class="action-icons">
+                        <i class="fas fa-pencil-alt"></i>
+                        <i class="fas fa-trash-alt"></i>
+                    </td>
+                </tr>
+                </tbody>
+        </table>
+
+        <div class="pagination">
+            <span class="page-arrow">&lt;</span>
+            <span class="page-num active">1</span>
+            <span class="page-num">2</span>
+            <span class="page-num">3</span>
+            <span class="page-dots">...</span>
+            <span class="page-num">10</span>
+            <span class="page-arrow">&gt;</span>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
