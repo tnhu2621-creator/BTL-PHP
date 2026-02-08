@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mochi Pet - Dashboard Danh mục</title>
-    <link rel="stylesheet" href="baimau.css">
+    <link rel="stylesheet" href="Khachhang.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 <body>
 
@@ -12,9 +14,6 @@
         <background></background>
         <div class="header-left">
             <div class="logo-circle">
-                <a href="Thong-tin-QL.html" class="btn-back">
-                    <i class="fas fa-chevron-left"></i>
-                </a>
                 <img src="Anh/LOGO.jpg" alt="Mochi Pet Logo" class="main-logo">
             </div>
             <h1 class="brand-name linear-gradient-text">MOCHI PET</h1>
@@ -43,6 +42,159 @@
             </a>
         </div>
     </header>
+    <main>
+        <div class="container">
+        <header class="header-section">
+            <h1>Quản lý Khách hàng</h1>
+            <button class="btn-add">+ Thêm khách hàng</button>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                <div class="stat-info">
+                    <span class="stat-label">Tổng khách hàng</span>
+                    <p class="stat-value">77</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <div class="stat-info">
+                    <span class="stat-label">Tổng doanh thu</span>
+                    <p class="stat-value">4</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="stat-info">
+                    <span class="stat-label">Yêu cầu chờ duyệt</span>
+                    <p class="stat-value">3</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-user-lock"></i></div>
+                <div class="stat-info">
+                    <span class="stat-label">Tài khoản bị khóa</span>
+                    <p class="stat-value" style="color: red;">1</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" class="search-bar" placeholder="Tìm kiếm khách hàng...">
+            </div>
+            
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Khách hàng</th>
+                        <th>Liên hệ</th>
+                        <th>Thú cưng</th>
+                        <th>Đơn hàng</th>
+                        <th>Tổng chi tiêu</th>
+                        <th>Ngày tham gia</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="customer-cell">
+                                <img src="Anh/Khach-hang1.jpg" alt="Avatar" class="avatar">
+                                <div>
+                                    <strong>Nguyễn Văn An</strong><br>
+                                    <small>KH001</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="contact-info">
+                            <span><i class="fa-regular fa-envelope"></i> Nguyenvanan01@gmail.com</span><br>
+                            <span><i class="fa-solid fa-phone"></i> 0918234789</span>
+                        </td>
+                        <td>
+                            <a href="#" class="pet-link">Max (Chó)</a>
+                            <a href="#" class="pet-link">Luna (Mèo)</a>
+                        </td>
+                        <td>12</td>
+                        <td><span class="total-spent">5.400.000đ</span></td>
+                        <td>25/08/2025</td>
+                        <td>
+                            <div class="action-buttons-container">
+                                <i class="fa-solid fa-eye view-icon" title="Xem chi tiết"></i>
+                                <i class="fa-solid fa-lock lock-icon" title="Khóa tài khoản"></i>
+                                <i class="fa-solid fa-trash-can delete-icon" title="Xóa"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div class="customer-cell">
+                                <img src="Anh/Khach-hang2.jpg" alt="Avatar" class="avatar">
+                                <div>
+                                    <strong>Nguyễn Văn An</strong><br>
+                                    <small>KH001</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="contact-info">
+                            <span><i class="fa-regular fa-envelope"></i> Nguyenvanan01@gmail.com</span><br>
+                            <span><i class="fa-solid fa-phone"></i> 0918234789</span>
+                        </td>
+                        <td>
+                            <a href="#" class="pet-link">Max (Chó)</a>
+                            <a href="#" class="pet-link">Luna (Mèo)</a>
+                        </td>
+                        <td>12</td>
+                        <td><span class="total-spent">5.400.000đ</span></td>
+                        <td>25/08/2025</td>
+                        <td>
+                            <div class="action-buttons-container">
+                                <i class="fa-solid fa-eye view-icon" title="Xem chi tiết"></i>
+                                <i class="fa-solid fa-lock lock-icon" title="Khóa tài khoản"></i>
+                                <i class="fa-solid fa-trash-can delete-icon" title="Xóa"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div class="customer-cell">
+                                <img src="Anh/anh-mo-ta.jpg" alt="Avatar" class="avatar">
+                                <div>
+                                    <strong>Nguyễn Văn An</strong><br>
+                                    <small>KH001</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="contact-info">
+                            <span><i class="fa-regular fa-envelope"></i> Nguyenvanan01@gmail.com</span><br>
+                            <span><i class="fa-solid fa-phone"></i> 0918234789</span>
+                        </td>
+                        <td>
+                            <a href="#" class="pet-link">Max (Chó)</a>
+                            <a href="#" class="pet-link">Luna (Mèo)</a>
+                        </td>
+                        <td>12</td>
+                        <td><span class="total-spent">5.400.000đ</span></td>
+                        <td>25/08/2025</td>
+                        <td>
+                            <div class="action-buttons-container">
+                                <i class="fa-solid fa-eye view-icon" title="Xem chi tiết"></i>
+                                <i class="fa-solid fa-lock lock-icon" title="Khóa tài khoản"></i>
+                                <i class="fa-solid fa-trash-can delete-icon" title="Xóa"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    </main>
 
 </body>
 </html>

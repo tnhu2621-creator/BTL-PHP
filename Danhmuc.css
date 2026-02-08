@@ -124,7 +124,7 @@ body.dashboard-body {
     justify-content: space-between;
     align-items: flex-end; /* Căn nút xuống đáy để thẳng hàng với tiêu đề */
     margin-bottom:25px;
-    margin-top:-30px;
+    margin-top:-50px;
 }
 
 .header-side-actions {
@@ -252,7 +252,7 @@ body.dashboard-body {
     gap: 20px;
     justify-content: flex-start;
     align-items: center;
-    height: 60px; /* Khớp với td height */
+    height: 80px; /* Khớp với td height */
 }
 
 .action-cell i {
@@ -350,4 +350,113 @@ textarea {
     border-radius: 50%;
     object-fit: cover;
     border: 1px solid #eee;
+}
+
+/* Lớp phủ mờ toàn màn hình */
+.modal-overlay {
+    position: fixed; /* Bắt buộc là fixed để không chiếm chỗ content */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full chiều rộng màn hình */
+    height: 100vh; /* Full chiều cao màn hình */
+    background: rgba(0, 0, 0, 0.6);
+    display: none; /* JS sẽ đổi thành flex */
+    justify-content: center;
+    align-items: center;
+    z-index: 99999; /* Luôn nằm trên cùng */
+    backdrop-filter: blur(4px);
+}
+
+/* Đảm bảo khi mở modal, body không bị dịch chuyển */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Đảm bảo modal-card không có margin quá lớn gây đẩy khung */
+.modal-card {
+    background: white;
+    width: 450px;
+    max-width: 90%;
+    padding: 30px;
+    border-radius: 25px;
+    position: relative;  /* Để nằm trong overlay */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-title {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+}
+
+.modal-form-group {
+    margin-bottom: 20px;
+}
+
+.modal-form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.modal-form-group input, 
+.modal-form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    outline: none;
+    background: #fff;
+}
+
+.btn-select-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #fff;
+    cursor: pointer;
+    color: #888;
+}
+
+/* Các nút bấm ở chân Modal */
+.modal-footer-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.btn-modal-save {
+    background: #e64a19; /* Màu cam đậm như ảnh */
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-modal-save:hover { background: #d84315; }
+
+.btn-modal-cancel {
+    background: #bdbdbd; /* Màu xám như ảnh */
+    color: #333;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
 }
