@@ -49,7 +49,9 @@
             <div class="trash-bin-btn"><i class="fas fa-trash-alt"></i></div>
             <div class="button-group">
                 <button class="btn btn-green-view">Xem danh mục dịch vụ</button>
-                <button class="btn btn-orange-add"><i class="fas fa-plus-circle"></i> Thêm danh mục mới</button>
+                <button class="btn btn-orange-add" id="openModalBtn">
+                    <i class="fas fa-plus-circle"></i> Thêm danh mục mới
+                </button>
             </div>
         </div>
     </div>
@@ -82,30 +84,30 @@
                         <td class="action-cell"><i class="fas fa-pencil-alt"></i> <i class="fas fa-trash-alt"></i></td>
                     </tr>
                     <tr>
-                        <td><div class="icon-frame"><img src="icon-thuc-an.png"></div></td>
-                        <td><strong>Thức ăn</strong></td>
-                        <td class="text-description">Các loại hạt, pate và thực phẩm chức năng</td>
+                        <td><div class="icon-frame"><img src="toy.png"></div></td>
+                        <td><strong>Đồ chơi</strong></td>
+                        <td class="text-description">Các loại đồ chơi giải trí, huấn luyện và giảm stress cho thú cưng.</td>
                         <td><strong>60</strong></td>
                         <td class="action-cell"><i class="fas fa-pencil-alt"></i> <i class="fas fa-trash-alt"></i></td>
                     </tr>
                     <tr>
                         <td><div class="icon-frame"><img src="icon-thuc-an.png"></div></td>
-                        <td><strong>Thức ăn</strong></td>
-                        <td class="text-description">Các loại hạt, pate và thực phẩm chức năng</td>
+                        <td><strong>Phụ kiện</strong></td>
+                        <td class="text-description">Các mẫu áo, váy, nơ, bảng tên và giày cho các bé.</td>
                         <td><strong>60</strong></td>
                         <td class="action-cell"><i class="fas fa-pencil-alt"></i> <i class="fas fa-trash-alt"></i></td>
                     </tr>
                     <tr>
                         <td><div class="icon-frame"><img src="icon-thuc-an.png"></div></td>
-                        <td><strong>Thức ăn</strong></td>
-                        <td class="text-description">Các loại hạt, pate và thực phẩm chức năng</td>
+                        <td><strong>Vệ sinh & Chăm sóc</strong></td>
+                        <td class="text-description">Sữa tắm, dung dịch khử mùi, bàn chải lông, cắt móng, khăn lau</td>
                         <td><strong>60</strong></td>
                         <td class="action-cell"><i class="fas fa-pencil-alt"></i> <i class="fas fa-trash-alt"></i></td>
                     </tr>
                     <tr>
                         <td><div class="icon-frame"><img src="icon-thuc-an.png"></div></td>
-                        <td><strong>Thức ăn</strong></td>
-                        <td class="text-description">Các loại hạt, pate và thực phẩm chức năng</td>
+                        <td><strong>Sản phẩm cho mèo</strong></td>
+                        <td class="text-description">Các sản phẩm dành riêng cho mèo như cát vệ sinh, bàn cào móng, nhà vệ sinh...</td>
                         <td><strong>60</strong></td>
                         <td class="action-cell"><i class="fas fa-pencil-alt"></i> <i class="fas fa-trash-alt"></i></td>
                     </tr>
@@ -151,7 +153,60 @@
             </div>
         </div>
     </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-card">
+            <h2 class="modal-title">Thêm danh mục mới</h2>
+        
+            <div class="modal-form-group">
+                <label>Tên danh mục</label>
+                <input type="text" placeholder="Nhập tên danh mục...">
+            </div>
+
+            <div class="modal-form-group">
+                <label>Icon</label>
+                <button class="btn-select-icon">
+                    <i class="fa-solid fa-circle-plus"></i> Chọn Icon
+                </button>
+            </div>
+
+            <div class="modal-form-group">
+                <label>Mô tả</label>
+                <textarea rows="3" placeholder="Nhập mô tả danh mục..."></textarea>
+            </div>
+
+            <div class="modal-footer-actions">
+                <button class="btn-modal-save">Lưu</button>
+                <button class="btn-modal-cancel" id="closeModalBtn">Hủy</button>
+            </div>
+        </div>
+    </div>
 </main>
 
 </body>
+<script>
+    const modal = document.getElementById('modalOverlay');
+    const openBtn = document.getElementById('openModalBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+
+    if(openBtn) {
+        openBtn.onclick = function() {
+            modal.style.display = 'flex';
+            document.body.classList.add('modal-open'); // Khóa cuộn
+        }
+    }
+
+    const closeModal = () => {
+        modal.style.display = 'none';
+        document.body.classList.remove('modal-open'); // Mở cuộn
+    };
+
+    closeBtn.onclick = closeModal;
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+</script>
 </html>

@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mochi Pet - Dashboard Danh mục</title>
-    <link rel="stylesheet" href="baimau.css">
+    <title>Mochi Pet - Quản lý Dịch vụ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="Dichvu.css">
 </head>
 <body>
 
@@ -41,5 +42,105 @@
         </div>
     </header>
 
+    <main class="container">
+        <header class="header-section">
+            <h1>Quản lý Dịch vụ</h1>
+            <div class="action-group">
+                <button class="btn-secondary">Xem lịch hẹn</button>
+                <button class="btn-add">+ Thêm dịch vụ</button>
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-regular fa-calendar-days"></i></div>
+                <div class="stat-info">
+                    <span class="stat-label">Tổng dịch vụ</span>
+                    <p class="stat-value" style="color: #0084ff;">6</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-regular fa-clock"></i></div>
+                <div class="stat-info">
+                    <span class="stat-label">Lượt đặt</span>
+                    <p class="stat-value" style="color: #ffb800;">4</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <div class="stat-info">
+                    <span class="stat-label">Doanh thu</span>
+                    <p class="stat-value" style="color: #ff5c00;">2</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-regular fa-circle-check"></i></div>
+                <div class="stat-info">
+                    <span class="stat-label">Giá trung bình</span>
+                    <p class="stat-value" style="color: #28a745;">0</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="filter-wrapper">
+                <div class="search-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" class="search-bar" placeholder="Tìm kiếm dịch vụ...">
+                </div>
+                <select class="category-select">
+                    <option>Tất cả danh mục</option>
+                </select>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="img-box"></div>
+                    <h3 class="service-name">Tắm & cắt lông chó</h3>
+                    <p class="service-desc">Tắm rửa, sấy khô, cắt tỉa lông theo yêu cầu.</p>
+                    <div class="service-info-row">
+                        <span><i class="fa-regular fa-clock"></i> 1.5h</span>
+                        <span><i class="fa-solid fa-paw"></i> Chó</span>
+                    </div>
+                    <div class="service-bottom">
+                        <div class="price-group">
+                            <p class="price">200.000đ</p>
+                            <p class="count">156 lượt đặt</p>
+                        </div>
+                        <span class="status-tag">Hoạt động</span>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn-edit"><i class="fa-regular fa-pen-to-square"></i> Sửa</button>
+                        <button class="btn-delete"><i class="fa-regular fa-trash-can"></i> Xóa</button>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </main>
 </body>
+<script>
+    const modal = document.getElementById('modalOverlay');
+    const openBtn = document.getElementById('openModalBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+
+    if(openBtn) {
+        openBtn.onclick = function() {
+            modal.style.display = 'flex';
+            document.body.classList.add('modal-open'); // Khóa cuộn
+        }
+    }
+
+    const closeModal = () => {
+        modal.style.display = 'none';
+        document.body.classList.remove('modal-open'); // Mở cuộn
+    };
+
+    closeBtn.onclick = closeModal;
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+</script>
 </html>
