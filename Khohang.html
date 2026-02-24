@@ -74,8 +74,23 @@
             <div class="search-box">
                 <input type="text" placeholder="Tìm kiếm theo mã sản phẩm, tên sản phẩm...">
             </div>
-            <select class="filter-select"><option>Tất cả Nhà cung cấp</option></select>
-            <select class="filter-select"><option>Trạng thái kho</option></select>
+            <select class="filter-select">
+                <option value="">Tất cả Nhà cung cấp</option>
+                <option value="paddy">Paddy Pet</option>
+                <option value="anpet">An Pet</option>
+                <option value="vietpet">Việt Pet</option>
+                <option value="senfood">Sen Food</option>
+                <option value="nutri">Nutri Feed</option>
+                <option value="biopet">BioPet Organic</option>
+                <option value="nekko">Nekko Japan</option>
+            </select>
+
+            <select class="filter-select">
+                <option>Trạng thái kho</option>
+                <option value="anpet">Còn hàng</option>
+                <option value="paddy">Sắp hết</option>
+
+            </select>
             <div class="filter-actions">
                 <button class="btn-export"><i class="fas fa-download"></i> Xuất báo cáo</button>
                 <button class="btn-add-stock"><i class="fas fa-plus"></i> Nhập kho mới</button>

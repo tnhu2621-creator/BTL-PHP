@@ -1,0 +1,347 @@
+/* --- RESET & FONTS --- */
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+body {
+    background-color: #e6f0dc; /* Màu nền xanh nhạt như ảnh */
+    color: #333;
+}
+
+/* --- HEADER --- */
+.top-header {
+    background: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+
+/* Khung tròn bao quanh logo */
+.logo-circle {
+    width: 40px;          /* Độ rộng vòng tròn */
+    height: 40px;         /* Độ cao vòng tròn */
+    background-color: #fff;
+    border-radius: 50%;   /* Tạo hình tròn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;     /* Cắt bỏ phần ảnh thừa nếu ảnh quá to */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Đổ bóng nhẹ */
+}
+
+/* Tùy chỉnh ảnh logo bên trong */
+.main-logo {
+    width: 100%;           /* Để ảnh nhỏ hơn vòng tròn một chút (tạo khoảng trắng) */
+    height: 100%;
+    object-fit: cover;  /* Giữ nguyên tỷ lệ ảnh, không bị méo */
+}
+
+/* Căn chỉnh chữ bên cạnh logo */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;            /* Khoảng cách giữa logo và chữ */
+}
+
+.linear-gradient-text {
+    /* Font chữ nên chọn font dày để thấy rõ màu gradient */
+    font-family: 'Inknut Antiqua'; 
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 1px;
+    margin: 0;
+
+    /* Thiết lập dải màu từ Xanh lá sang Cam */
+    background: linear-gradient(to right, #3D730A 0%, #3D730A 50%, #FF9222 50%, #FF9222 100%);
+    
+    /* Màu hòa quyện mượt mà hơn (không chia đôi khựng lại) */
+    background: linear-gradient(to right, #3D730A, #FF9222); 
+
+    /* Kỹ thuật đổ màu vào chữ */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    /* Thêm hiệu ứng bóng đổ nhẹ để tạo cảm giác 3D/Lineart nổi bật */
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.1));
+}
+
+/* Căn chỉnh header-left để logo và chữ nằm ngang */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main-menu ul { list-style: none; display: flex; gap: 25px; }
+.main-menu a { 
+    text-decoration: none; color: #407A08; font-weight: 600; font-size: 14px; 
+    padding-bottom: 5px; transition: 0.3s;
+}
+.main-menu a:hover, .main-menu a.active { 
+    color: #ff5722;
+    border-bottom: 2px solid #ff5722;
+    padding-left: 2px;
+    letter-spacing: 0.5px; 
+}
+
+.avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+.user-name { display: block; font-weight: bold; font-size: 14px; }
+.user-role { display: block; font-size: 11px; color: #888; }
+
+/* --- DASHBOARD CONTAINER --- */
+.dashboard-container {
+    max-width: 100%;
+    margin: 30px auto;
+    padding: 20px 40px;
+    background-color: var(--bg-light);
+}
+
+:root {
+    --bg-main: #E1EEDD;
+    --table-header-blue: #CCEEFF;
+    --btn-orange: #FF5500;
+    --btn-green: #00CC44;
+    --primary-green: #3D730A;
+}
+
+.dashboard-container {
+    padding: 20px;
+    background-color: var(--bg-light);
+}
+
+.management-container { max-width: 95%; margin: auto; }
+
+/* Hiệu ứng cho avatar ở header */
+.user-profile a:hover img {
+    opacity: 0.8;
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+}
+
+.user-profile a:hover span {
+    color: #31A600; /* Đổi tên sang xanh khi di chuột vào */
+}
+
+/* Đảm bảo ảnh avatar luôn tròn */
+.avatar-small {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #eee;
+}
+
+.container {
+    max-width: 1400px; 
+    margin: 0 auto;
+    width: 95%;
+}
+
+/* Header */
+
+/* Page Header */
+.breadcrumb {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #888;
+    padding-top: 25px;
+    padding-left: -10px;
+}
+
+.breadcrumb-link {
+    text-decoration: none;
+    color: #000; /* Sản phẩm màu đen */
+    font-weight: 500;
+}
+
+.breadcrumb-link:hover {
+    text-decoration: underline;
+}
+
+/* Chữ "Đăng bán" - Màu xanh trùng với thanh menu active */
+.breadcrumb .active {
+    color: #407A08; /* Thống kê màu xanh menu */
+    font-weight: 600;
+}
+
+
+h1 { margin: 10px 0; font-size: 28px; }
+.subtitle { color: var(--text-muted); margin-bottom: 30px; }
+
+/* Stats Cards */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 10px 15px; /* Giảm từ 20px xuống */
+    gap: 10px;
+    max-width: 300px; /* Giới hạn chiều dài tối đa của khung */
+    justify-self: center; /* Căn khung vào giữa ô lưới */
+    width: 100%; /* Đảm bảo khung vẫn co giãn linh hoạt trong phạm vi max-width */
+}
+
+.card p { font-size: 11px; font-weight: bold; color: var(--text-muted); margin: 0; }
+.card h2 { margin: 5px 0 0 0; font-size: 18px; }
+
+.icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+.orange { background: #fff1e7; color: #ff8a48; }
+.blue { background: #e7f0ff; color: #488eff; }
+.green { background: #e7fff0; color: #28a745; }
+
+/* Table Section */
+.table-section {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 15px;
+}
+
+table th, table td {
+    padding: 8px 10px; /* Giảm chiều cao của mỗi dòng trong bảng */
+    font-size: 13px;    /* Giảm cỡ chữ chung của bảng */
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tabs { display: flex; gap: 10px; }
+.tab {
+    padding: 10px 20px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.tab.active {
+    background: var(--primary-green);
+    color: white;
+    border-radius: 10px;
+}
+
+.tab:hover:not(.active) {
+    background-color: #f0f0f0;
+    color: var(--primary-green);
+    border-radius: 10px;
+    transform: translateY(-2px); /* Nhấc nhẹ nút lên */
+}
+
+/* Hiệu ứng cho nút Xác nhận đơn */
+.btn-confirm {
+    transition: all 0.2s ease;
+}
+
+.btn-confirm:hover {
+    background-color: #a8d13b; /* Màu đậm hơn một chút */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: scale(1.05); /* Phóng to nhẹ */
+}
+
+/* Hiệu ứng cho nút Đã giao (màu xanh 35D300 đã tạo trước đó) */
+.btn-delivered {
+    transition: all 0.2s ease;
+}
+
+.btn-delivered:hover {
+    background-color: #2eb500 !important;
+    filter: brightness(1.1);
+    transform: scale(1.05);
+}
+
+/* Hiệu ứng cho nút Thùng rác */
+.btn-delete {
+    transition: all 0.2s ease;
+}
+
+.btn-delete:hover {
+    background-color: #ff4d4d;
+    color: white;
+    transform: rotate(10deg); /* Xoay nhẹ icon thùng rác */
+}
+
+.search-input {
+    padding: 10px 15px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    width: 250px;
+    background: #f9f9f9;
+}
+
+/* Table Design */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    font-size: 12px;
+    color: var(--text-muted);
+    padding: 15px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+td {
+    padding: 15px 10px;
+    border-bottom: 1px solid #f5f5f5;
+    font-size: 14px;
+}
+
+.price { color: var(--primary-green); font-weight: bold; }
+
+.badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+.paid { background: #e7f0ff; color: #488eff; }
+.cod { background: #fff1e7; color: #ff8a48; }
+
+.btn-confirm {
+    background: #bce64c;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 12px;
+    font-size: 12px;
+}
+
+.btn-delete {
+    background: #eee;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}

@@ -135,7 +135,7 @@ body {
 .icon-red { background: #E57373; }
 .icon-blue { background: #64B5F6; }
 
-.search-box input { padding: 10px 15px; border-radius: 10px; border: 1px solid #eee; width: 500px; background: #f9f9f9; }
+.search-box input { padding: 10px 15px; border-radius: 10px; border: 1px solid #eee; width: 320px; background: #f9f9f9; transition: all 0.3s ease;}
 
 .btn-add-stock { background: #4CAF50; color: white; border: none; padding: 10px 20px; border-radius: 10px; font-weight: bold; cursor: pointer;}
 
@@ -196,6 +196,18 @@ body {
     box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
 }
 
+.btn-view-detail {
+    background: #2CA600;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 13px;
+
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+
+}
+
 /* Hiệu ứng cho avatar ở header */
 .user-profile a:hover img {
     opacity: 0.8;
@@ -219,3 +231,36 @@ body {
 }
 
 
+/* Tùy chỉnh chung cho các ô Select (Combobox) */
+.filter-select {
+    padding: 8px 13px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    color: #555;
+    font-size: 13px;
+    font-weight: 300;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    min-width: 180px; /* Đảm bảo độ rộng đủ để đọc tên nhà cung cấp */
+}
+
+/* Hiệu ứng khi nhấn vào hoặc lia chuột */
+.filter-select:hover {
+    border-color: var(--primary-green);
+    background-color: #fff;
+}
+
+.filter-select:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(61, 115, 10, 0.1);
+}
+
+/* Nhóm các hành động lọc để cân đối khoảng cách */
+.filter-section {
+    display: flex;
+    gap: 15px; /* Khoảng cách giữa các phần tử lọc */
+    align-items: center;
+    flex-wrap: wrap; /* Tự xuống dòng nếu màn hình nhỏ */
+}
