@@ -122,41 +122,44 @@ body.dashboard-body {
 .page-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end; /* Căn nút xuống đáy để thẳng hàng với tiêu đề */
-    margin-bottom:25px;
-    margin-top:-50px;
+    align-items: flex-end;
+    margin-bottom: 25px;
+    margin-top: 20px; /* Đổi từ -50px thành 20px để tạo khoảng cách thở */
 }
 
+/* Khung chứa chính: Tiêu đề bên trái, Cụm nút bên phải */
+/* Khung chứa tiêu đề và nhóm nút */
 .header-side-actions {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 15px;
+    flex-direction: row;            /* Ép nằm trên một dòng ngang */
+    justify-content: space-between; /* Đẩy tiêu đề sang trái, nút sang phải */
+    align-items: center;            /* Căn giữa theo chiều dọc để các nút và chữ thẳng hàng */
+    width: 100%;                    /* Đảm bảo chiếm hết chiều ngang container */
+    margin-bottom: 25px;
+    margin-top: 20px;
+    padding: 0 5px;                 /* Tạo chút khoảng cách với mép nếu cần */
 }
 
-.trash-bin-btn {
-    width: 40px;
-    height: 40px;
-    background-color: #ffffff;
-    color: #000;
-    border-radius: 50%;
+/* Ép tiêu đề luôn nằm bên trái */
+.header-side-actions h2 {
+    margin: 0;                      /* Bỏ margin mặc định */
+    text-align: left;               /* Căn chữ lề trái */
+    flex: 1;                        /* Chiếm không gian còn lại để đẩy các nút sang phải */
+}
+
+/* Nhóm chứa tất cả các nút (Xanh, Cam, Thùng rác) */
+.right-actions-group {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: 0.3s;
-    cursor: pointer;
+    align-items: center;            /* Căn giữa các nút theo chiều dọc */
+    gap: 15px;                      /* Khoảng cách giữa các thành phần */
 }
 
-.trash-bin-btn:hover {
-    background-color: #E84C01;
-    color: white;
-}
-
+/* Cụm 2 nút bấm */
 .button-group {
     display: flex;
-    gap: 15px;
+    gap: 10px;
 }
+
 
 .btn-green-view {
     background-color: #11CC00;
@@ -292,18 +295,68 @@ body.dashboard-body {
     border-radius: 15px;
 }
 
-.icon-item {
-    background: white;
-    border-radius: 8px;
-    padding: 8px;
-    display: flex;
-    justify-content: center;
-    border: 1px solid transparent;
-    cursor: pointer;
+/* Hiệu ứng khi di chuột qua */
+.icon-item:hover {
+    background: #f0f7ea;
+    border-color: #e1eedd;
 }
 
-.icon-item.active { border-color: var(--btn-green); box-shadow: 0 0 5px rgba(0,204,68,0.2); }
+/* Trạng thái bảng sửa bị khóa */
+.edit-panel.disabled-panel {
+    opacity: 0.6; /* Làm mờ */
+    pointer-events: none; /* Ngăn click, nhập liệu */
+    filter: grayscale(0.5); /* (Tùy chọn) Chuyển sang tông xám nhẹ */
+    position: relative;
+}
+
+/* Hiệu ứng mượt mà khi mở khóa */
+.edit-panel {
+    transition: all 0.4s ease;
+}
+
+/* Khung chứa icon mặc định */
+.icon-item {
+    background: white;
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px; /* Kích thước emoji */
+    border: 2px solid transparent; /* Viền trong suốt để không bị nhảy khung khi active */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+/* Khi icon được chọn (Active) */
+.icon-item.active {
+    border-color: #3D730A !important; /* Màu xanh lá đậm của Mochi Pet */
+    background-color: #f0f7ea;
+    box-shadow: 0 0 8px rgba(61, 115, 10, 0.3); /* Đổ bóng nhẹ màu xanh */
+    transform: scale(1.05); /* Phóng to nhẹ để tạo điểm nhấn */
+}
 .icon-item img { width: 25px; height: 25px; }
+
+/* Khung Icon trong bảng sửa */
+#editIconGrid .icon-item {
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 24px;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Khi Icon được chọn */
+#editIconGrid .icon-item.active {
+    border-color: #28a745; /* Màu xanh lá */
+    background-color: #f0fff4;
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.2);
+}
 
 textarea {
     width: 100%;
@@ -460,3 +513,92 @@ body.modal-open {
     font-weight: bold;
     cursor: pointer;
 }
+
+/* Khung tròn bao quanh thùng rác phía trên */
+.trash-bin-container {
+    width: 45px !important;
+    height: 45px !important;
+    background-color: #ff5722 !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    overflow: visible !important;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 87, 34, 0.3);
+}
+
+.trash-bin-container i {
+    color: white !important;
+    pointer-events: none;
+}
+
+.btn-restore {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* Custom cho Modal Xóa */
+.delete-card {
+    text-align: center;
+    padding: 40px;
+}
+
+.confirm-input {
+    text-align: center;
+    border: 1px solid #ccc !important;
+    border-radius: 20px !important;
+    padding: 10px !important;
+}
+
+.delete-note {
+    text-align: left;
+    font-size: 13px;
+    color: #444;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.delete-note ul {
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+.btn-confirm-delete {
+    background: #E64A19;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-confirm-delete:hover {
+    background: #C62828;
+}
+
+.btn-restore {
+    color: #28a745;
+    background: none;
+    border: 1px solid #28a745;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.btn-delete-forever {
+    color: #dc3545;
+    background: none;
+    border: 1px solid #dc3545;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-restore:hover { background: #28a745; color: white; }
+.btn-delete-forever:hover { background: #dc3545; color: white; }
