@@ -360,3 +360,9 @@ td {
     color: white;
     transform: rotate(10deg); /* Xoay nhẹ icon thùng rác */
 }
+
+/* Thêm vào file Dichvuchamsoc.css */
+.value.blue { color: #00b4d8; }
+.value.orange { color: #ff9f1c; }
+.value.red { color: #f56565; }
+.value.green { color: #4caf50; }

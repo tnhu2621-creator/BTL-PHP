@@ -189,7 +189,8 @@ body.dashboard-body {
 
 .search-container {
     position: relative;
-    width: 500px;
+    width: 100%;       
+    max-width: 500px;  
 }
 
 .search-icon {
@@ -218,8 +219,11 @@ body.dashboard-body {
 .content-main-grid {
     display: grid;
     grid-template-columns: 1.8fr 1fr;
-    gap: 30px;
+    gap: 20px;
     align-items: start;
+    width: 100%;
+    max-width: 1200px; /* Khớp với dashboard-container */
+    margin: 0 auto;
 }
 
 .card {
@@ -233,6 +237,7 @@ body.dashboard-body {
 .category-table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
 }
 
 .category-table th {
@@ -241,21 +246,41 @@ body.dashboard-body {
     text-align: left;
     font-size: 13px;
     color: #444;
+    height: 70px;
 }
 
 .category-table td {
-    padding: 15px;
+    padding: 10px 15px;      /* Padding vừa phải để cân đối */
     border-bottom: 1px solid #f2f2f2;
-    vertical-align: middle;
+    height: 60px;            /* Chiều cao cố định để các hàng đều nhau */
+    overflow: hidden;
+    vertical-align: middle; /* Giữ icon và chữ luôn thẳng hàng với nhau */
+}
+
+.category-table th:nth-child(1) { width: 60px; }  /* Icon */
+.category-table th:nth-child(2) { width: 15%; }   /* Tên DM */
+.category-table th:nth-child(3) { width: 50%; }   /* Mô tả (Vùng gây lỗi) */
+.category-table th:nth-child(4) { width: 10%; }   /* Sản phẩm */
+.category-table th:nth-child(5) { width: 100px; } /* Thao tác */
+
+.category-table td:nth-child(3) {
+    word-wrap: break-word;
+    white-space: normal;
+    line-height: 1.4;
+    /* Cắt chữ nếu quá dài (hiện 2 dòng) */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
 }
 
 /* FIX ICON THAO TÁC NẰM NGANG VÀ THẲNG HÀNG SỐ LƯỢNG */
 .action-cell {
     display: flex !important;
-    gap: 20px;
-    justify-content: flex-start;
-    align-items: center;
-    height: 80px; /* Khớp với td height */
+    gap: 15px;
+    justify-content: center; /* Căn giữa ngang */
+    align-items: center;     /* Căn giữa dọc */
+    height: 100%;       /* Đảm bảo đủ chỗ cho 2 icon */
 }
 
 .action-cell i {
@@ -407,16 +432,16 @@ textarea {
 
 /* Lớp phủ mờ toàn màn hình */
 .modal-overlay {
-    position: fixed; /* Bắt buộc là fixed để không chiếm chỗ content */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Full chiều rộng màn hình */
-    height: 100vh; /* Full chiều cao màn hình */
+    width: 100%; /* Sửa từ 95% thành 100% */
+    height: 100%; /* Sửa từ 95% thành 100% */
     background: rgba(0, 0, 0, 0.6);
-    display: none; /* JS sẽ đổi thành flex */
+    display: none;
     justify-content: center;
     align-items: center;
-    z-index: 99999; /* Luôn nằm trên cùng */
+    z-index: 99999;
     backdrop-filter: blur(4px);
 }
 
@@ -602,3 +627,36 @@ body.modal-open {
 }
 .btn-restore:hover { background: #28a745; color: white; }
 .btn-delete-forever:hover { background: #dc3545; color: white; }
+
+
+.table-card, .edit-panel {
+    min-width: 0; /* Quan trọng: cho phép phần tử co lại trong Grid */
+    width: 100%;
+}
+
+.table-card {
+    overflow-x: auto; /* Nếu bảng quá rộng trên màn hình nhỏ, nó sẽ tự hiện thanh cuộn TRONG card */
+}
+
+/* 1. Đảm bảo mọi phần tử đều tính toán kích thước đúng chuẩn */
+*, *::before, *::after {
+    box-sizing: border-box !important;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; 
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 1024px) {
+    .content-main-grid {
+        grid-template-columns: 1fr; /* Chuyển thành 1 cột duy nhất */
+    }
+    
+    .edit-panel {
+        margin-top: 20px;
+    }
+}
+

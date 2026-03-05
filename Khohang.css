@@ -135,7 +135,13 @@ body {
 .icon-red { background: #E57373; }
 .icon-blue { background: #64B5F6; }
 
-.search-box input { padding: 10px 15px; border-radius: 10px; border: 1px solid #eee; width: 320px; background: #f9f9f9; transition: all 0.3s ease;}
+.search-box input {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    width: 320px; /* Độ rộng cố định hoặc dùng max-width */
+    background: #f9f9f9;
+}
 
 .btn-add-stock { background: #4CAF50; color: white; border: none; padding: 10px 20px; border-radius: 10px; font-weight: bold; cursor: pointer;}
 
@@ -159,7 +165,7 @@ body {
     padding: 12px 20px;
     border-radius: 15px;
     display: flex;
-    justify-content: space-between; /* Đẩy filter-left sang trái, filter-right sang phải */
+    justify-content: space-between; 
     align-items: center;
     margin-bottom: 25px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
@@ -168,7 +174,7 @@ body {
 /* Nhóm bên trái (Search + Select) */
 .filter-left {
     display: flex;
-    gap: 12px;
+    gap: 15px; /* Khoảng cách giữa Search Box và Select */
     align-items: center;
 }
 
@@ -233,7 +239,7 @@ body {
 
 /* Tùy chỉnh chung cho các ô Select (Combobox) */
 .filter-select {
-    padding: 8px 13px;
+
     border: 1px solid #eee;
     border-radius: 10px;
     background-color: #f9f9f9;
@@ -243,7 +249,9 @@ body {
     cursor: pointer;
     outline: none;
     transition: all 0.3s ease;
-    min-width: 180px; /* Đảm bảo độ rộng đủ để đọc tên nhà cung cấp */
+    padding: 10px 15px;
+    min-width: 200px;
+
 }
 
 /* Hiệu ứng khi nhấn vào hoặc lia chuột */
@@ -263,4 +271,35 @@ body {
     gap: 15px; /* Khoảng cách giữa các phần tử lọc */
     align-items: center;
     flex-wrap: wrap; /* Tự xuống dòng nếu màn hình nhỏ */
+}
+
+/* Trạng thái mặc định của nút Xem chi tiết */
+.btn-view-detail {
+    display: inline-block;
+    background-color: #2CA600; /* Màu xanh lá chủ đạo */
+    color: #ffffff !important;  /* Ép chữ luôn màu trắng */
+    text-decoration: none;      /* Bỏ gạch chân của thẻ a */
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Hiệu ứng mượt */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 5px;
+}
+
+/* Hiệu ứng khi lia chuột vào (Hover) */
+.btn-view-detail:hover {
+    background-color: #238500;   /* Xanh đậm hơn một chút */
+    color: #ffffff !important;
+    transform: translateY(-3px); /* Nút bay lên nhẹ */
+    box-shadow: 0 6px 12px rgba(44, 166, 0, 0.3); /* Đổ bóng màu xanh */
+}
+
+/* Hiệu ứng khi click (Active) */
+.btn-view-detail:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }

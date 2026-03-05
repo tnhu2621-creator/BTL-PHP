@@ -10,7 +10,6 @@
 <body>
 
     <header class="top-header">
-        <background></background>
         <div class="header-left">
             <div class="logo-circle">
                 <img src="Anh/LOGO.jpg" alt="Mochi Pet Logo" class="main-logo">
@@ -33,86 +32,99 @@
         <div class="user-profile">
             <a href="Thong-tin-QL.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
                 <img src="Anh/AvatarQL.jpg" alt="Avatar" class="avatar-small">
-                    <div class="user-name">
-                        <span style="font-weight: bold; color: #333;">Thanh An</span>
-                        <br>
-                        <small style="color: #777;">Quản lý cửa hàng</small>
-                    </div>
+                <div class="user-name">
+                    <span style="font-weight: bold; color: #333;">Thanh An</span>
+                    <br>
+                    <small style="color: #777;">Quản lý cửa hàng</small>
+                </div>
             </a>
         </div>
     </header>
 
     <main class="management-container">
-        <div class="page-header">
-            <h2 class="page-title">Quản lý Nhân viên</h2> <button class="btn-add-staff">
-                <i class="fas fa-plus-circle"></i> Thêm nhân viên
-            </button>
-        </div>
+    <div class="page-header">
+        <h2 class="page-title">Quản lý Nhân viên</h2> 
+        <button class="btn-add-staff" onclick="openAddModal()">
+            <i class="fas fa-plus-circle"></i> Tạo tài khoản nhân viên
+        </button>
+    </div>
 
-        <div class="stats-grid">
-            <div class="card-mini">
-                <div class="mini-icon blue"><i class="fas fa-users"></i></div>
-                <div class="mini-info">
-                    <span>TỔNG NHÂN VIÊN</span>
-                    <strong>12</strong>
-                </div>
-            </div>
-            <div class="card-mini">
-                <div class="mini-icon green"><i class="fas fa-user-check"></i></div>
-                <div class="mini-info">
-                    <span>ĐANG LÀM VIỆC</span>
-                    <strong>4</strong>
-                </div>
-            </div>
-            <div class="card-mini">
-                <div class="mini-icon orange"><i class="fas fa-envelope"></i></div>
-                <div class="mini-info">
-                    <span>YÊU CẦU CHỜ DUYỆT</span>
-                    <strong class="text-orange">3</strong>
-                </div>
-            </div>
-            <div class="card-mini">
-                <div class="mini-icon red"><i class="fas fa-user-times"></i></div>
-                <div class="mini-info">
-                    <span>TÀI KHOẢN BỊ KHÓA</span>
-                    <strong class="text-red">1</strong>
-                </div>
+    <div class="stats-grid">
+        <div class="card-mini">
+            <div class="mini-icon blue"><i class="fas fa-users"></i></div>
+            <div class="mini-info">
+                <span>TỔNG NHÂN VIÊN</span>
+                <strong>12</strong>
             </div>
         </div>
 
-        <div class="main-card table-section">
-            <div class="tab-menu">
-                <div class="tab-item active">Danh sách nhân viên</div>
-                <div class="tab-item">Yêu cầu đăng ký <span class="badge">3</span></div>
+        <div class="card-mini">
+            <div class="mini-icon green"><i class="fas fa-user-check"></i></div>
+            <div class="mini-info">
+                <span>ĐANG LÀM VIỆC</span>
+                <strong>4</strong>
             </div>
+        </div>
 
-            <div class="search-bar">
-                <input type="text" placeholder="Tìm kiếm nhân viên theo tên nhân viên...">
+        <div class="card-mini">
+            <div class="mini-icon red"><i class="fas fa-user-times"></i></div>
+            <div class="mini-info">
+                <span>TÀI KHOẢN BỊ KHÓA</span>
+                <strong id="locked-count" class="text-red">1</strong>
             </div>
+        </div>
+    </div>
 
-            <table class="staff-table">
-                <thead>
-                    <tr>
-                        <th>NHÂN VIÊN</th>
-                        <th>LIÊN HỆ</th>
-                        <th>VỊ TRÍ</th>
-                        <th>CA LÀM VIỆC</th>
-                        <th>DỊCH VỤ HOÀN THÀNH</th>
-                        <th>TRẠNG THÁI</th>
-                        <th>THAO TÁC</th>
-                    </tr>
-                </thead>
-                <tbody>
+    <div class="main-card table-section">
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm kiếm nhân viên theo tên nhân viên...">
+        </div>
+
+        <table class="staff-table">
+            <thead>
+                <tr>
+                    <th>NHÂN VIÊN</th>
+                    <th>LIÊN HỆ</th>
+                    <th>VỊ TRÍ</th>
+                    <th>CA LÀM VIỆC</th>
+                    <th>DỊCH VỤ</th>
+                    <th>TRẠNG THÁI</th>
+                    <th>THAO TÁC</th>
+                </tr>
+            </thead>
+                    <tbody>
                     <tr>
                         <td class="user-cell">
-                            <img src="https://i.pravatar.cc/150?u=1" alt="avatar">
-                            <div>
-                                <strong>Nguyễn Văn An</strong><br>
-                                <small>NV001</small>
-                            </div>
+                            <img src="Anh/NV-NAM3.png" alt="avatar">
+                            <div><strong>Nguyễn Minh Triết</strong><br><small>NV001</small></div>
                         </td>
                         <td class="contact-cell">
-                            <i class="fas fa-envelope"></i> nguyenvana01@gmail.com<br>
+                            <i class="fas fa-envelope"></i> nguyenminhtriet66@gmail.com<br>
+                            <i class="fas fa-phone"></i> 0918234789
+                        </td>
+                        <td><span class="pos-tag">Nhân viên chăm sóc</span></td>
+                        <td>9:00 - 17:00</td>
+                        <td class="text-center"><strong>234</strong></td>
+                        <td><span class="status-tag locked">Đã khóa</span></td> 
+                        <td class="action-btns">
+                            <i class="fas fa-edit text-green" 
+                                onclick="openEditModal(
+                                    'Nguyễn Minh Triết',
+                                    'Nhân viên chăm sóc',
+                                    'nguyenminhtriet66@gmail.com',
+                                    '0918234789', '9:00 - 17:00', 'trietnm_user')">
+                            </i>
+                            <i class="fas fa-lock text-red-lock" onclick="toggleLock(this)"></i>
+                            <i class="fas fa-trash text-gray"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="user-cell">
+                            <img src="Anh/NV-NU1.png" alt="avatar">
+                            <div><strong>Nguyễn Tuệ Lâm</strong><br><small>NV002</small></div>
+                        </td>
+                        <td class="contact-cell">
+                            <i class="fas fa-envelope"></i> nguyentuelam@gmail.com<br>
                             <i class="fas fa-phone"></i> 0918234789
                         </td>
                         <td><span class="pos-tag">Nhân viên chăm sóc</span></td>
@@ -120,36 +132,545 @@
                         <td class="text-center"><strong>234</strong></td>
                         <td><span class="status-tag working">Đang làm</span></td>
                         <td class="action-btns">
-                            <i class="fas fa-edit text-green"></i>
-                            <i class="fas fa-lock text-orange"></i>
+                            <i class="fas fa-edit text-green" 
+                                onclick="openEditModal(
+                                    'Nguyễn Tuệ Lâm',
+                                    'Nhân viên chăm sóc',
+                                    'nguyentuelam@gmail.com',
+                                    '0918234789', '9:00 - 17:00', 'tuelam_user')">
+                            </i>
+                            <i class="fas fa-lock-open text-orange" onclick="toggleLock(this)"></i>
                             <i class="fas fa-trash text-gray"></i>
                         </td>
                     </tr>
                     <tr>
                         <td class="user-cell">
-                            <img src="https://i.pravatar.cc/150?u=6" alt="avatar">
-                            <div>
-                                <strong>Nguyễn Văn A</strong><br>
-                                <small>NV001</small>
-                            </div>
+                            <img src="Anh/NV-NAM1.png" alt="avatar">
+                            <div><strong>Ngô Quốc Trung</strong><br><small>NV003</small></div>
                         </td>
                         <td class="contact-cell">
-                            <i class="fas fa-envelope"></i> nguyenvana01@gmail.com<br>
+                            <i class="fas fa-envelope"></i> ngoquoctrung@gmail.com<br>
                             <i class="fas fa-phone"></i> 0918234789
                         </td>
-                        <td><span class="pos-tag">Nhân viên chăm sóc</span></td>
-                        <td>13:00 - 20:00</td>
+                        <td><span class="poss-tag">Nhân viên bán hàng</span></td>
+                        <td>9:00 - 17:00</td>
                         <td class="text-center"><strong>234</strong></td>
-                        <td><span class="status-tag locked">Đã khóa</span></td>
+                        <td><span class="status-tag working">Đang làm</span></td>
                         <td class="action-btns">
-                            <i class="fas fa-edit text-green"></i>
-                            <i class="fas fa-lock text-orange"></i>
+                            <i class="fas fa-edit text-green" 
+                                onclick="openEditModal(
+                                    'Ngô Quốc trung',
+                                    'Nhân viên chăm sóc',
+                                    'ngoquoctrung@gmail.com',
+                                    '0918234789', '9:00 - 17:00', 'trung_user')">
+                            </i>
+                            <i class="fas fa-lock-open text-orange" onclick="toggleLock(this)"></i> 
                             <i class="fas fa-trash text-gray"></i>
                         </td>
                     </tr>
-                </tbody>
-            </table>
-        </div>
+                    <tr>
+                        <td class="user-cell">
+                            <img src="Anh/NV-NU2.png" alt="avatar">
+                            <div><strong>Phan Thanh Nhã</strong><br><small>NV004</small></div>
+                        </td>
+                        <td class="contact-cell">
+                            <i class="fas fa-envelope"></i> phanthanhnha@gmail.com<br>
+                            <i class="fas fa-phone"></i> 0918234789
+                        </td>
+                        <td><span class="pos-tag">Nhân viên chăm sóc</span></td>
+                        <td>9:00 - 17:00</td>
+                        <td class="text-center"><strong>234</strong></td>
+                        <td><span class="status-tag working">Đang làm</span></td>
+                        <td class="action-btns">
+                            <i class="fas fa-edit text-green" 
+                                onclick="openEditModal(
+                                    'Phạm Thanh Nhã',
+                                    'Nhân viên chăm sóc',
+                                    'phanthanhnha@gmail.com',
+                                    '0918234789', '9:00 - 17:00', 'thanhnha_user')">
+                            </i>
+                            <i class="fas fa-lock-open text-orange" onclick="toggleLock(this)"></i> 
+                            <i class="fas fa-trash text-gray"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="user-cell">
+                            <img src="Anh/NV-NAM2.png" alt="avatar">
+                            <div><strong>Phạm Khôi</strong><br><small>NV005</small></div>
+                        </td>
+                        <td class="contact-cell">
+                            <i class="fas fa-envelope"></i> khoipham@gmail.com<br>
+                            <i class="fas fa-phone"></i> 0918234789
+                        </td>
+                        <td><span class="pos-tag">Nhân viên bán hàng</span></td>
+                        <td>9:00 - 17:00</td>
+                        <td class="text-center"><strong>234</strong></td>
+                        <td><span class="status-tag working">Đang làm</span></td>
+                        <td class="action-btns">
+                            <i class="fas fa-edit text-green" 
+                                onclick="openEditModal(
+                                    'Phạm Khôi',
+                                    'Nhân viên chăm sóc',
+                                    'khoipham@gmail.com',
+                                    '0918234789', '9:00 - 17:00', 'trietnm_user')">
+                            </i>
+                            <i class="fas fa-lock-open text-orange" onclick="toggleLock(this)"></i> 
+                            <i class="fas fa-trash text-gray"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="user-cell">
+                            <img src="Anh/NV-NAM4.png" alt="avatar">
+                            <div><strong>Kỷ Nguyên Chương</strong><br><small>NV006</small></div>
+                        </td>
+                        <td class="contact-cell">
+                            <i class="fas fa-envelope"></i> nguyenchuong@gmail.com<br>
+                            <i class="fas fa-phone"></i> 0918234789
+                        </td>
+                        <td><span class="pos-tag">Nhân viên chăm sóc</span></td>
+                        <td>9:00 - 17:00</td>
+                        <td class="text-center"><strong>234</strong></td>
+                        <td><span class="status-tag resting">Tạm nghĩ</span></td>
+                        <td class="action-btns">
+                            <i class="fas fa-edit text-green" 
+                                onclick="openEditModal(
+                                    'Kỷ Nguyên Chương',
+                                    'Nhân viên chăm sóc',
+                                    'nguyenchuong@gmail.com',
+                                    '0918234789', '9:00 - 17:00', 'nchuong_user')">
+                            </i>
+                            <i class="fas fa-lock-open text-orange" onclick="toggleLock(this)"></i> 
+                            <i class="fas fa-trash text-gray"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="user-cell">
+                            <img src="Anh/NV-NAM5.png" alt="avatar">
+                            <div><strong>Lê Hy Niên</strong><br><small>NV007</small></div>
+                        </td>
+                        <td class="contact-cell">
+                            <i class="fas fa-envelope"></i> lehynien@gmail.com<br>
+                            <i class="fas fa-phone"></i> 0918234789
+                        </td>
+                        <td><span class="pos-tag">Nhân viên chăm sóc</span></td>
+                        <td>9:00 - 17:00</td>
+                        <td class="text-center"><strong>234</strong></td>
+                        <td><span class="status-tag resting">Tạm nghĩ</span></td>
+                        <td class="action-btns">
+                            <i class="fas fa-edit text-green" 
+                                onclick="openEditModal(
+                                    'Lê Hy Niên',
+                                    'Nhân viên chăm sóc',
+                                    'khoipham@gmail.com',
+                                    '0918234789', '9:00 - 17:00', 'trietnm_user')">
+                            </i>
+                            <i class="fas fa-lock-open text-orange" onclick="toggleLock(this)"></i> 
+                            <i class="fas fa-trash text-gray"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="user-cell">
+                            <img src="Anh/NV-NAM6.png" alt="avatar">
+                            <div><strong>Ngô Hoàng Lâm</strong><br><small>NV008</small></div>
+                        </td>
+                        <td class="contact-cell">
+                            <i class="fas fa-envelope"></i> ngolam@gmail.com<br>
+                            <i class="fas fa-phone"></i> 0918234789
+                        </td>
+                        <td><span class="pos-tag">Nhân viên chăm sóc</span></td>
+                        <td>9:00 - 17:00</td>
+                        <td class="text-center"><strong>234</strong></td>
+                        <td><span class="status-tag resting">Tạm nghĩ</span></td>
+                        <td class="action-btns">
+                            <i class="fas fa-edit text-green" 
+                                onclick="openEditModal(
+                                    'Ngô Hoàng Lâm',
+                                    'Nhân viên chăm sóc',
+                                    'khoipham@gmail.com',
+                                    '0918234789', '9:00 - 17:00', 'trietnm_user')">
+                            </i>
+                            <i class="fas fa-lock-open text-orange" onclick="toggleLock(this)"></i> 
+                            <i class="fas fa-trash text-gray"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="user-cell">
+                            <img src="Anh/NV-NU3.png" alt="avatar">
+                            <div><strong>Nguyễn Thị Thùy Dung</strong><br><small>NV009</small></div>
+                        </td>
+                        <td class="contact-cell">
+                            <i class="fas fa-envelope"></i> thuydung@gmail.com<br>
+                            <i class="fas fa-phone"></i> 0918234789
+                        </td>
+                        <td><span class="pos-tag">Nhân viên chăm sóc</span></td>
+                        <td>9:00 - 17:00</td>
+                        <td class="text-center"><strong>234</strong></td>
+                        <td><span class="status-tag resting">Tạm nghĩ</span></td>
+                        <td class="action-btns">
+                            <i class="fas fa-edit text-green" 
+                                onclick="openEditModal(
+                                    'Nguyễn Thị Thùy Dung',
+                                    'Nhân viên chăm sóc',
+                                    'khoipham@gmail.com',
+                                    '0918234789', '9:00 - 17:00', 'trietnm_user')">
+                            </i>
+                            <i class="fas fa-lock-open text-orange" onclick="toggleLock(this)"></i> 
+                            <i class="fas fa-trash text-gray"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="user-cell">
+                            <img src="Anh/NV-NU4.png" alt="avatar">
+                            <div><strong>Lê An Nhiên</strong><br><small>NV010</small></div>
+                        </td>
+                        <td class="contact-cell">
+                            <i class="fas fa-envelope"></i> leannhien@gmail.com<br>
+                            <i class="fas fa-phone"></i> 0918234789
+                        </td>
+                        <td><span class="poss-tag">Nhân viên bán hàng</span></td>
+                        <td>9:00 - 17:00</td>
+                        <td class="text-center"><strong>234</strong></td>
+                        <td><span class="status-tag resting">Tạm nghĩ</span></td>
+                        <td class="action-btns">
+                            <i class="fas fa-edit text-green" 
+                                onclick="openEditModal(
+                                    'Lê An Nhiên',
+                                    'Nhân viên chăm sóc',
+                                    'khoipham@gmail.com',
+                                    '0918234789', '9:00 - 17:00', 'annhien_user')">
+                            </i>
+                            <i class="fas fa-lock-open text-orange" onclick="toggleLock(this)"></i> 
+                            <i class="fas fa-trash text-gray"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="user-cell">
+                            <img src="Anh/NV-NU5.png" alt="avatar">
+                            <div><strong>Cao Thái Thiên</strong><br><small>NV011</small></div>
+                        </td>
+                        <td class="contact-cell">
+                            <i class="fas fa-envelope"></i> caothaithien@gmail.com<br>
+                            <i class="fas fa-phone"></i> 0918234789
+                        </td>
+                        <td><span class="poss-tag">Nhân viên bán hàng</span></td>
+                        <td>9:00 - 17:00</td>
+                        <td class="text-center"><strong>234</strong></td>
+                        <td><span class="status-tag resting">Tạm nghĩ</span></td>
+                        <td class="action-btns">
+                            <i class="fas fa-edit text-green" 
+                                onclick="openEditModal(
+                                    'Cao Thái Thiên',
+                                    'Nhân viên chăm sóc',
+                                    'khoipham@gmail.com',
+                                    '0918234789', '9:00 - 17:00', 'thienn_user')">
+                            </i>
+                            <i class="fas fa-lock-open text-orange" onclick="toggleLock(this)"></i> 
+                            <i class="fas fa-trash text-gray"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="user-cell">
+                            <img src="Anh/NV-NU6.png" alt="avatar">
+                            <div><strong>Dương Nguyễn Hải My</strong><br><small>NV012</small></div>
+                        </td>
+                        <td class="contact-cell">
+                            <i class="fas fa-envelope"></i> haimy@gmail.com<br>
+                            <i class="fas fa-phone"></i> 0918234789
+                        </td>
+                        <td><span class="poss-tag">Nhân viên bán hàng</span></td>
+                        <td>9:00 - 17:00</td>
+                        <td class="text-center"><strong>234</strong></td>
+                        <td><span class="status-tag resting">Tạm nghĩ</span></td>
+                        <td class="action-btns">
+                            <i class="fas fa-edit text-green" 
+                                onclick="openEditModal(
+                                    'Dương Nguyễn Hải My',
+                                    'Nhân viên chăm sóc',
+                                    'khoipham@gmail.com',
+                                    '0918234789', '9:00 - 17:00', 'haimy_user')">
+                            </i>
+                            <i class="fas fa-lock-open text-orange" onclick="toggleLock(this)"></i> 
+                            <i class="fas fa-trash text-gray"></i>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+    </div>
     </main>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Sửa thông tin nhân viên</h3>
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+            </div>
+            <form id="editForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Họ và tên</label>
+                        <input type="text" id="editName">
+                    </div>
+                    <div class="form-group">
+                        <label>Vị trí</label>
+                        <select id="editPos">
+                            <option value="Nhân viên chăm sóc">Nhân viên chăm sóc</option>
+                            <option value="Quản lý">Quản lý</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tên đăng nhập</label>
+                        <input type="text" id="editUsername" placeholder="Nhập tên đăng nhập">
+                    </div>
+                    <div class="form-group">
+                        <label>Mật khẩu</label>
+                        <input type="password" id="editPassword" placeholder="Nhập mật khẩu mới (nếu có)">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="editEmail">
+                    </div>
+                    <div class="form-group">
+                        <label>Số điện thoại</label>
+                        <input type="text" id="editPhone">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Ca làm việc</label>
+                    <input type="text" id="editShift">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-cancel" onclick="closeModal()">Hủy</button>
+                    <button type="submit" class="btn-save">Lưu thay đổi</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="addModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Tạo tài khoản Nhân viên</h3>
+            <span class="close-btn" onclick="closeAddModal()">&times;</span>
+        </div>
+        <form id="addForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Họ và tên</label>
+                    <input type="text" id="addName" placeholder="Nhập họ và tên">
+                </div>
+                <div class="form-group">
+                    <label>Vị trí</label>
+                    <select id="addPos">
+                        <option value="Nhân viên bán hàng">Nhân viên bán hàng</option>
+                        <option value="Nhân viên chăm sóc">Nhân viên chăm sóc</option>
+                        <option value="Quản lý">Quản lý</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Tên đăng nhập</label>
+                    <input type="text" id="addUsername" placeholder="NV-01">
+                </div>
+                <div class="form-group">
+                    <label>Mật khẩu</label>
+                    <input type="password" id="addPassword" placeholder="12345">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="addEmail" placeholder="Email@gmail.com">
+                </div>
+                <div class="form-group">
+                    <label>Số điện thoại</label>
+                    <input type="text" id="addPhone" placeholder="0896737362">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Ca làm việc</label>
+                <input type="text" id="addShift" placeholder="9:00 - 17:00">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-cancel" onclick="closeAddModal()">Hủy</button>
+                <button type="submit" class="btn-add-submit">Tạo tài khoản</button>
+            </div>
+        </form>
+    </div>
+    </div>
+
+    <script>
+    // Hàm mở Modal
+    function openEditModal(name, position, email, phone, shift, username) {
+        const modal = document.getElementById("editModal");
+        modal.style.display = "block";
+
+        // Đổ dữ liệu vào các ô input
+        document.getElementById("editName").value = name;
+        document.getElementById("editEmail").value = email;
+        document.getElementById("editPhone").value = phone;
+        document.getElementById("editShift").value = shift;
+        document.getElementById("editPos").value = position;
+        document.getElementById("editUsername").value = username || ''; 
+        document.getElementById("editPassword").value = ''; 
+    }
+
+    // Hàm đóng Modal (Phải để ở ngoài để dấu x và nút Hủy gọi được)
+    function closeModal() {
+        const modal = document.getElementById("editModal");
+        modal.style.display = "none";
+    }
+
+    // Đóng modal khi click ra vùng ngoài màu đen
+    window.onclick = function(event) {
+        const modal = document.getElementById("editModal");
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+
+    // Xử lý khi nhấn nút "Lưu thay đổi" (Ngăn trang web tải lại)
+    document.getElementById("editForm").onsubmit = function(e) {
+        e.preventDefault();
+        alert("Đã lưu thông tin thành công!");
+        closeModal();
+    }
+
+    // Hàm mở Modal thêm
+function openAddModal() {
+    document.getElementById("addModal").style.display = "block";
+}
+
+// Hàm đóng Modal thêm
+function closeAddModal() {
+    document.getElementById("addModal").style.display = "none";
+    // Xử lý khi nhấn nút "Tạo tài khoản"
+document.getElementById("addForm").onsubmit = function(e) {
+    e.preventDefault(); // Ngăn trang web tải lại
+
+    // 1. Lấy dữ liệu từ các ô input
+    const name = document.getElementById("addName").value;
+    const pos = document.getElementById("addPos").value;
+    const email = document.getElementById("addEmail").value;
+    const phone = document.getElementById("addPhone").value;
+    const shift = document.getElementById("addShift").value;
+    const username = document.getElementById("addUsername").value;
+
+    // Kiểm tra nhanh xem đã nhập tên chưa
+    if (!name) {
+        alert("Vui lòng nhập họ và tên nhân viên!");
+        return;
+    }
+
+    // 2. Tạo ID ngẫu nhiên cho nhân viên mới (Ví dụ: NV013)
+    const nextId = "NV" + String(document.querySelectorAll('.staff-table tbody tr').length + 1).padStart(3, '0');
+
+    // 3. Tạo cấu trúc hàng mới cho bảng
+    const tableBody = document.querySelector(".staff-table tbody");
+    const newRow = document.createElement("tr");
+
+    newRow.innerHTML = `
+        <td class="user-cell">
+            <img src="Anh/NV-NAM1.png" alt="avatar"> <div><strong>${name}</strong><br><small>${nextId}</small></div>
+        </td>
+        <td class="contact-cell">
+            <i class="fas fa-envelope"></i> ${email}<br>
+            <i class="fas fa-phone"></i> ${phone}
+        </td>
+        <td><span class="pos-tag">${pos}</span></td>
+        <td>${shift}</td>
+        <td class="text-center"><strong>0</strong></td>
+        <td><span class="status-tag working">Đang làm</span></td>
+        <td class="action-btns">
+            <i class="fas fa-edit text-green" onclick="openEditModal('${name}', '${pos}', '${email}', '${phone}', '${shift}', '${username}')"></i>
+            <i class="fas fa-lock-open text-orange" onclick="toggleLock(this)"></i> 
+            <i class="fas fa-trash text-gray" onclick="this.closest('tr').remove()"></i>
+        </td>
+    `;
+
+    // 4. Chèn hàng mới vào đầu bảng
+    tableBody.prepend(newRow);
+
+    // 5. Thông báo và đóng modal
+    alert("Tạo tài khoản nhân viên thành công!");
+    closeAddModal();
+    
+    // Cập nhật lại tổng số nhân viên trên Dashboard
+    updateTotalStaff();
+};
+
+// Hàm cập nhật tổng số nhân viên trên Dashboard
+function updateTotalStaff() {
+    const total = document.querySelectorAll('.staff-table tbody tr').length;
+    const totalDisplay = document.querySelector('.card-mini .mini-info strong');
+    if (totalDisplay) totalDisplay.textContent = total;
+}
+}
+
+// Cập nhật lại window.onclick để đóng cả 2 modal khi click ra ngoài
+window.onclick = function(event) {
+    const editModal = document.getElementById("editModal");
+    const addModal = document.getElementById("addModal");
+    if (event.target == editModal) {
+        closeModal();
+    }
+    if (event.target == addModal) {
+        closeAddModal();
+    }
+}
+
+function toggleLock(element) {
+    const row = element.closest('tr');
+    const statusTag = row.querySelector('.status-tag');
+    
+    // Kiểm tra trạng thái hiện tại dựa trên class
+    const isLocked = statusTag.classList.contains('locked');
+    const isWorking = statusTag.classList.contains('working');
+    const isResting = statusTag.classList.contains('resting');
+
+    if (isLocked) {
+        // TRẠNG THÁI 1: Đang KHÓA -> Mở ra trả về trạng thái trước đó
+        // Lấy lại trạng thái cũ đã lưu, nếu không có mặc định là 'working'
+        const previous = statusTag.getAttribute('data-origin') || 'working';
+        
+        if (previous === 'working') {
+            statusTag.textContent = 'Đang làm';
+            statusTag.className = 'status-tag working';
+        } else {
+            statusTag.textContent = 'Tạm nghỉ';
+            statusTag.className = 'status-tag resting';
+        }
+
+        // Đổi icon về Ổ khóa mở (Cam)
+        element.className = 'fas fa-lock-open text-orange';
+        
+    } else {
+        // TRẠNG THÁI 2 & 3: Đang LÀM hoặc TẠM NGHỈ -> Chuyển sang KHÓA
+        // Lưu lại trạng thái hiện tại vào data-origin trước khi ghi đè
+        const currentClass = isWorking ? 'working' : 'resting';
+        statusTag.setAttribute('data-origin', currentClass);
+
+        statusTag.textContent = 'Đã khóa';
+        statusTag.className = 'status-tag locked';
+
+        // Đổi icon về Ổ khóa đóng (Đỏ)
+        element.className = 'fas fa-lock text-red-lock';
+    }
+
+    // Cập nhật con số hiển thị trên dashboard (Tùy chọn)
+    updateLockedCount();
+}
+
+// Hàm bổ trợ để cập nhật số lượng tài khoản bị khóa trên thẻ Mini Card
+function updateLockedCount() {
+    const count = document.querySelectorAll('.status-tag.locked').length;
+    const countDisplay = document.getElementById('locked-count');
+    if(countDisplay) countDisplay.textContent = count;
+}
+</script>
 </body>
 </html>

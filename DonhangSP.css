@@ -195,6 +195,7 @@ h1 { margin: 10px 0; font-size: 28px; }
     max-width: 300px; /* Giới hạn chiều dài tối đa của khung */
     justify-self: center; /* Căn khung vào giữa ô lưới */
     width: 100%; /* Đảm bảo khung vẫn co giãn linh hoạt trong phạm vi max-width */
+
 }
 
 .card p { font-size: 11px; font-weight: bold; color: var(--text-muted); margin: 0; }

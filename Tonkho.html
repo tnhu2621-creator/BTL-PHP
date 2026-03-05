@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Tồn kho</title>
+    <link rel="stylesheet" href="Tonkho.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="breadcrumb">
+                    <a href="Khohang.html" class="breadcrumb-link">Kho hàng</a> 
+                    <span> / </span> 
+                    <span class="active">Quản lý kho</span>
+                    <div class="actions">
+                        <button class="btn-stats">📊 Thống kê</button>
+                        <button class="btn-export">📥 Xuất báo cáo</button>
+                    </div>
+            </div>
+    
+            <div class="top-row-1">
+                <h1>Quản lý Tồn kho</h1>
+                <input type="text" class="search-input" placeholder="Tìm kiếm theo mã sản phẩm, tên sản phẩm,..">
+                    <select id="filter-category" class="filters" onchange="filterInventory()">
+                        <option value="">Phân loại (Tất cả)</option>
+                        <option value="Thức ăn">Thức ăn</option>
+                        <option value="Đồ chơi thú cưng">Đồ chơi thú cưng</option>
+                        <option value="Quần áo & phụ kiện">Quần áo & phụ kiện</option>
+                        <option value="Chuồng - Nhà - Giường ngủ">Chuồng - Nhà - Giường ngủ</option>
+                        <option value="Vệ sinh & chăm sóc">Vệ sinh & chăm sóc</option>
+                        <option value="Y tế & sức khỏe">Y tế & sức khỏe</option>
+                        <option value="Dụng cụ ăn uống">Dụng cụ ăn uống</option>
+                        <option value="Sản phẩm cho mèo">Sản phẩm cho mèo</option>
+                        <option value="Sản phẩm cho chó">Sản phẩm cho chó</option>
+                    </select>
+                    <select id="filter-status" onchange="filterInventory()">
+                        <option value="">Trạng thái kho</option>
+                        <option value="conhang">Còn hàng</option>
+                        <option value="Saphet">Sắp hết</option>
+                    </select>
+            </div>
+        </header>
+
+        <div class="table-wrapper">
+            <div class="table-header">
+                <div class="col">MÃ SẢN PHẨM</div>
+                <div class="col grow">TÊN SẢN PHẨM</div>
+                <div class="col">PHÂN LOẠI</div>
+                <div class="col">GIÁ NHẬP</div>
+                <div class="col">GIÁ BÁN LẺ</div>
+                <div class="col">SỐ LƯỢNG TỒN</div>
+                <div class="col">NGÀY NHẬP</div>
+            </div>
+
+            <div class="table-body">
+                <div class="table-row">
+                    <div class="col">#ORD-8821</div>
+                    <div class="col grow">Hạt Cho Mèo Mọi Lứa Tuổi...</div>
+                    <div class="col">Thức ăn</div>
+                    <div class="col green">80.000đ/Túi</div>
+                    <div class="col green">90.000đ/Túi</div>
+                    <div class="col">12</div>
+                    <div class="col">24/01/2026</div>
+                </div>
+                <div class="table-row">
+                    <div class="col">#ORD-8822</div>
+                    <div class="col grow">Cát Đậu Nành Cho Mèo Cat...</div>
+                    <div class="col">Vệ sinh & chăm sóc</div>
+                    <div class="col green">140.000đ/Túi</div>
+                    <div class="col green">150.000đ/Túi</div>
+                    <div class="col">49</div>
+                    <div class="col">24/01/2026</div>
+                </div>
+                <div class="table-row">
+                    <div class="col">#ORD-8823</div>
+                    <div class="col grow">Hạt Cho Chó Trưởng Thành...</div>
+                    <div class="col">Thức ăn</div>
+                    <div class="col green">669.000đ/Túi</div>
+                    <div class="col green">679.000đ/Túi</div>
+                    <div class="col">14</div>
+                    <div class="col">24/01/2026</div>
+                </div>
+                <div class="table-row">
+                    <div class="col">#ORD-8824</div>
+                    <div class="col grow">Xịt Thơm Miệng Chó Mèo For...</div>
+                    <div class="col">Vệ sinh & chăm sóc</div>
+                    <div class="col green">155.000đ/Chai</div>
+                    <div class="col green">165.000đ/Chai</div>
+                    <div class="col">37</div>
+                    <div class="col">24/01/2026</div>
+                </div>
+                <div class="table-row">
+                    <div class="col">#ORD-8825</div>
+                    <div class="col grow">Thịt Sấy Snack Mèo Jinny Fre...</div>
+                    <div class="col">Thức ăn</div>
+                    <div class="col green">70.000đ/Túi</div>
+                    <div class="col green">82.000đ/Túi</div>
+                    <div class="col">15</div>
+                    <div class="col">24/01/2026</div>
+                </div>
+                <div class="table-row">
+                    <div class="col">#ORD-8826</div>
+                    <div class="col grow">Bánh Thưởng Cho Chó...</div>
+                    <div class="col">Thức ăn</div>
+                    <div class="col green">80.000đ/Túi</div>
+                    <div class="col green">90.000đ/Túi</div>
+                    <div class="col">9</div>
+                    <div class="col">24/01/2026</div>
+                </div>
+                <div class="table-row">
+                    <div class="col">#ORD-8827</div>
+                    <div class="col grow">Bánh Thưởng Cho Chó...</div>
+                    <div class="col">Thức ăn</div>
+                    <div class="col green">80.000đ/Túi</div>
+                    <div class="col green">90.000đ/Túi</div>
+                    <div class="col">50</div>
+                    <div class="col">24/01/2026</div>
+                </div>
+                <div class="table-row">
+                    <div class="col">#ORD-8828</div>
+                    <div class="col grow">Bánh Thưởng Cho Chó...</div>
+                    <div class="col">Thức ăn</div>
+                    <div class="col green">80.000đ/Túi</div>
+                    <div class="col green">90.000đ/Túi</div>
+                    <div class="col">50</div>
+                    <div class="col">24/01/2026</div>
+                </div>
+                <div class="table-row">
+                    <div class="col">#ORD-8829</div>
+                    <div class="col grow">Bánh Thưởng Cho Chó...</div>
+                    <div class="col">Thức ăn</div>
+                    <div class="col green">80.000đ/Túi</div>
+                    <div class="col green">90.000đ/Túi</div>
+                    <div class="col">50</div>
+                    <div class="col">24/01/2026</div>
+                </div>
+                <div class="table-row">
+                    <div class="col">#ORD-8830</div>
+                    <div class="col grow">Bánh Thưởng Cho Chó...</div>
+                    <div class="col">Thức ăn</div>
+                    <div class="col green">80.000đ/Túi</div>
+                    <div class="col green">90.000đ/Túi</div>
+                    <div class="col">50</div>
+                    <div class="col">24/01/2026</div>
+                </div>
+                <div class="table-row">
+                    <div class="col">#ORD-8831</div>
+                    <div class="col grow">Bánh Thưởng Cho Chó...</div>
+                    <div class="col">Thức ăn</div>
+                    <div class="col green">80.000đ/Túi</div>
+                    <div class="col green">90.000đ/Túi</div>
+                    <div class="col">50</div>
+                    <div class="col">24/01/2026</div>
+                </div>
+                <div class="table-row">
+                    <div class="col">#ORD-8832</div>
+                    <div class="col grow">Bánh Thưởng Cho Chó...</div>
+                    <div class="col">Thức ăn</div>
+                    <div class="col green">80.000đ/Túi</div>
+                    <div class="col green">90.000đ/Túi</div>
+                    <div class="col">50</div>
+                    <div class="col">24/01/2026</div>
+                </div>
+            </div>
+
+            <div class="table-footer">
+                <div class="col grow-footer">TỔNG CỘNG:</div>
+                <div class="col">90.000.000đ</div>
+                <div class="col">125.400.000đ</div>
+                <div class="col">2340</div>
+                <div class="col"></div> </div>
+        </div>
+    </div>
+
+<script>
+    function filterInventory() {
+    // 1. Lấy giá trị hiện tại của cả 2 bộ lọc
+    const categoryValue = document.getElementById('filter-category').value;
+    const statusValue = document.getElementById('filter-status').value;
+    
+    // 2. Lấy tất cả các dòng dữ liệu
+    const rows = document.querySelectorAll('.table-body .table-row');
+
+    rows.forEach(row => {
+        // Lấy dữ liệu Phân loại (Cột 3) và Số lượng tồn (Cột 6)
+        const rowCategory = row.querySelector('.col:nth-child(3)').innerText.trim();
+        const stockText = row.querySelector('.col:nth-child(6)').innerText.trim();
+        const rowStock = parseInt(stockText) || 0;
+
+        // Kiểm tra điều kiện Phân loại
+        const matchCategory = (categoryValue === "") || (rowCategory === categoryValue);
+
+        // Kiểm tra điều kiện Trạng thái kho (Ngưỡng 15)
+        let matchStatus = true;
+        if (statusValue === "Saphet") {
+            matchStatus = (rowStock <= 15);
+        } else if (statusValue === "conhang") {
+            matchStatus = (rowStock > 15);
+        }
+
+        // Hiển thị dòng nếu thỏa mãn CẢ HAI điều kiện
+        if (matchCategory && matchStatus) {
+            row.style.display = "flex"; // Dùng flex để không vỡ giao diện CSS
+        } else {
+            row.style.display = "none";
+        }
+    });
+}
+</script>
+</body>
+</html>

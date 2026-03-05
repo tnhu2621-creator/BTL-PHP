@@ -4,6 +4,7 @@
     --primary-green: #72BF24;
     --text-muted: #777777;
     --white: #ffffff;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
@@ -108,7 +109,8 @@ body { background-color: var(--bg-main); color: #333; }
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
-    margin-top: 40px;
+    /* Đảm bảo nó không bị dính vào Header chính */
+    padding-top: 10px;
 }
 
 .header-section h1 {
@@ -136,10 +138,29 @@ body { background-color: var(--bg-main); color: #333; }
 .category-select { border: 1px solid #eee; padding: 10px; border-radius: 10px; min-width: 180px; outline: none; }
 
 /* Service Cards Grid */
-.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.services-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); /* Chia làm 3 cột bằng nhau */
+    gap: 20px; 
+}
 .service-card { border: 1px solid #f0f0f0; padding: 20px; border-radius: 15px; transition: 0.3s; }
 .service-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-.img-box { background: #bcd9ff; height: 45px; border-radius: 8px; margin-bottom: 15px; }
+.img-box {
+    background: #e3f2fd; /* Màu mặc định */
+    height: 100px; /* Tăng chiều cao để giống ảnh mẫu hơn */
+    border-radius: 12px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-box::after {
+    content: '\f1b0'; /* Icon chân chó font-awesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 30px;
+    color: rgba(0,0,0,0.1);
+}
 .service-name { font-size: 18px; margin-bottom: 8px; }
 .service-desc { font-size: 13px; color: #666; margin-bottom: 15px; min-height: 40px; }
 .service-info-row { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 15px; }
@@ -152,3 +173,208 @@ body { background-color: var(--bg-main); color: #333; }
 .btn-group button { padding: 8px; border-radius: 8px; border: 1px solid; cursor: pointer; font-weight: bold; background: white; }
 .btn-edit { border-color: var(--accent-blue); color: var(--accent-blue); }
 .btn-delete { border-color: #ff4d4d; color: #ff4d4d; }
+
+/* Container chính chứa 2 biểu đồ */
+.main-charts {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Tỉ lệ 1.5 cho biểu đồ đường, 1 cho biểu đồ tròn */
+    gap: 25px;
+    margin-bottom: 30px;
+    align-items: stretch; /* Đảm bảo 2 card cao bằng nhau */
+    margin: 0 auto 30px auto; /* Căn giữa và tạo khoảng cách dưới */
+    max-width: 1250px;
+}
+
+/* Định dạng chung cho Card chứa biểu đồ */
+.chart-line, .chart-pie {
+    background: var(--white);
+    padding: 24px;
+    border-radius: 20px; /* Bo góc nhẹ hơn cho hợp style Mochi Pet */
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    min-height: 400px; /* Đủ cao để chứa cả chú thích và biểu đồ */
+
+}
+
+/* Tiêu đề bên trong biểu đồ */
+.main-charts h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #4a5568;
+    margin-top: 0;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Tinh chỉnh riêng cho biểu đồ Đường (Line Chart) */
+.chart-line {
+    height: 350px !important; 
+    position: relative;
+}
+
+#lineChart, #pieChart {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 300px; /* Giới hạn để không bị quá to */
+}
+
+/* Tinh chỉnh riêng cho biểu đồ Tròn (Pie/Doughnut) */
+.chart-pie {
+    align-items: center;
+}
+
+.pie-container {
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+}
+
+canvas#lineChart {
+    max-height: 300px !important; /* Giới hạn chiều cao thực tế của biểu đồ */
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Layout chia 2 cột */
+.content-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px; /* Cột trái linh hoạt, cột phải cố định 320px */
+    gap: 25px;
+    margin-top: 25px;
+}
+
+/* Tinh chỉnh cột phải */
+.side-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.side-column .card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.side-column h3 {
+    font-size: 15px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Style cho từng phản hồi */
+.feedback-item {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.fb-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.fb-user img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.stars { color: #ffb800; font-size: 10px; }
+
+.feedback-item p {
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.feedback-item small {
+    font-size: 10px;
+    font-weight: bold;
+    color: #999;
+}
+
+/* Nút xem tất cả */
+.btn-view-all {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #eee;
+    background: white;
+    border-radius: 10px;
+    color: var(--primary-green);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Hoạt động mới nhất */
+.activity-card {
+    background: #d4edda !important; /* Màu xanh nhạt theo ảnh mẫu */
+}
+
+.activity-card ul {
+    list-style: none;
+    font-size: 12px;
+}
+
+.activity-card li {
+    margin-bottom: 10px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.activity-card li::before {
+    content: "•";
+    color: var(--primary-green);
+    position: absolute;
+    left: 0;
+}
+
+.card, 
+.stat-card, 
+.service-card, 
+.feedback-card {
+    background-color: #ffffff !important; /* Đảm bảo màu nền là trắng thuần */
+    border-radius: 20px; /* Độ bo góc theo thiết kế mẫu */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Thêm đổ bóng nhẹ để nổi bật trên nền xám nhạt */
+    border: none;
+    padding: 20px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #ffffff;
+}
+
+/* Phần dịch vụ (service-card) */
+.service-card {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+body {
+    background-color: #f0f7f4; /* Màu nền xanh nhạt theo thiết kế Mochi Pet */
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.fb-user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #eee; /* Màu nền tạm nếu chưa có ảnh */
+}
