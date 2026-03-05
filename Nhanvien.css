@@ -117,9 +117,11 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
+    margin-top: 40px;
+
 }
 .btn-add-staff {
-    background-color: #00c2ff;
+    background-color: #FF5500;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -131,25 +133,29 @@ body {
 /* 4 ô thống kê */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-bottom: 30px;
+    grid-template-columns: repeat(3, 1fr); /* Chia làm 3 cột bằng nhau */
+    gap: 35px;                             /* Khoảng cách giữa các khung */
+    margin-bottom: 25px;
 }
 .card-mini {
     background: white;
     padding: 20px;
     border-radius: 20px;
-    position: relative;
     display: flex;
     align-items: center;
     gap: 15px;
-    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    /* Bỏ position: relative nếu không cần thiết để layout chuẩn hơn */
 }
 
 .mini-icon {
     font-size: 24px;
-    width: 50px; height: 50px;
-    display: flex; align-items: center; justify-content: center;
+    width: 50px; 
+    height: 50px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    border-radius: 12px; /* Thêm bo góc nhẹ cho icon nếu muốn giống mẫu */
 }
 .mini-icon.blue { color: #00c2ff; }
 .mini-icon.green { color: #4caf50; }
@@ -165,25 +171,6 @@ body {
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-.tab-menu {
-    display: flex;
-    gap: 30px;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 20px;
-}
-.tab-item {
-    padding-bottom: 10px;
-    font-weight: bold;
-    color: #888;
-    cursor: pointer;
-    position: relative;
-}
-.tab-item.active { color: #00c2ff; border-bottom: 3px solid #00c2ff; }
-.badge {
-    background: red; color: white;
-    font-size: 10px; padding: 2px 6px;
-    border-radius: 10px; vertical-align: top;
 }
 
 .search-bar input {
@@ -204,19 +191,66 @@ body {
 .staff-table td { padding: 15px 12px; border-bottom: 1px solid #eee; font-size: 13px; }
 
 .user-cell { display: flex; align-items: center; gap: 10px; }
-.user-cell img { width: 40px; height: 40px; border-radius: 50%; }
+.user-cell img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; object-position: center; }
 
 .pos-tag { color: #00c2ff; font-weight: bold; font-size: 11px; }
+.poss-tag { color: #000000; font-weight: bold; font-size: 11px; }
 .status-tag {
     padding: 4px 12px; border-radius: 15px; font-size: 11px; font-weight: bold;
 }
 .status-tag.working { background: #e8f5e9; color: #4caf50; }
+
 .status-tag.locked { background: #ffebee; color: #f44336; }
 
-.action-btns i { margin: 0 5px; cursor: pointer; font-size: 16px; }
-.text-green { color: #8bc34a; }
-.text-orange { color: #ffb74d; }
-.text-gray { color: #ccc; }
+/* Màu cho trạng thái Tạm nghĩ */
+.status-tag.resting {
+    background-color: #f0f0f0; /* Màu nền xám nhạt */
+    color: #777777;            /* Màu chữ xám đậm */
+    border: 1px solid #cccccc; /* Khung xám */
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.action-btns i { 
+    margin: 0 5px;
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: transform 0.2s;
+}
+.text-green {
+    color: #28a745;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.text-green:hover {
+    transform: scale(1.3) rotate(10deg);
+    color: #1e7e34;
+}
+
+/* Tương tự bạn có thể thêm cho các icon khác để đồng bộ */
+.action-btns i:hover {
+    opacity: 0.8;
+    transform: scale(1.2);
+}
+
+.text-orange { 
+    color: #ffb74d; 
+}
+
+.text-red-lock {
+    color: #f44336 !important; /* Màu đỏ tương đồng với tag Đã khóa */
+    transition: all 0.3s ease;
+}
+.text-gray {
+    color: #999;
+    cursor: pointer;
+}
+
+.text-gray:hover {
+    color: #ff0000; /* Đổi sang đỏ khi muốn xóa */
+}
 
 /* Hiệu ứng cho avatar ở header */
 .user-profile a:hover img {
@@ -236,4 +270,153 @@ body {
     border-radius: 50%;
     object-fit: cover;
     border: 1px solid #eee;
+}
+
+/* Nền tối bao phủ toàn màn hình */
+.modal {
+    display: none; /* Ẩn mặc định */
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Màu nền mờ */
+}
+
+/* Khung trắng chính giữa */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
+}
+
+.modal-content {
+    background-color: white;
+    width: 550px;
+    padding: 30px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%); /* Căn giữa hoàn hảo */
+    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+}
+
+.close-btn {
+    font-size: 24px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+    line-height: 1; /* Đảm bảo dấu X không bị lệch tâm */
+    transition: color 0.2s;
+}
+.close-btn:hover {
+    color: #ff5c5c; /* Đổi màu đỏ nhẹ khi di chuột vào để báo hiệu nút đóng */
+}
+/* Bố cục Form */
+.form-row { display: flex; gap: 15px; margin-bottom: 15px; }
+.form-group { flex: 1; display: flex; flex-direction: column; gap: 5px; }
+.form-group label { font-size: 13px; font-weight: bold; color: #444; }
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+
+/* Nút bấm trong modal */
+.btn-save {
+    background-color: #00a83a;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-save:hover {
+    background-color: #008f31;
+}
+
+.btn-cancel {
+    background-color: #d1d1d1; /* Màu xám giống ảnh */
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Các ô input */
+.form-group input, .form-group select {
+    border: 1.5px solid #eaeaea;
+    padding: 12px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #00a83a; /* Đổi màu viền khi nhấn vào */
+}
+
+/* --- Giao diện Yêu cầu đăng ký (Dạng Card) --- */
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeIn 0.4s; }
+
+
+.request-actions button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+@keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+}
+
+/* Căn chỉnh header để các phần tử giãn ra hai đầu */
+.modal-header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee; /* Đường kẻ phân cách (nếu muốn) */
+    padding-bottom: 10px;
+}
+
+/* Tùy chỉnh dấu x */
+.close-btn {
+    font-size: 24px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #ff5c5c; /* Đổi màu khi di chuột vào */
+}
+
+.btn-add-submit {
+    background-color: #FF5500; /* Màu xanh dương sáng */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-add-submit:hover {
+    background-color: #039B21;
 }

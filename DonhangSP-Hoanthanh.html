@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochi Pet - Dashboard Sản phẩm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="DonhangSP-Hoanthanh.css">
+</head>
+<body>
+
+    <header class="top-header">
+        <background></background>
+        <div class="header-left">
+            <div class="logo-circle">
+                <img src="Anh/LOGO.jpg" alt="Mochi Pet Logo" class="main-logo">
+            </div>
+            <h1 class="brand-name linear-gradient-text">MOCHI PET</h1>
+        </div>
+
+        <nav class="main-menu">
+            <ul>
+                <li><a href="Tongquan.html">Tổng quan</a></li>
+                <li><a href="Danhmuc.html">Danh mục</a></li>
+                <li><a href="Sanpham.html" class="active">Sản phẩm</a></li>
+                <li><a href="Khohang.html">Kho hàng</a></li>
+                <li><a href="Nhanvien.html">Nhân viên</a></li>
+                <li><a href="Khachhang.html">Khách hàng</a></li>
+                <li><a href="Dichvu.html">Dịch vụ chăm sóc</a></li>
+            </ul>
+        </nav>
+
+        <div class="user-profile">
+            <a href="Thong-tin-QL.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                <img src="Anh/AvatarQL.jpg" alt="Avatar" class="avatar-small">
+                    <div class="user-name">
+                        <span style="font-weight: bold; color: #333;">Thanh An</span>
+                        <br>
+                        <small style="color: #777;">Quản lý cửa hàng</small>
+                    </div>
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="container">
+            <header>
+                <div class="breadcrumb">
+                    <a href="Sanpham.html" class="breadcrumb-link">Sản phẩm</a> 
+                    <span> / </span> 
+                    <span class="active">Đơn hàng</span>
+                </div>
+                <h1>Quản lý đơn hàng</h1>
+                <p class="subtitle">Theo dõi và xử lý các đơn hàng từ khách hàng</p>
+            </header>
+
+            <div class="stats-container">
+                <div class="card">
+                    <div class="icon orange">📅</div>
+                    <div>
+                        <p>ĐƠN HÀNG MỚI HÔM NAY</p>
+                        <h2>45</h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="icon blue">✔️</div>
+                    <div>
+                        <p>ĐÃ HOÀN THÀNH</p>
+                        <h2>62</h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="icon green">💰</div>
+                    <div>
+                        <p>DOANH THU TRONG NGÀY</p>
+                        <div class="revenue">
+                            <h2>5.560.000 VNĐ</h2>
+                            <span class="trend">📈 12.5%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-section">
+                <div class="table-header">
+                    <div class="tabs">
+                        <button class="tab" onclick="location.href='DonhangSP.html'">Chờ xác nhận (45)</button>
+                        <button class="tab" onclick="location.href='DonhangSP-Danggiao.html'">Đang giao</button>
+                        <button class="tab active" onclick="location.href='DonhangSP-Hoanthanh.html'">Hoàn thành</button>
+                        <button class="tab" onclick="location.href='DonhangSP-Dahuy.html'">Đã hủy</button>
+                    </div>
+                    <input type="text" placeholder="Tìm kiếm theo mã sản phẩm, tên sản..." class="search-input">
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>MÃ ĐƠN HÀNG</th>
+                            <th>KHÁCH HÀNG</th>
+                            <th>SẢN PHẨM</th>
+                            <th>TỔNG TIỀN</th>
+                            <th>THANH TOÁN</th>
+                            <th>THAO TÁC</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#ORD-8821</td>
+                            <td><strong>Nguyễn Văn An</strong><br><small>0987654 ***</small></td>
+                            <td>Hạt Cho Mèo Mọi Lứa Tuổi Ca...<br><small>Số lượng: 1 x 400g</small></td>
+                            <td class="price">85.000đ</td>
+                            <td><span class="badge paid">Đã thanh toán</span></td>
+                            <td>
+                                <button class="btn-confirm" onclick="openOrderDetail('#ORD-8821', 'Nguyễn Văn An', '85.000đ', 'Hạt Cho Mèo Mọi Lứa Tuổi Ca...')">
+                                    Xem chi tiết
+                                </button>
+                                <button class="btn-delete">🗑️</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-8822</td>
+                            <td><strong>Nguyễn Văn Bình</strong><br><small>0987653 ***</small></td>
+                            <td>Cát Đậu Nành Cho Mèo Catur...<br><small>Số lượng: 1 x Túi nhỏ 2,4kg</small></td>
+                            <td class="price">150.000đ</td>
+                            <td><span class="badge cod">COD</span></td>
+                            <td>
+                                <button class="btn-confirm" onclick="openOrderDetail('#ORD-8822', 'Nguyễn Văn Bình', '150.000đ', 'Cát Đậu Nành Cho Mèo Catur...')">
+                                    Xem chi tiết
+                                </button>
+                                <button class="btn-delete">🗑️</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-8823</td>
+                            <td><strong>Nguyễn Thị Anh Thi</strong><br><small>0987653 ***</small></td>
+                            <td>Hạt Cho Chó Trưởng Thành Giống Vừa Royal Canin Medium Adult<br><small>Số lượng: 1 x Túi nhỏ 2,4kg</small></td>
+                            <td class="price">150.000đ</td>
+                            <td><span class="badge cod">COD</span></td>
+                            <td>
+                                <button class="btn-confirm" onclick="openOrderDetail('#ORD-8823', 'Nguyễn Thị Anh Thi', '85.000đ', 'Hạt Cho Chó Trưởng Thành Giống Vừa Royal Canin Medium Adult')">
+                                    Xem chi tiết
+                                </button>
+                                <button class="btn-delete">🗑️</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-8824</td>
+                            <td><strong>Nguyễn Văn Dương</strong><br><small>0987653 ***</small></td>
+                            <td>Xịt Thơm Miệng Chó Mèo Forcans Oral Refresher<br><small>Số lượng: 1 x Túi nhỏ 2,4kg</small></td>
+                            <td class="price">150.000đ</td>
+                            <td><span class="badge cod">COD</span></td>
+                            <td>
+                                <button class="btn-confirm" onclick="openOrderDetail('#ORD-8824', 'Nguyễn Văn Dương', '85.000đ', 'Xịt Thơm Miệng Chó Mèo Forcans Oral Refresher')">
+                                    Xem chi tiết
+                                </button>
+                                <button class="btn-delete">🗑️</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-8825</td>
+                            <td><strong>Nguyễn Văn Kiệt</strong><br><small>0987653 ***</small></td>
+                            <td>Thịt Sấy Snack Mèo Jinny Freeze Dried 40g<br><small>Số lượng: 1 x Túi nhỏ 2,4kg</small></td>
+                            <td class="price">150.000đ</td>
+                            <td><span class="badge cod">COD</span></td>
+                            <td>
+                                <button class="btn-confirm" onclick="openOrderDetail('#ORD-8825', 'Nguyễn Văn Kiệt', '85.000đ','Thịt Sấy Snack Mèo Jinny Freeze Dried 40g')">
+                                    Xem chi tiết
+                                </button>
+                                <button class="btn-delete">🗑️</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <div id="orderDetailModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+<script>
+    function openOrderDetail(maDon, tenKhach, tongTien, tenSanPham) {
+    const modal = document.getElementById("orderDetailModal");
+    const body = document.getElementById("modalBody");
+
+    body.innerHTML = `
+        <h2 style="margin-bottom: 20px;">Chi tiết Xác nhận Đơn hàng</h2>
+        <p style="color: #777;">Mã đơn: ${maDon} | 22/01/2026 22:00</p>
+        <hr style="border: 0.5px solid #eee; margin: 15px 0;">
+        <div style="display: flex; gap: 40px; margin-top: 20px;">
+            <div style="flex: 1.2;">
+                <h4 style="color: #555; margin-bottom: 10px;">THÔNG TIN KHÁCH HÀNG</h4>
+                <p><strong>${tenKhach}</strong></p>
+                <p style="color: #666; font-size: 14px; margin-top: 5px;">📞 0987854452</p>
+                <p style="color: #666; font-size: 14px;">📍 783 Phạm Hữu Lầu, Đồng Tháp</p>
+            </div>
+            <div style="flex: 1;">
+                <h4 style="color: #555; margin-bottom: 10px;">DANH SÁCH SẢN PHẨM</h4>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <p style="font-size: 14px;">${tenSanPham} (x1)</p>
+                    <p><strong>${tongTien}</strong></p>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 30px; text-align: right;">
+            <button class="btn-confirm-modal" onclick="closeModal()">Xác nhận và In hóa đơn</button>
+        </div>
+    `;
+
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("orderDetailModal").style.display = "none";
+}
+
+// Đóng modal khi click ra ngoài khung trắng
+window.onclick = function(event) {
+    const modal = document.getElementById("orderDetailModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</body>
+</html>

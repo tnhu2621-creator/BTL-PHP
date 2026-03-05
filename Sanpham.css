@@ -89,9 +89,9 @@ body {
     color: #ff5722;
     border-bottom: 2px solid #ff5722;
     padding-left: 2px;
-    letter-spacing: 0.5px; }
+    letter-spacing: 0.5px; 
+}
 
-.user-profile { display: flex; align-items: center; gap: 10px; text-align: right; }
 .avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
 .user-name { display: block; font-weight: bold; font-size: 14px; }
 .user-role { display: block; font-size: 11px; color: #888; }
@@ -101,6 +101,7 @@ body {
     max-width: 1200px;
     margin: 30px auto;
     padding: 0 20px;
+    background-color: var(--bg-light);
 }
 
 :root {
@@ -123,23 +124,51 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: -50px; /* Đẩy lên cao theo ý bạn */
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
+/* Base style cho các nút */
 .btn-action {
-    border: 1px solid #ccc;
-    padding: 10px 18px;
-    border-radius: 12px;
-    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Khoảng cách giữa icon và chữ */
+    padding: 10px 20px;
+    border-radius: 12px; /* Bo góc mềm mại */
+    font-weight: 700;
+    font-size: 14px;
     cursor: pointer;
-    margin-left: 10px;
-    margin-top:20px;
+    border: 1.5px solid; /* Độ dày viền */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Đổ bóng nhẹ phía dưới */
+    text-decoration: none;
 }
 
-.btn-blue { border-color: #0000ff; color: #0000ff;}
-.btn-red { border-color: #ff0000; color: #ff0000; }
-.btn-green-light { border-color: #039B21; color:#039B21 }
+/* Hiệu ứng hover cho chuyên nghiệp */
+.btn-action:hover {
+    transform: translateY(-2px); /* Nhích nhẹ lên khi di chuột */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Nút Đơn hàng (Xanh dương) */
+.btn-blue { 
+    border-color: #3333FF; 
+    color: #0000FF;
+    background-color: rgba(51, 51, 255, 0.05); /* Nền xanh cực nhạt */
+}
+
+/* Nút Thống kê doanh thu (Đỏ) */
+.btn-red { 
+    border-color: #FF0000; 
+    color: #FF0000; 
+    background-color: rgba(255, 0, 0, 0.05); /* Nền đỏ cực nhạt */
+}
+
+/* Nút Đăng bán sản phẩm (Xanh lá) */
+.btn-green-light { 
+    border-color: #008000; 
+    color: #000; /* Chữ màu đen theo ảnh 2 */
+    background-color: rgba(0, 128, 0, 0.05); /* Nền xanh lá cực nhạt */
+}
 
 /* Table Styling */
 .table-container {
@@ -153,6 +182,7 @@ body {
 .main-table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
 }
 
 .main-table th {
@@ -160,20 +190,48 @@ body {
     padding: 15px;
     text-align: left;
     color: #333;
+    width:120px;
 }
 
 .main-table td {
     padding: 15px;
     border-bottom: 1px solid #eee;
     vertical-align: middle;
+    width:120px;
 }
+
+/* 2. Tăng chiều dài khung danh mục */
+.main-table th:nth-child(2), 
+.main-table td:nth-child(2) {
+    width: 100px; /* Tăng từ mặc định lên 180px */
+}
+
+/* Di chuyển và căn chỉnh cột Giá bán, Lượt bán sang phải */
+.main-table th:nth-child(5), .main-table td:nth-child(5), /* Cột Giá bán */
+.main-table th:nth-child(6), .main-table td:nth-child(6)  /* Cột Lượt bán */ {
+    text-align: right; 
+    padding-right: 30px; /* Tạo khoảng cách với lề phải */
+    width: 10%;
+}
+
+/* Cột Thao tác ở cuối cùng */
+.main-table th:last-child, .main-table td:last-child {
+    text-align: center;
+    width: 10%;
+}
+
+/* Các cột nhỏ khác */
+.main-table th:first-child { width: 8%; } /* Hình ảnh */
+.main-table th:nth-child(2) { width: 12%; } /* Danh mục */
 
 /* Specific Columns */
 .product-thumb { width: 50px; height: 50px; border-radius: 8px; }
 
-.supplier-name { font-size: 13px; color: #444; width: 220px; }
+.product-name { width: 25%; white-space: normal; word-wrap: break-word;}
 
-.price-value { color: #11CC00; font-weight: bold; }
+.supplier-name { font-size: 13px; color: #444; width: 25%; }
+
+.price-value { color: #11CC00; font-weight: bold; width:20px; }
 
 .action-cell {
     display: flex !important;
@@ -227,4 +285,44 @@ body {
     border-radius: 50%;
     object-fit: cover;
     border: 1px solid #eee;
+}
+
+/* --- SEARCH SECTION --- */
+.search-section {
+    margin-bottom: 20px;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 16px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 12px 12px 45px; /* Tạo khoảng trống bên trái cho icon */
+    border: 1px solid #fff; /* Viền trắng hoặc không viền tùy ý */
+    border-radius: 25px;    /* Bo tròn mạnh theo thiết kế */
+    font-size: 15px;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Đổ bóng nhẹ cho nổi bật */
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #3D730A;
+    box-shadow: 0 2px 10px rgba(61, 115, 10, 0.2);
+}
+
+/* Điều chỉnh lại icon kính lúp trên giao diện */
+.fa-search {
+    cursor: default;
 }

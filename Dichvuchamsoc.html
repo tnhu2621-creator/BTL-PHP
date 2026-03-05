@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Dịch vụ</title>
+    <link rel="stylesheet" href="Dichvuchamsoc.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="header">
+            <h2>Quản lý Dịch vụ</h2>
+            <div class="header-btns">
+                <button class="btn btn-secondary">Xem lịch hẹn</button>
+                <button class="btn btn-primary">+ Thêm dịch vụ</button>
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <p>TỔNG DỊCH VỤ</p>
+                <span class="value blue">06</span>
+            </div>
+            <div class="stat-card">
+                <p>LƯỢT ĐẶT</p>
+                <div class="value-container">
+                    <span class="value orange">154</span>
+                    <span class="badge orange">+12%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <p>DOANH THU (TRĐ)</p>
+                <span class="value red">42.5</span>
+                <span class="badge">+5%</span>
+            </div>
+            <div class="stat-card">
+                <p>GIÁ TRUNG BÌNH</p>
+                <span class="value green">275k</span>
+            </div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <section class="main-charts">
+            <div class="chart-line card">
+                <h3>Biểu đồ Tăng trưởng Dịch vụ (30 ngày qua)</h3>
+                <canvas id="lineChart"></canvas> 
+            </div>
+
+            <div class="chart-pie card">
+                <h3>Dịch vụ Phổ biến</h3>
+                <div class="pie-container">
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <div class="filter-bar">
+            <input type="text" placeholder="Tìm kiếm dịch vụ theo tên...">
+            <select>
+                <option>Tất cả danh mục</option>
+            </select>
+        </div>
+
+        <div class="bottom-section">
+            <div class="service-list">
+                <div class="service-card card">
+                    <h4>Tắm & cắt tỉa lông chó</h4>
+                    <p class="desc">Tắm rửa, sấy khô, cắt tỉa lông theo yêu cầu chuyên nghiệp nhất.</p>
+                    <div class="meta">
+                        <span>1.5h</span>
+                        <span>Chó</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="price">200.000đ</span>
+                        <span class="status-active">HOẠT ĐỘNG</span>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-edit">Sửa</button>
+                        <button class="btn-delete">Xóa</button>
+                    </div>
+                </div>
+                </div>
+
+            <aside class="sidebar-info">
+                <div class="feedback card">
+                    <h3>Phản hồi khách hàng</h3>
+                    <div class="feedback-item">
+                        <strong>Chị Minh Anh</strong>
+                        <p>"Dịch vụ rất tốt..."</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script>
+    // 1. Cấu hình Biểu đồ Đường (Line Chart)
+    const ctxLine = document.getElementById('lineChart').getContext('2d');
+    new Chart(ctxLine, {
+        type: 'line',
+        data: {
+            labels: ['01/10', '05/10', '10/10', '15/10', '20/10', '25/10', '30/10'],
+            datasets: [
+                {
+                    label: 'Lượt đặt',
+                    data: [12, 19, 15, 25, 22, 30, 31],
+                    borderColor: '#00b4d8',
+                    backgroundColor: 'rgba(0, 180, 216, 0.1)',
+                    fill: true,
+                    tension: 0.4, // Tạo độ cong cho đường
+                    pointRadius: 5,
+                    pointBackgroundColor: '#fff',
+                    pointBorderWidth: 2
+                },
+                {
+                    label: 'Doanh thu trung bình',
+                    data: [8, 11, 12, 18, 15, 22, 25],
+                    borderColor: '#4caf50',
+                    backgroundColor: 'transparent',
+                    tension: 0.4,
+                    pointRadius: 5
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } }, // Ẩn legend để giống ảnh
+            scales: {
+                y: { beginAtZero: true, grid: { display: false } },
+                x: { grid: { display: false } }
+            }
+        }
+    });
+
+    // 2. Cấu hình Biểu đồ Tròn (Pie/Doughnut Chart)
+    const ctxPie = document.getElementById('pieChart').getContext('2d');
+    new Chart(ctxPie, {
+        type: 'doughnut',
+        data: {
+            labels: ['Grooming', 'Spa & Tắm', 'Lưu trú'],
+            datasets: [{
+                data: [45, 30, 25],
+                backgroundColor: ['#4361ee', '#2ec4b6', '#ff9f1c'],
+                borderWidth: 0,
+                hoverOffset: 10
+            }]
+        },
+        options: {
+            cutout: '70%', // Tạo lỗ hổng ở giữa để thành biểu đồ vòng (Doughnut)
+            plugins: {
+                legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20 } }
+            }
+        }
+    });
+</script>
+</body>
+</html>

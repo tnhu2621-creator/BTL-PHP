@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochi Pet - Thống kê doanh thu</title>
+    <link rel="stylesheet" href="ThongkeSP.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="top-header">
+        <background></background>
+        <div class="header-left">
+            <div class="logo-circle">
+                <img src="Anh/LOGO.jpg" alt="Mochi Pet Logo" class="main-logo">
+            </div>
+            <h1 class="brand-name linear-gradient-text">MOCHI PET</h1>
+        </div>
+
+        <nav class="main-menu">
+            <ul>
+                <li><a href="Tongquan.html">Tổng quan</a></li>
+                <li><a href="Danhmuc.html">Danh mục</a></li>
+                <li><a href="Sanpham.html" class="active">Sản phẩm</a></li>
+                <li><a href="Khohang.html">Kho hàng</a></li>
+                <li><a href="Nhanvien.html">Nhân viên</a></li>
+                <li><a href="Khachhang.html">Khách hàng</a></li>
+                <li><a href="Dichvu.html">Dịch vụ chăm sóc</a></li>
+            </ul>
+        </nav>
+
+        <div class="user-profile">
+            <a href="Thong-tin-QL.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                <img src="Anh/AvatarQL.jpg" alt="Avatar" class="avatar-small">
+                    <div class="user-name">
+                        <span style="font-weight: bold; color: #333;">Thanh An</span>
+                        <br>
+                        <small style="color: #777;">Quản lý cửa hàng</small>
+                    </div>
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="Sanpham.html" class="breadcrumb-link">Sản phẩm</a> 
+            <span> / </span> 
+            <span class="active">Thống kê</span>
+        </div>
+        
+        <div class="header-action">
+            <h2 class="page-title">Thống kê doanh thu</h2>
+            <div class="filter-group">
+                <div class="time-tabs">
+                    <button class="active">Ngày</button>
+                    <button>Tháng</button>
+                    <button>Năm</button>
+                </div>
+                <button class="btn-export"><i class="fas fa-download"></i> Xuất báo cáo</button>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <small>DOANH THU TRONG NGÀY</small>
+                    <div class="icon-box"><i class="fas fa-money-bill-wave"></i></div>
+                </div>
+                <h3>5.560.000 VNĐ</h3>
+                <div class="progress-bar">
+                    <div class="fill" style="width: 75%"></div>
+                </div>
+                <div class="trend up"><i class="fas fa-caret-up"></i> 12.5%</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <small>ĐƠN HÀNG</small>
+                    <div class="icon-box pink"><i class="fas fa-shopping-basket"></i></div>
+                </div>
+                <h3>62</h3>
+                <div class="progress-bar">
+                    <div class="fill" style="width: 60%"></div>
+                </div>
+                <div class="trend down"><i class="fas fa-caret-down"></i> 2.4%</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <small>LỢI NHUẬN</small>
+                    <div class="icon-box light-green"><i class="fas fa-chart-line"></i></div>
+                </div>
+                <h3>2.059.260 VNĐ</h3>
+                <div class="progress-bar">
+                    <div class="fill" style="width: 85%"></div>
+                </div>
+                <div class="trend up"><i class="fas fa-caret-up"></i> 8.1%</div>
+            </div>
+        </div>
+
+        <div class="main-charts-grid">
+            <section class="card chart-section">
+                <div class="card-header">
+                    <h3>Xu hướng doanh thu</h3>
+                    <small>Hiệu suất 6 tháng gần nhất</small>
+                </div>
+            <div class="chart-container">
+                <img src="Anh/bieu-do-xu-huong.png" alt="Biểu đồ xu hướng" class="chart-img">
+            </div>
+            </section>
+
+            <section class="card top-products">
+                <div class="card-header">
+                    <h3>Top sản phẩm bán chạy</h3>
+                </div>
+                <div class="product-list">
+                    <div class="product-item">
+                        <span class="rank-circle">1</span>
+                        <img src="Anh/sp1.jpg" alt="sp" class="p-thumb">
+                        <div class="p-details">
+                            <p class="p-name">Cát Đậu Nành Cho Mèo Cature Tofu</p>
+                            <div class="p-progress"><div class="p-fill" style="width: 90%;"></div></div>
+                        </div>
+                        <span class="p-qty">620</span>
+                    </div>
+
+                    <div class="product-item">
+                        <span class="rank-circle">2</span>
+                        <img src="Anh/sp2.jpg" alt="sp" class="p-thumb">
+                        <div class="p-details">
+                            <p class="p-name">Sữa Tắm Chó Mèo Yu' Siêu Thơm</p>
+                            <div class="p-progress"><div class="p-fill" style="width: 75%;"></div></div>
+                        </div>
+                        <span class="p-qty">495</span>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
