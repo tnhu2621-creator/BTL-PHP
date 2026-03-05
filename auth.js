@@ -105,3 +105,43 @@ function resetPassword() {
     window.location.href = "Dangnhap.html";
 }
 
+/* ===== AUTH HIỂN THỊ USER ===== */
+const authBtn = document.getElementById("authBtn");
+const userNameBox = document.getElementById("userName");
+
+function updateAuthUI(){
+    const isLogin = localStorage.getItem("isLogin");
+
+    // ===== CHƯA ĐĂNG NHẬP =====
+    if (isLogin !== "true") {
+        authBtn.innerHTML = "Đăng nhập";
+        authBtn.classList.remove("user-icon");
+        authBtn.classList.add("login-btn");
+
+        userNameBox.textContent = "";
+
+        authBtn.onclick = () => {
+            window.location.href = "Dangnhap.html";
+        };
+    }
+
+    // ===== ĐÃ ĐĂNG NHẬP =====
+    else {
+        authBtn.innerHTML = '<i class="fa-solid fa-user"></i>';
+        authBtn.classList.remove("login-btn");
+        authBtn.classList.add("user-icon");
+
+        const name = localStorage.getItem("userName");
+        userNameBox.textContent = name || "User";
+
+        authBtn.onclick = () => {
+            if (confirm("Bạn có muốn đăng xuất không?")) {
+                localStorage.clear();
+                updateAuthUI(); 
+                window.location.reload(); 
+            }
+        };
+    }
+}
+
+updateAuthUI();

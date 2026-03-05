@@ -12,7 +12,7 @@
 <!-- HEADER -->
 <header class="header">
     <div class="logo">
-        <img src="LOGO.png" alt="logo">
+        <img src="Anh/LOGO.png" alt="logo">
         <span class="logo-text">MOCHI PET</span>
 
     </div>
@@ -33,7 +33,10 @@
         <div class="icon-circle"><i class="fa fa-cart-shopping"></i></div>
         <div class="icon-circle"><i class="fa fa-bell"></i></div>
 
-        <button class="login-btn" id="authBtn"></button>
+        <div class="user-box">
+            <button class="login-btn" id="authBtn"></button>
+            <span id="userName" class="user-name"></span>
+        </div>
 
     </div>
 </header>
@@ -43,13 +46,15 @@
     <div class="mega-box">
 
         <div class="mega-col food">
-            <h4>
-                <span class="icon-wrap">
-                    <i class="fa-solid fa-bowl-food"></i>
-                </span>
-                Thức ăn thú cưng
-            </h4>
-            <ul>
+    <button type="button" 
+            class="mega-title" 
+            onclick="window.location.href='sp.html'">
+        <span class="icon-wrap">
+            <i class="fa-solid fa-bowl-food"></i>
+        </span>
+        Thức ăn thú cưng
+    </button>
+    <ul>
     <li>
         <a href="#">
             <i class="fa-solid fa-dog"></i>
@@ -82,12 +87,12 @@
         </div>
 
         <div class="mega-col toy">
-            <h4>
+            <button class="mega-title">
                 <span class="icon-wrap">
                     <i class="fa-solid fa-baseball"></i>
                 </span>
                 Đồ chơi thú cưng
-            </h4>
+            </button>
             <ul>
     <li>
         <a href="#">
@@ -121,12 +126,12 @@
         </div>
 
         <div class="mega-col accessory">
-            <h4>
+            <button class="mega-title">
                 <span class="icon-wrap">
                     <i class="fa-solid fa-paw"></i>
                 </span>
                 Phụ kiện thú cưng
-            </h4>
+            </button>
             <ul>
     <li>
         <a href="#">
@@ -160,12 +165,12 @@
         </div>
 
         <div class="mega-col care">
-            <h4>
+            <button class="mega-title">
                 <span class="icon-wrap">
                     <i class="fa-solid fa-soap"></i>
                 </span>
                 Chăm sóc - vệ sinh
-            </h4>
+            </button>
             <ul>
     <li>
         <a href="#">
@@ -206,7 +211,7 @@
     <div class="service-box">
 
         <div class="service-col">
-            <h4>🌿 Dịch vụ cơ bản</h4>
+            <button class="service-title">🌿 Dịch vụ cơ bản</button>
             <ul>
                 <li><i class="fa-solid fa-bath"></i> Tắm - Vệ sinh</li>
                 <li><i class="fa-solid fa-scissors"></i> Tỉa lông - tạo kiểu</li>
@@ -216,7 +221,7 @@
         </div>
 
         <div class="service-col">
-            <h4>⭐ Dịch vụ nâng cao</h4>
+            <button class="service-title">⭐ Dịch vụ nâng cao</button>
             <ul>
                 <li><i class="fa-solid fa-hotel"></i> Khách sạn thú cưng</li>
                 <li><i class="fa-solid fa-clock"></i> Trông giữ theo giờ</li>
@@ -254,41 +259,129 @@
 
 
 
-<!-- CATEGORY -->
 <section class="section">
     <h2>Danh mục Sản phẩm</h2>
+
     <div class="grid">
-        <div class="card">
-            <img src="phukien.png">
-            <p>Phụ kiện</p>
+
+        <!-- CARD 1 -->
+        <div class="category-item">
+            <div class="category-card">
+                <img src="Anh/phukien.png">
+
+                <!-- Thanh xám dưới -->
+                <div class="bottom-bar">
+                    <small>BST Phụ kiện</small>
+                </div>
+
+                <div class="overlay">
+                    <h3>Phụ kiện cao cấp</h3>
+                </div>
+            </div>
+
+            <div class="category-bottom">
+                <span>45+ Sản phẩm</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
         </div>
-        <div class="card">
-            <img src="dochoi.png">
-            <p>Đồ chơi</p>
+
+        <!-- CARD 2 -->
+        <div class="category-item">
+            <div class="category-card">
+                <img src="Anh/dochoi.png">
+
+                <div class="bottom-bar">
+                    <small>Giải trí</small>
+                </div>
+
+                <div class="overlay">
+                    <h3>Đồ chơi thông minh</h3>
+                </div>
+            </div>
+
+            <div class="category-bottom">
+                <span>45+ Sản phẩm</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
         </div>
-        <div class="card">
-            <img src="thuan.png">
-            <p>Thức ăn</p>
+
+        <!-- CARD 3 -->
+        <div class="category-item">
+            <div class="category-card">
+                <img src="Anh/thucan.png">
+
+                <div class="bottom-bar">
+                    <small>Dinh dưỡng</small>
+                </div>
+
+                <div class="overlay">
+                    <h3>Thực phẩm bổ sung</h3>
+                </div>
+            </div>
+
+            <div class="category-bottom">
+                <span>45+ Sản phẩm</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
         </div>
+
     </div>
 </section>
 
-<!-- SERVICES -->
-<section class="section">
-    <h2>Dịch vụ Thú cưng</h2>
+<!-- SERVICES ADVANCED -->
+<section class="services">
+    <h2 class="title">Dịch vụ thú cưng</h2>
+
     <div class="grid">
-        <div class="card">
-            <img src="tam_spa.png">
-            <p>Tắm - Spa</p>
+
+        <!-- SPA -->
+        <div class="service-card">
+            <img src="Anh/spa.png" class="service-img">
+
+            <div class="overlay">
+                <h3>Tắm - Spa thư giãn</h3>
+                <p>
+                    Quy trình 12 bước chăm sóc chuyên sâu với các dòng sữa tắm organic nhập khẩu từ Pháp.
+                </p>
+                <div class="bottom">
+                    <span>Từ 250.000đ</span>
+                    <a href="#">Xem chi tiết</a>
+                </div>
+            </div>
         </div>
-        <div class="card">
-            <img src="tialong.png">
-            <p>Cắt tỉa lông</p>
+
+        <!-- CẮT LÔNG -->
+        <div class="service-card">
+            <img src="Anh/catlong.png" class="service-img">
+
+            <div class="overlay">
+                <h3>Cắt tỉa lông</h3>
+                <p>
+                    Được thực hiện bởi những nhân viên chuyên nghiệp, giúp thú cưng sở hữu diện mạo đẳng cấp nhất.
+                </p>
+                <div class="bottom">
+                    <span>Từ 250.000đ</span>
+                    <a href="#">Xem chi tiết</a>
+                </div>
+            </div>
         </div>
-        <div class="card">
-            <img src="tronggiu.png">
-            <p>Trông giữ</p>
+
+        <!-- KHÁCH SẠN -->
+        <div class="service-card">
+            <img src="Anh/hotel.png" class="service-img">
+
+            <div class="overlay">
+                <h3>Khách sạn cho bé</h3>
+                <p>
+                    Phòng nghỉ riêng biệt, camera theo dõi và chế độ dinh dưỡng cá nhân hóa.
+                </p>
+                <div class="bottom">
+                    <span>Từ 250.000đ</span>
+                    <a href="#">Xem chi tiết</a>
+                </div>
+            </div>
         </div>
+
     </div>
 </section>
 
@@ -299,7 +392,7 @@
     <div class="product-list">
 
         <div class="product-card">
-            <img src="CTSP(1).png" alt="">
+            <img src="Anh/CTSP(1).png" alt="">
             <h3>Hạt Cho Mèo Mọi Lứa Tuổi Catsrang</h3>
             <p class="price">90.000đ</p>
             <button class="btn-detail" onclick="window.location.href='Chitietsp.html'">
@@ -310,7 +403,7 @@
         </div>
 
         <div class="product-card">
-            <img src="sp2.png" alt="">
+            <img src="Anh/sp2.png" alt="">
             <h3>Súp Thưởng Cho Mèo Nắp Vặn Sunny Buddy</h3>
             <p class="price">20.000đ</p>
             <button class="btn-detail"><i class="fa fa-eye"></i> Xem chi tiết</button>
@@ -318,7 +411,7 @@
         </div>
 
         <div class="product-card">
-            <img src="sp3.png" alt="">
+            <img src="Anh/sp3.png" alt="">
             <h3>Hạt Mềm Cho Mèo Zenith Hairball Tiêu Búi Lông</h3>
             <p class="price">65.000đ</p>
             <button class="btn-detail"><i class="fa fa-eye"></i> Xem chi tiết</button>
@@ -326,7 +419,7 @@
         </div>
 
         <div class="product-card">
-            <img src="sp4.png" alt="">
+            <img src="Anh/sp4.png" alt="">
             <h3>Pate Cho Chó Mèo Phục Hồi Sức Khỏe Royal Canin Recovery Lon 195g</h3>
             <p class="price">85.000đ</p>
             <button class="btn-detail"><i class="fa fa-eye"></i> Xem chi tiết</button>
@@ -334,7 +427,7 @@
         </div>
 
         <div class="product-card">
-            <img src="sp5.png" alt="">
+            <img src="Anh/sp5.png" alt="">
             <h3>Thức Ăn Cho Mèo Reflex Plus Hairball Tiêu Búi Lông (Nhập khẩu Thổ Nhĩ Kỳ)</h3>
             <p class="price">230.000đ</p>
             <button class="btn-detail"><i class="fa fa-eye"></i> Xem chi tiết</button>
@@ -393,7 +486,7 @@
 
 <div class="service-left">
 
-  <div class="service-card">
+  <div class="service-main-card">
 
     <h3 class="title-top">MOCHI PET</h3>
     <div class="title-line"></div>
@@ -489,7 +582,7 @@
     </div>
 
     <div class="hotel-circle">
-      <img src="LOGO.png">
+      <img src="Anh/LOGO.png">
     </div>
   </div>
 </section>
@@ -509,7 +602,7 @@
                 lông mượt và thơm lâu. Nhân viên lại cực kì nhiệt tình.”
             </p>
             <div class="testimonial-user">
-                <img src="bebo.png" alt="">
+                <img src="Anh/bebo.png" alt="">
                 <div>
                     <b>Chị Mai Anh</b>
                     <span>Chú Bé Bơ</span>
@@ -526,7 +619,7 @@
                 Có camera 24/7 xem rất an tâm, phòng sạch sẽ thoáng mát.”
             </p>
             <div class="testimonial-user">
-                <img src="belu.png" alt="">
+                <img src="Anh/belu.png" alt="">
                 <div>
                     <b>Anh Tuấn</b>
                     <span>Chú Bé Lu</span>
@@ -543,7 +636,7 @@
                 Giao hàng cũng rất nhanh. Sẽ ủng hộ dài dài!”
             </p>
             <div class="testimonial-user">
-                <img src="bemeo.png" alt="">
+                <img src="Anh/bemeo.png" alt="">
                 <div>
                     <b>Minh Ngọc</b>
                     <span>Chú Bé Meo</span>
@@ -575,7 +668,7 @@
         <!-- COL 1 -->
         <div class="footer-col footer-brand">
             <div class="footer-logo">
-                <img src="LOGO.png" alt="Mochi Pet">
+                <img src="Anh/LOGO.png" alt="Mochi Pet">
                 <h3>MOCHI PET</h3>
             </div>
             <p>
@@ -623,7 +716,6 @@
 
 <script>
 /* ================= MENU ================= */
-
 const btnDanhMuc = document.getElementById("btnDanhMuc");
 const megaMenu = document.getElementById("megaMenu");
 
@@ -659,28 +751,135 @@ document.addEventListener("click", () => {
 
 /* ================= AUTH ================= */
 const authBtn = document.getElementById("authBtn");
+const userNameBox = document.getElementById("userName");
+
 const isLogin = localStorage.getItem("isLogin");
 
-// ❌ Chưa đăng nhập → đá về trang đăng nhập
-if(isLogin !== "true"){
-    window.location.href = "Dangnhap.html";
-}
-
-// ✅ Đã đăng nhập
-if(isLogin === "true"){
-    authBtn.textContent = "Đăng xuất";
+// CHƯA ĐĂNG NHẬP
+if (isLogin !== "true") {
+    authBtn.textContent = "Đăng nhập";
+    authBtn.classList.remove("user-icon");
+    userNameBox.textContent = "";
 
     authBtn.onclick = () => {
-        if(confirm("Bạn có chắc muốn đăng xuất không?")){
-            localStorage.removeItem("isLogin");
-            localStorage.removeItem("currentUser");
-            window.location.href = "Dangnhap.html";
+        window.location.href = "Dangnhap.html";
+    };
+}
+
+// ĐÃ ĐĂNG NHẬP
+if (isLogin === "true") {
+
+    authBtn.innerHTML = '<i class="fa-solid fa-user"></i>';
+    authBtn.classList.add("user-icon");
+
+    // 🔥 HIỆN TÊN
+    const user = JSON.parse(localStorage.getItem("user"));
+    userNameBox.textContent = user ? user.name : "User";
+
+    authBtn.onclick = () => {
+        if (confirm("Bạn có muốn đăng xuất không?")) {
+            localStorage.clear();
+            window.location.href = "User.html";
         }
     };
 }
+
+
+// 1. Chuyển đổi Form
+function showForm(formId) {
+    document.querySelectorAll('.login-container')
+        .forEach(form => form.classList.remove('active'));
+    document.getElementById(formId).classList.add('active');
+}
+
+
+// 2. ĐĂNG NHẬP
+document.getElementById('loginBtn').addEventListener('click', function() {
+    const user = document.getElementById('username').value.trim();
+    const pass = document.getElementById('password').value.trim();
+    const errorBox = document.getElementById('login-error');
+
+    const validAdmin = "admin";
+    const validAdminPass = "123456";
+
+    if (user === "" || pass === "") {
+        errorBox.innerText = "Vui lòng nhập đầy đủ thông tin!";
+        errorBox.style.display = "block";
+        return;
+    }
+
+    // ADMIN
+    if (user === validAdmin && pass === validAdminPass) {
+        localStorage.setItem("isLogin", "true");
+        localStorage.setItem("role", "admin");
+        window.location.href = "Tongquan.html";
+        return;
+    }
+
+    // USER
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+
+    if (storedUser &&
+        (user === storedUser.name || user === storedUser.email) &&
+        pass === storedUser.password) {
+
+        localStorage.setItem("isLogin", "true");
+        localStorage.setItem("role", "user");
+        localStorage.setItem("userName", storedUser.name);
+        window.location.href = "User.html";
+    } else {
+        errorBox.innerText = "Tên đăng nhập hoặc mật khẩu không đúng!";
+        errorBox.style.display = "block";
+    }
+});
+
+
+// 3. ĐĂNG KÝ
+document.getElementById('registerBtn').addEventListener('click', function() {
+    const name = document.getElementById('admin-user').value.trim();
+    const email = document.getElementById('admin-email')?.value.trim();
+    const pass = document.getElementById('admin-pass').value.trim();
+    const code = document.getElementById('adminCode').value.trim();
+    const errorBox = document.getElementById('admin-error');
+
+    if (name === "" || pass === "") {
+        errorBox.innerText = "Không được để trống!";
+        errorBox.style.display = "block";
+        return;
+    }
+
+    // ADMIN REGISTER (GIỮ NGUYÊN)
+    if (code === "MOCHI2026") {
+        alert("Tạo tài khoản quản lý thành công!");
+        showForm('login-form');
+        return;
+    }
+
+    // USER REGISTER
+    const userData = {
+        name: name,
+        email: email || "",
+        pass: pass
+    };
+
+    localStorage.setItem("user", JSON.stringify({
+    name: name,
+    email: email || "",
+    password: pass
+}));
+    alert("Đăng ký thành công!");
+    showForm('login-form');
+});
+
+
+// 4. Ẩn / hiện mật khẩu
+document.getElementById('togglePassword').addEventListener('click', function() {
+    const passInput = document.getElementById('password');
+    passInput.type = passInput.type === 'password' ? 'text' : 'password';
+    this.classList.toggle('fa-eye-slash');
+});
+
 </script>
-
-
 
 </body>
 </html>

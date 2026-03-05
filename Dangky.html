@@ -10,7 +10,7 @@
 
 <header class="auth-header">
     <div class="logo">
-        <img src="LOGO.png">
+        <img src="Anh/LOGO.png">
         <span>MOCHI PET</span>
     </div>
 
@@ -35,7 +35,7 @@
         </p>
 
         <div class="pet-image">
-            <img src="taikhoan.jpg">
+            <img src="Anh/taikhoan.jpg">
         </div>
     </div>
 
@@ -107,10 +107,10 @@ function dangKy(){
 
     // Lưu user (demo 1 tài khoản)
     localStorage.setItem("user", JSON.stringify({
-        username: username,
-        email: email,
-        password: password
-    }));
+    name: username,
+    email: email,
+    password: password
+}));
 
     alert("Đăng ký thành công! Vui lòng đăng nhập.");
     window.location.href = "Dangnhap.html";

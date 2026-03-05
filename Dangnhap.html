@@ -11,7 +11,7 @@
 
 <header class="auth-header">
     <div class="logo">
-        <img src="LOGO.png" alt="Mochi Pet">
+        <img src="Anh/LOGO.png" alt="Mochi Pet">
         <span>MOCHI PET</span>
     </div>
 
@@ -37,7 +37,7 @@
         </p>
 
         <div class="pet-frame">
-            <img src="taikhoan.jpg" alt="Pet">
+            <img src="Anh/taikhoan.jpg" alt="Pet">
         </div>
     </div>
 
@@ -84,14 +84,27 @@
 
 <script>
 function dangNhap(){
-    const email = document.getElementById("login-email").value.trim();
+    const emailOrName = document.getElementById("login-email").value.trim();
     const password = document.getElementById("login-password").value;
 
-    if(email === "" || password === ""){
+    // ===== ADMIN CỐ ĐỊNH =====
+    const ADMIN_USER = "admin";
+    const ADMIN_PASS = "123456";
+
+    if(emailOrName === "" || password === ""){
         alert("Vui lòng nhập đầy đủ thông tin");
         return;
     }
 
+    /* ===== ADMIN LOGIN (KHÔNG CẦN ĐĂNG KÝ) ===== */
+    if(emailOrName === ADMIN_USER && password === ADMIN_PASS){
+        localStorage.setItem("isLogin", "true");
+        localStorage.setItem("role", "admin");
+        window.location.href = "Tongquan.html";
+        return;
+    }
+
+    /* ===== USER LOGIN ===== */
     const user = JSON.parse(localStorage.getItem("user"));
 
     if(!user){
@@ -99,18 +112,23 @@ function dangNhap(){
         return;
     }
 
-    if(email === user.email && password === user.password){
-        alert("Đăng nhập thành công!");
+    if(
+    (emailOrName === user.email || emailOrName === user.name) &&
+    password === user.password
+){
+    alert("Đăng nhập thành công!");
 
-        localStorage.setItem("isLogin", "true");
-        localStorage.setItem("currentUser", JSON.stringify(user));
-        window.location.href = "User.html";
+    localStorage.setItem("isLogin", "true");
+    localStorage.setItem("role", "user");
+    localStorage.setItem("userName", user.name);
 
-    }else{
-        alert("Email hoặc mật khẩu không đúng!");
+    window.location.href = "User.html";
+}else{
+        alert("Email / Tên đăng nhập hoặc mật khẩu không đúng!");
     }
 }
 </script>
+
 
 
 </body>

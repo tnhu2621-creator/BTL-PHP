@@ -5,6 +5,7 @@
     <title>Mochi Pet</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="Chitietsp.css">
 </head>
 <body>
@@ -12,7 +13,7 @@
 <!-- HEADER -->
 <header class="header">
     <div class="logo">
-        <img src="LOGO.png" alt="logo">
+        <img src="Anh/LOGO.png" alt="logo">
         <span class="logo-text">MOCHI PET</span>
 
     </div>
@@ -33,15 +34,29 @@
         <div class="icon-circle"><i class="fa fa-cart-shopping"></i></div>
         <div class="icon-circle"><i class="fa fa-bell"></i></div>
 
-        <button class="login-btn" id="authBtn">Đăng nhập</button>
+        <div class="user-box">
+    <button id="authBtn" class="user-icon">
+        <i class="fa-solid fa-user"></i>
+    </button>
+    <span id="userName" class="user-name"></span>
+</div>
 
 
     </div>
 </header>
 
+<!-- BACK BUTTON -->
+<div class="back-wrap">
+    <button class="back-btn" onclick="goBackUser()">
+        <i class="fa-solid fa-arrow-left"></i>
+        Quay lại
+    </button>
+</div>
+
+
 <!-- ===== BREADCRUMB ===== -->
 <div class="breadcrumb">
-    Trang chủ /
+    <button class="home-btn" onclick="goBackUser()">Trang chủ</button> /
     <span>Hạt Cho Mèo Mọi Lứa Tuổi Catsrang</span>
 </div>
 
@@ -49,12 +64,12 @@
 <section class="product-container">
     <!-- LEFT -->
     <div class="product-images">
-        <img src="CTSP(1).png" class="main-img" id="mainImg">
+        <img src="Anh/CTSP(1).png" class="main-img" id="mainImg">
         <div class="thumbs">
-            <img src="CTSP(1).png">
-            <img src="CTSP(2).jpg">
-            <img src="CTSP(3).webp">
-            <img src="CTSP(4).jpg">
+            <img src="Anh/CTSP(1).png">
+            <img src="Anh/CTSP(2).jpg">
+            <img src="Anh/CTSP(3).webp">
+            <img src="Anh/CTSP(4).jpg">
         </div>
     </div>
 
@@ -87,7 +102,7 @@
                 <button id="plus">+</button>
             </div>
         </div>
-        <div class="price" id="priceText">90.000đ</div>
+        <div class="product-price" id="priceText">90.000đ</div>
         <div class="total">
             Tổng số tiền: <strong id="total">90.000đ</strong>
         </div>
@@ -126,6 +141,224 @@
 
     </div>
 </section>
+
+<!-- ===== PRODUCT TABS ===== -->
+<section class="product-tabs">
+
+    <div class="tab-header">
+        <button class="tab-btn active" data-tab="tab1">Mô tả sản phẩm</button>
+        <button class="tab-btn" data-tab="tab2">Thành phần & Hướng dẫn</button>
+        <button class="tab-btn" data-tab="tab3">Đánh giá</button>
+    </div>
+
+    <div class="tab-content active" id="tab1">
+        <ul>
+            <li>Với đặc tính dễ tiêu, hạt Catsrang giúp mèo đi phân rắn và giảm thiểu mùi hôi khó chịu.</li>
+            <li>Ngăn ngừa lông vón cục trong ruột mèo.</li>
+            <li>Hàm lượng dinh dưỡng cân bằng, catsrang phù hợp trong việc cải thiện da lông, phòng tránh bệnh quáng gà ở mèo.</li>
+            <li>Sử dụng protein cao cấp tốt cho hệ tiêu hóa.</li>
+            <li>Đặc biệt, sản phẩm không sử dụng chất bảo quản, chất kháng sinh, phẩm màu hay hương liệu nhân tạo khác.</li>
+        </ul>
+    </div>
+
+    <div class="tab-content" id="tab2">
+
+    <p><strong>Thành phần:</strong> Bột thịt gà, ngô, bột cá ngừ, mỡ gà, Protein rau, củ cải đường, hạt lanh, men ủ dinh dưỡng, muối, L-Lysine, DL-methionine, L-Threonine, Taurine, sáp ong, Fructooligosaccharide, chiết xuất Yucca, chất chống oxy hóa tự nhiên (Tocopherol α, β, γ, δ, dầu hương thảo), Vitamin bổ sung (Vitamin A, Vitamin D, ...).</p>
+
+    <p><strong>Hướng dẫn bảo quản:</strong></p>
+    <ul>
+        <li>Bảo quản nơi khô ráo, tránh ánh nắng trực tiếp từ mặt trời.</li>
+        <li>Dùng trong thời gian nhanh nhất sau khi mở bao bì.</li>
+        <li>Sau khi cho ăn, đậy nắp bao bì để tránh các dị vật và côn trùng gây hại.</li>
+        <li>Khi dùng cùng lúc với thuốc kháng sinh cần làm theo chỉ dẫn của bác sĩ thú y.</li>
+        <li>Ngưng sử dụng sản phẩm nếu bị biến chất trong khi bảo quản.(Chú ý bảo quản khi thời tiết nóng ẩm và vào mùa hè).</li>
+        <li>Bảo quản xa tầm tay trẻ em.</li>
+        <li>Không dùng làm thức ăn cho gia súc.</li>
+    </ul>
+
+</div>
+
+    <div class="tab-content" id="tab3">
+
+    <!-- BOX TỔNG ĐÁNH GIÁ -->
+    <div class="review-summary">
+
+        <div class="score">
+            <h2>4.8<span>/5</span></h2>
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <p>Dựa trên hơn 120 đánh giá</p>
+        </div>
+
+        <div class="bars">
+            <div class="bar"><span>5 sao</span><div><i style="width:85%"></i></div><b>85%</b></div>
+            <div class="bar"><span>4 sao</span><div><i style="width:10%"></i></div><b>10%</b></div>
+            <div class="bar"><span>3 sao</span><div><i style="width:3%"></i></div><b>3%</b></div>
+            <div class="bar"><span>2 sao</span><div><i style="width:1%"></i></div><b>1%</b></div>
+            <div class="bar"><span>1 sao</span><div><i style="width:1%"></i></div><b>1%</b></div>
+        </div>
+
+        <div class="write-review">
+            <p>Chia sẻ trải nghiệm của bạn về sản phẩm</p>
+            <button>Viết đánh giá</button>
+        </div>
+
+    </div>
+
+
+    <!-- DANH SÁCH REVIEW -->
+    <div class="review-item">
+        <img src="Anh/user1.jpg">
+        <div>
+            <h4>Nguyễn Minh Anh <span>★★★★★</span></h4>
+            <small>Đã mua tại Mochi Pet</small>
+            <p>Mèo nhà mình ăn Catsrang được hơn 2 tháng, thấy tiêu hóa tốt hơn hẳn, phân ít mùi. Hạt vừa miệng, mèo rất thích. Sẽ tiếp tục mua!</p>
+        </div>
+        <div class="date">21/01/2026</div>
+    </div>
+
+    <div class="review-item">
+        <img src="Anh/user2.jpg">
+        <div>
+            <h4>Hoàng Nam <span>★★★★★</span></h4>
+            <small>Đã mua tại Mochi Pet</small>
+            <p>Sản phẩm chính hãng, bao bì chắc chắn. Mình mua loại 5kg dùng khá tiết kiệm. Bé mèo ăn không bị nôn hay tiêu chảy như mấy loại trước.</p>
+        </div>
+        <div class="date">14/09/2025</div>
+    </div>
+
+    <div class="review-item">
+        <img src="Anh/user3.jpg">
+        <div>
+            <h4>Lê Thùy Dung <span>★★★★☆</span></h4>
+            <small>Đã mua tại Mochi Pet</small>
+            <p>Hạt thơm, mèo ăn khỏe. Giá hơi cao nhưng chất lượng ổn. Shop giao hàng nhanh, tư vấn nhiệt tình.</p>
+        </div>
+        <div class="date">19/05/2025</div>
+    </div>
+
+    <div class="review-item">
+        <img src="Anh/user4.jpg">
+        <div>
+            <h4>Phạm Quốc Huy <span>★★★★★</span></h4>
+            <small>Đã mua tại Mochi Pet</small>
+            <p>Thành phần rõ ràng, có thịt gà và cá ngừ nên yên tâm. Mèo lông mượt hơn sau khoảng 3 tuần sử dụng.</p>
+        </div>
+        <div class="date">26/03/2025</div>
+    </div>
+
+</div>
+</section>
+
+<!-- RELATED PRODUCTS -->
+<section class="related-products">
+    <h2>SẢN PHẨM LIÊN QUAN </h2>
+
+    <div class="product-list">
+
+        <div class="product-card">
+            <img src="Anh/sp_3.jpg" alt="">
+            <h3>Bánh Thưởng cho chó Bánh Cookie Miniball BowWow</h3>
+            <p class="price">100.000đ</p>
+            <button class="btn-detail" onclick="window.location.href='Chitietsp.html'">
+    <i class="fa fa-eye"></i> Xem chi tiết
+</button>
+
+            <button class="btn-cart"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <img src="Anh/sp2.png" alt="">
+            <h3>Súp Thưởng Cho Mèo Nắp Vặn Sunny Buddy</h3>
+            <p class="price">20.000đ</p>
+            <button class="btn-detail"><i class="fa fa-eye"></i> Xem chi tiết</button>
+            <button class="btn-cart"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <img src="Anh/sp3.png" alt="">
+            <h3>Hạt Mềm Cho Mèo Zenith Hairball Tiêu Búi Lông</h3>
+            <p class="price">65.000đ</p>
+            <button class="btn-detail"><i class="fa fa-eye"></i> Xem chi tiết</button>
+            <button class="btn-cart"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <img src="Anh/sp4.png" alt="">
+            <h3>Pate Cho Chó Mèo Phục Hồi Sức Khỏe Royal Canin Recovery Lon 195g</h3>
+            <p class="price">85.000đ</p>
+            <button class="btn-detail"><i class="fa fa-eye"></i> Xem chi tiết</button>
+            <button class="btn-cart"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <img src="Anh/sp5.png" alt="">
+            <h3>Thức Ăn Cho Mèo Reflex Plus Hairball Tiêu Búi Lông (Nhập khẩu Thổ Nhĩ Kỳ)</h3>
+            <p class="price">230.000đ</p>
+            <button class="btn-detail"><i class="fa fa-eye"></i> Xem chi tiết</button>
+            <button class="btn-cart"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- COL 1 -->
+        <div class="footer-col footer-brand">
+            <div class="footer-logo">
+                <img src="Anh/LOGO.png" alt="Mochi Pet">
+                <h3>MOCHI PET</h3>
+            </div>
+            <p>
+                Tự hào là hệ thống cửa hàng chăm sóc thú cưng chất lượng cao,
+                cung cấp sản phẩm và dịch vụ đạt chuẩn, giúp thú cưng luôn khỏe mạnh,
+                sạch sẽ và được yêu thương trọn vẹn.
+            </p>
+        </div>
+
+        <!-- COL 2 -->
+        <div class="footer-col">
+            <h4>Dịch vụ</h4>
+            <ul>
+                <li>Khách sạn thú cưng</li>
+                <li>Tắm - Vệ sinh</li>
+                <li>Chăm sóc trọn gói</li>
+            </ul>
+        </div>
+
+        <!-- COL 3 -->
+        <div class="footer-col">
+            <h4>Liên kết</h4>
+            <ul>
+                <li>Chính sách bảo mật</li>
+                <li>Về chúng tôi</li>
+                <li>Liên hệ</li>
+            </ul>
+        </div>
+
+        <!-- COL 4 -->
+        <div class="footer-col">
+            <h4>Đăng ký bản tin</h4>
+            <p>Nhận ngay thông báo về các chương trình ưu đãi mới nhất.</p>
+
+            <div class="footer-subscribe">
+                <input type="email" placeholder="Email của bạn">
+                <button>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</footer>
 
 
 <script>
@@ -187,8 +420,83 @@ thumbs.forEach((img, index)=>{
         img.classList.add("active");
     }
 });
+function goBackUser(){
+    window.location.href = "User.html";
+}
+
+/* ===== TAB ===== */
+const tabs = document.querySelectorAll(".tab-btn");
+const contents = document.querySelectorAll(".tab-content");
+
+tabs.forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+        tabs.forEach(b=>b.classList.remove("active"));
+        contents.forEach(c=>c.classList.remove("active"));
+
+        btn.classList.add("active");
+        document.getElementById(btn.dataset.tab).classList.add("active");
+    });
+});
+
+/* THÊM VÀO GIỎ HÀNG THÀNH CÔNG  */
+const addCartBtn = document.querySelector(".add-cart");
+
+addCartBtn.addEventListener("click", ()=>{
+
+    const activeSize = document.querySelector(".sizes .active");
+    const sizeText = activeSize.innerText;
+
+    const quantity = qty;
+    const totalPrice = price * quantity;
+    const img = mainImg.src;
+    const name = document.querySelector(".product-info h1").innerText;
+
+    // ===== HIỂN THỊ POPUP =====
+    document.getElementById("popupImg").src = img;
+    document.getElementById("popupName").innerText = name;
+    document.getElementById("popupQty").innerText =
+        "Số lượng: " + quantity + " × " + sizeText;
+    document.getElementById("popupPrice").innerText =
+        "Giá: " + formatMoney(totalPrice);
+
+    document.getElementById("cartPopup").classList.add("show");
+});
+
+function closePopup(){
+    document.getElementById("cartPopup").classList.remove("show");
+}
 </script>
 
+<!-- ===== POPUP ===== -->
+<div id="cartPopup" class="cart-popup">
+    <div class="popup-box">
 
+        <span class="close-popup" onclick="closePopup()">×</span>
+
+        <div class="popup-check">
+            <i class="fa-solid fa-check"></i>
+        </div>
+
+        <h2>Thêm vào giỏ hàng thành công</h2>
+
+        <div class="popup-product">
+            <img id="popupImg">
+
+            <div>
+                <h3 id="popupName"></h3>
+                <p id="popupQty"></p>
+                <b id="popupPrice"></b>
+            </div>
+        </div>
+
+        <div class="popup-btns">
+            <button class="continue">Tiếp tục mua hàng</button>
+            <button class="go-cart">Đi đến giỏ hàng</button>
+        </div>
+
+    </div>
+</div>
+
+<script src="auth.js"></script>
 </body>
 </html>

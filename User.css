@@ -123,7 +123,7 @@ body {
 .hero {
     position: relative;
     height: 500px;
-    background: url("main_user.jpg") no-repeat center/cover;
+    background: url("Anh/main_user.jpg") no-repeat center/cover;
 }
 
 .hero::before {
@@ -217,6 +217,256 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
+
+/* ================= CATEGORY NEW ================= */
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+/* MỖI ITEM */
+.category-item{
+    display:flex;
+    flex-direction:column;
+}
+
+/* CARD */
+.category-card{
+    position:relative;
+    border-radius:22px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:0.3s;
+    height:650px;
+}
+
+.category-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.category-card:hover{
+    transform:translateY(-8px);
+}
+
+
+
+/* OVERLAY */
+.overlay{
+    position:absolute;
+    bottom:0px;
+    left:0;
+    text-align:left;
+    width:100%;
+    padding:24px;
+
+    background:none;
+    color:white;
+}
+
+.overlay small{
+    display:block;
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:6px;
+    margin-left:0;
+    padding-left:0;
+}
+.overlay h3{
+    font-size:28px; 
+    font-weight:700;
+    line-height:1.3;
+    margin:0;
+    padding:0;
+    
+}
+
+/* PHẦN DƯỚI */
+.category-bottom{
+    height:60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 16px;
+    font-size:13px;
+    color:#777;
+
+    background:rgba(255,255,255,0.8);
+    backdrop-filter:blur(6px);
+}
+
+.top-bar{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:14px 20px;
+
+    background:rgba(230,230,230,0.85);
+    backdrop-filter:blur(6px);
+
+    font-size:14px;
+    font-weight:500;
+    color:#333;
+}
+
+.bottom-bar{
+    position:absolute;
+    bottom:0; 
+    left:0;
+    width:100%;
+    height:110px;
+    padding:32px 24px 32px 20px; 
+
+    background:rgba(245,245,245,0.6);
+    backdrop-filter:blur(10px);
+    text-align:left;
+
+    font-size:13px;
+    color:#333;
+    
+}
+.bottom-bar small{
+    font-size:15px; 
+    color:#407A08;
+    font-weight:500;
+    letter-spacing:0.5px;
+    line-height:1.3;
+
+    margin:0;        
+    padding:0; 
+    display:block;      
+    text-align:left;
+    position:relative;
+    top:-10px;
+} 
+.category-bottom i{
+    color:#FF8202;
+    font-size:18px;
+}
+
+/* ================= SERVICES ADVANCED ================= */
+.services{
+    max-width:1400px;
+    width:90%;
+    margin:60px auto;
+    overflow:hidden;
+}
+
+.title{
+    text-align:center;
+    font-size:38px;
+    color:#407A08;   
+    margin-bottom:45px;
+    position:relative;
+    font-weight:700;
+}
+
+.title::before,
+.title::after{
+    content:"";
+    position:absolute;
+    width:90px;              
+    height:2px;              
+    background:#407A08;      
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.title::before{ left:30%; }
+.title::after{ right:30%; }
+
+/* GRID */
+.services .grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:30px;
+}
+
+/* CARD */
+.service-card{
+    position:relative;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 15px 30px rgba(0,0,0,0.08);
+    transition:0.35s;
+    height:650px;  
+    max-width:430px;               
+    width:100%;
+    justify-self:start; 
+
+    
+}
+
+.service-card:hover{
+    transform:translateY(-8px);
+}
+
+/* IMAGE */
+.service-img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* OVERLAY */
+.services .overlay{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:24px;
+    background:rgba(245,245,245,0.6); 
+    backdrop-filter: blur(2px);
+}
+
+.overlay h3{
+    font-size:28px;
+    font-weight:700;
+    line-height:1.3;
+    margin:0 0 8px 0;
+    color:#000;
+}
+
+.overlay p{
+    font-size:16px;
+    color:#407A08;
+    margin-bottom:12px;
+}
+
+/* BOTTOM */
+.bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:14px;
+}
+
+.bottom span{
+    font-weight:600;
+    color:#000;
+    font-size:17px;
+}
+
+.bottom a{
+    color:#FF8202;
+    text-decoration:none;
+    font-weight:500;
+    Font-size:17px;
+    text-decoration:underline;
+}
+
+.bottom a:hover{
+    text-decoration:underline;
+}
+
 
 /* ================= CARD ================= */
 .card {
@@ -344,7 +594,7 @@ body {
     position:relative;
 }
 
-.service-card{
+.service-main-card{
     background:#fdebe1;
     padding:60px 40px 90px;
     border-radius:35px;
@@ -440,11 +690,11 @@ body {
     color:#6cc5b8;
 }
 .paw-row i:first-child{
-    font-size:24px;   /* dấu chân bên trái to hơn */
+    font-size:24px;   
 }
 
 .paw-row i:last-child{
-    font-size:16px;   /* dấu chân bên phải nhỏ lại */
+    font-size:16px;   
 }
 
 
@@ -452,7 +702,7 @@ body {
 .center-book span{
     font-weight:bold;
     color:#6cc5b8;
-    font-size:14px;       /* tăng từ 12px lên 14px */
+    font-size:14px;       
 }
 
 /* nút BOOK NOW (nhỏ lại) */
@@ -460,9 +710,9 @@ body {
     background:#6cc5b8;
     color:white;
     border:none;
-    padding:3px 10px;     /* nhỏ hơn nữa */
+    padding:3px 10px;     
     border-radius:12px;
-    font-size:9px;        /* chữ nhỏ lại */
+    font-size:9px;        
     cursor:pointer;
 }
 
@@ -501,16 +751,16 @@ body {
     max-width:500px;
     display:flex;
     flex-direction:column;
-    align-items:flex-start; /* canh trái cùng hàng với h2 */
+    align-items:flex-start; 
 }
 
 
 .service-tag{
     color:#4a7c1b;          
-    font-weight:800;        /* đậm hơn */
+    font-weight:800;        
     font-size:14px;
     margin-bottom:10px;
-    letter-spacing:1px;     /* nhìn chuyên nghiệp hơn */
+    letter-spacing:1px;     
 }
 
 
@@ -542,7 +792,7 @@ body {
 }
 
 .btn-green{
-    background:#4a7c1b;     /* xanh đậm như hình mẫu */
+    background:#4a7c1b;     
     color:#fff;
     border:none;
     padding:12px 26px;
@@ -552,13 +802,12 @@ body {
 }
 
 .btn-green:hover{
-    background:#3b6415;     /* hover đậm hơn xíu */
+    background:#3b6415;     
 }
 
 
 
 /* ================= HOTEL ================= */
-/* ================= HOTEL (STYLE GIỐNG SERVICE-RIGHT) ================= */
 .hotel{
     background:#E3EBDA;
     padding:80px 8%;
@@ -626,13 +875,13 @@ body {
 
 /* BUTTON */
 .btn-orange{
-    background: transparent;        /* bỏ nền cam */
-    border: 3px solid #E84C01;      /* viền cam */
+    background: transparent;        
+    border: 3px solid #E84C01;      
     padding: 14px 40px;
     border-radius: 50px;
     font-weight: 700;
     font-size: 22px;
-    color: #000;                    /* chữ đen */
+    color: #000;                    
     cursor: pointer;
     transition: 0.3s ease;
 }
@@ -663,7 +912,7 @@ body {
     left:30px;
     background:#E84C01;
     color:white;
-    padding:18px 28px;     /* khung to hơn */
+    padding:18px 28px;     
     border-radius:18px;
     font-size:16px;
     line-height:1.2;
@@ -671,7 +920,7 @@ body {
 
 /* làm GIẢM 20% to và đậm hơn */
 .discount-badge b{
-    font-size:24px;       /* TĂNG size GIẢM 20% */
+    font-size:24px;       
     font-weight:800;
 }
 
@@ -772,8 +1021,8 @@ body {
     text-align:center;
     color:white;
 
-    max-width:1000px;   /* rút ngắn 2 bên */
-    width:80%;          /* không full màn hình */
+    max-width:1000px;   
+    width:80%;          
 }
 
 
@@ -954,7 +1203,6 @@ body {
     margin-top: -35px;
     margin-bottom: 25px;
 
-    /* 🌿 TRẮNG NHẸ – KHÔNG GẮT */
     background: linear-gradient(
         90deg,
         rgba(255,255,255,0.85) 0%,
@@ -1067,7 +1315,7 @@ body {
 .btn-cart:hover{
     background:#d94f00;
 }
-
+/* ================= MEGA MENU ================= */
 
 .mega-menu{
     position:absolute;
@@ -1189,6 +1437,29 @@ body {
     color: #f05a00;         
     font-weight: 900;
 }
+.mega-title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background: #e5f2d5;    
+    color: #407A08;          
+
+    padding: 14px 20px;
+    border-radius: 14px;
+    border: none;
+
+    font-size: 18px;
+    font-weight: 900;
+
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+.mega-title:hover{
+    background: #d6e9bd;
+    transform: translateX(4px);
+}
 
 
 /* ================= SERVICE MENU ================= */
@@ -1216,15 +1487,6 @@ body {
     gap:40px;
 }
 
-.service-col h4{
-    background:#e5f2d5;
-    padding:14px 20px;
-    border-radius:14px;
-    font-size:18px;
-    font-weight:900;
-    color:#407A08;
-    margin-bottom:15px;
-}
 
 .service-col ul{
     list-style:none;
@@ -1268,6 +1530,63 @@ body {
     color:white;
 }
 
+.service-title{
+    width:100%;
+    text-align:left;
+
+    background:#e5f2d5;
+    padding:14px 20px;
+    border-radius:14px;
+
+    font-size:18px;
+    font-weight:900;
+    color:#407A08;
+
+    border:none;
+    cursor:pointer;
+    margin-bottom:15px;
+    transition:0.25s;
+}
+
+.service-title:hover{
+    background: #d6e9bd;
+    transform: translateX(4px);
+}
+
+/* ================= AUTH ================= */
+/* ICON USER KHI ĐĂNG NHẬP */
+.user-box{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:4px;
+}
+
+.user-name{
+    font-size:12px;
+    color:#555;
+    max-width:70px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.user-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-icon i {
+    color: #333;
+    font-size: 18px;
+}
 
 
 /* ================= RESPONSIVE ================= */
@@ -1308,6 +1627,9 @@ body {
     }
 
     .footer-container{
+        grid-template-columns:1fr;
+    }
+    .services-grid{
         grid-template-columns:1fr;
     }
 }

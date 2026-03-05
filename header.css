@@ -1,0 +1,46 @@
+/* ================= AUTH USER ================= */
+
+/* KHUNG USER */
+.user-box{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:4px;
+}
+
+/* TÊN USER */
+.user-name{
+    font-size:12px;
+    color:#666;
+    max-width:80px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+/* ICON USER */
+.user-icon {
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#ddd;     /* hình tròn xám nhạt */
+    border:none;
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transition:0.2s;
+}
+
+/* ICON BÊN TRONG */
+.user-icon i {
+    color:#333;          /* icon xám đậm */
+    font-size:18px;
+}
+
+/* HOVER */
+.user-icon:hover{
+    background:#bbb;
+}
