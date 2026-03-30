@@ -1,0 +1,288 @@
+:root {
+    --bg-color: #e5ede3;
+    --primary-green: #28a745;
+    --text-dark: #333;
+    --border-color: #eee;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+header { margin-bottom: 20px; }
+.breadcrumb {
+    font-size: 14px;
+    color: #888;
+    padding-top: 0px;
+    padding-left: -10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;                      
+    margin-bottom: 15px;
+}
+
+.breadcrumb-link {
+    text-decoration: none;
+    color: #000; /* Sản phẩm màu đen */
+    font-weight: 500;
+}
+
+.breadcrumb-link:hover {
+    text-decoration: underline;
+}
+
+/* Chữ "Đăng bán" - Màu xanh trùng với thanh menu active */
+.breadcrumb .active {
+    color: #407A08; /* Thống kê màu xanh menu */
+    font-weight: 600;
+}
+.top-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+.actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-left: auto; /* Đảm bảo cụm này luôn nằm sát phải */
+}
+
+input, select {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background-color: white;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+}
+
+.top-row-1 {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Khoảng cách giữa chữ và ô tìm kiếm */
+    margin-bottom: 15px;
+}
+
+.top-row-1 h1 {
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Áp dụng cho tất cả select trong header để đồng bộ */
+.top-row-1 select, .filters {
+    border: 1.5px solid #407A08 !important;
+    color: #407A08;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 8px 15px;
+    outline: none;
+    background-color: white;
+    transition: all 0.2s;
+}
+
+.top-row-1 select:hover {
+    background-color: rgba(64, 122, 8, 0.05);
+}
+
+.btn-stats, .btn-export {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    gap: 20px;
+}
+
+.btn-stats{
+    border: 1.5px solid #FF0000; 
+    color: #FF0000;              
+    background-color: rgba(255, 0, 0, 0.05);
+}
+
+.btn-export{
+    border: 1.5px solid #1AAE00; 
+    color: #ffffff;             
+    background-color: #1AAE00;
+}
+
+.search-input {
+    flex: 1; /* Để thanh tìm kiếm dài ra */
+    max-width: 400px;
+    padding: 10px 25px;
+    border-radius: 25px;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: #3D730A;
+    box-shadow: 0 2px 10px rgba(61, 115, 10, 0.2);
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Khoảng cách giữa 2 ô Select */
+}
+
+.filter-select {
+    margin-right: 15px; /* Tạo khoảng trống bên phải ô Phân loại */
+}
+
+.actions {
+    display: flex;
+    gap: 10px;      /* Khoảng cách giữa nút Thống kê và Xuất báo cáo */
+    margin-left: auto; /* Tự động tạo khoảng trống bên trái để đẩy nút về phải */
+}
+
+/* Điều chỉnh lại icon kính lúp trên giao diện */
+.fa-search {
+    cursor: default;
+}
+
+/* Table Wrapper */
+.table-wrapper {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    
+    max-height: 450px; 
+    overflow-y: auto;   /* Giữ thanh cuộn dọc */
+    overflow-x: hidden; /* TRIỆT TIÊU THANH CUỘN NGANG */
+    
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;        /* Đảm bảo không rộng hơn container cha */
+    box-sizing: border-box;
+
+    overflow: hidden; /* Ngăn bảng tràn ra ngoài wrapper */
+}
+
+.table-header {
+    background-color: #f9f9f9;
+    font-weight: bold;
+    color: #888;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 2px solid #eee; /* Tạo đường kẻ ngăn cách rõ ràng */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    /* Chiều cao vừa đủ */
+    height: 55px; 
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Cố định Tổng cộng (Footer) */
+.table-footer {
+    background-color: #fff;
+    font-weight: bold;
+    /* Cố định */
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    /* Thiết kế */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-top: 2px solid #eee;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.02); /* Đổ bóng nhẹ lên trên để tách biệt nội dung */
+}
+
+/* Common Column Styles */
+.table-header, .table-row, .table-footer {
+    display: flex;
+    width: 100%;
+    padding: 15px 20px;
+    box-sizing: border-box; /* Quan trọng: để padding không đẩy chiều rộng ra thêm */
+    align-items: center;
+    gap: 20px;
+}
+
+.col { width: 100px; font-size: 13px; color: #555; flex-shrink: 0; }
+.col.grow { flex: 1; min-width: 200px; padding-right: 10px; } /* Tên sản phẩm rộng hơn */
+.col.grow-footer { flex: 1; font-weight: bold; text-align: left; margin-left: 100px } 
+.green { color: var(--primary-green); font-weight: bold;}
+.table-header .col:nth-child(3),
+.table-row .col:nth-child(3) {
+    margin-left: -35px; /* Di chuyển sang trái 30px */
+    width: 150px;       /* Bạn có thể tăng chiều rộng nếu tên phân loại dài */
+}
+
+.table-footer .col {
+    width: 120px; /* Phải khớp với độ rộng .col ở trên */
+    flex-shrink: 0;
+}
+
+.table-header .col:nth-child(6),
+.table-row .col:nth-child(6),
+.table-footer .col:nth-child(4) { /* Cột số lượng ở Footer là cột thứ 4 */
+    display: flex;
+    justify-content: center; /* Canh giữa theo chiều ngang */
+    align-items: center;     /* Canh giữa theo chiều dọc */
+    text-align: center;
+}
+
+/* Fix Table Header */
+.table-header {
+    background-color: #f9f9f9;
+    font-weight: bold;
+    color: #888;
+}
+
+/* TABLE BODY & SCROLLBAR - CHỖ QUAN TRỌNG */
+.table-body {
+    min-height: 300px; /* Đảm bảo bảng luôn rộng rãi dù không có sản phẩm nào */
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Tự động chiếm không gian ở giữa */
+    overflow-y: auto;
+}
+
+/* Tùy chỉnh thanh cuộn cho đẹp */
+.table-body::-webkit-scrollbar { width: 6px; }
+.table-body::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
+
+/* Table Footer - Cố định ở cuối */
+.table-footer {
+    background-color: white;
+    font-weight: bold;
+    border-top: 2px solid var(--border-color);
+    border-bottom: none;
+}
+
+html {
+    scrollbar-gutter: stable; /* Luôn giữ chỗ cho thanh cuộn để Header không bị nhảy */
+}
+
+
+/* Hiệu ứng khi rê chuột vào cho chuyên nghiệp */
+#filter-status:hover {
+    background-color: rgba(64, 122, 8, 0.05); /* Nền xanh cực nhạt khi hover */
+    border-color: #3D730A;
+}
+
+
+#filter-category, #filter-status {
+    border: 1.5px solid #407A08 !important;
+    color: #407A08;
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}

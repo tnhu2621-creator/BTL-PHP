@@ -1,0 +1,206 @@
+<?php include 'connect.php'; ?>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochi Pet - Kho hàng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="Khohang.css">
+</head>
+<body>
+
+    <header class="top-header">
+        <background></background>
+        <div class="header-left">
+            <div class="logo-circle">
+                <img src="Anh/LOGO.jpg" alt="Mochi Pet Logo" class="main-logo">
+            </div>
+            <h1 class="brand-name linear-gradient-text">MOCHI PET</h1>
+        </div>
+
+        <nav class="main-menu">
+            <ul>
+                <li><a href="Tongquan.php">Tổng quan</a></li>
+                <li><a href="Danhmuc.php">Danh mục</a></li>
+                <li><a href="Sanpham.php">Sản phẩm</a></li>
+                <li><a href="Khohang.php" class="active">Kho hàng</a></li>
+                <li><a href="Nhanvien.php">Nhân viên</a></li>
+                <li><a href="Khachhang.php">Khách hàng</a></li>
+                <li><a href="Dichvu.php">Dịch vụ chăm sóc</a></li>
+            </ul>
+        </nav>
+
+        <div class="user-profile">
+            <a href="Thong-tin-QL.php" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                <img src="Anh/AvatarQL.jpg" alt="Avatar" class="avatar-small">
+                    <div class="user-name">
+                        <span style="font-weight: bold; color: #333;">Thanh An</span>
+                        <br>
+                        <small style="color: #777;">Quản lý cửa hàng</small>
+                    </div>
+            </a>
+        </div>
+    </header>
+
+    <div class="dashboard-wrapper">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-content">
+                    <p class="stat-label">TỔNG GIÁ TRỊ TỒN KHO</p>
+                    <h3 class="stat-value">125.400.000 VNĐ</h3>
+                    <a href="Tonkho.php" class="btn-view-detail">Xem chi tiết</a>
+                </div>
+                <div class="stat-icon icon-green"><i class="fas fa-wallet"></i></div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-content">
+                    <p class="stat-label">SẮP HẾT HÀNG</p>
+                    <h3 class="stat-value">12 <small>sản phẩm</small></h3>
+                    <a href="Tonkho.php" class="btn-view-detail">Xem chi tiết</a>
+                </div>
+                <div class="stat-icon icon-red"><i class="fas fa-exclamation-triangle"></i></div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-content">
+                    <p class="stat-label">ĐƠN NHẬP THÁNG NÀY</p>
+                    <h3 class="stat-value">156 <small>Kiện hàng</small></h3>
+                    <a href="Tonkho.php" class="btn-view-detail">Xem chi tiết</a>
+                </div>
+                <div class="stat-icon icon-blue"><i class="fas fa-box"></i></div>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <div class="filter-left">
+                <div class="search-box">
+                    <input type="text" placeholder="Tìm kiếm theo mã sản phẩm, tên sản phẩm...">
+                </div>
+                <select class="filter-select" id="supplierFilter">
+                    <option value="">Tất cả Nhà cung cấp</option>
+                    <option value="Paddy Pet">Paddy Pet</option>
+                    <option value="An Pet">An Pet</option>
+                    <option value="Việt Pet">Việt Pet</option>
+                    <option value="Sen Food">Sen Food</option>
+                    <option value="Nutri Feed">Nutri Feed</option>
+                    <option value="BioPet Organic">BioPet Organic</option>
+                    <option value="Nekko Japan">Nekko Japan</option>
+                </select>
+            </div>
+
+            <div class="filter-right">
+                <button class="btn-export"><i class="fas fa-download"></i> Xuất báo cáo</button>
+                <button class="btn-add-stock"><i class="fas fa-plus"></i> Nhập kho mới</button>
+            </div>
+        </div>
+
+        <div class="inventory-card">
+            <div class="card-header">
+                <h3>Nhập kho gần đây</h3>
+                <a href="#" class="view-all">Xem tất cả</a>
+            </div>
+            <table class="inventory-table">
+                <thead>
+                    <tr>
+                        <th>MÃ ĐƠN HÀNG</th>
+                        <th>SẢN PHẨM</th>
+                        <th>SỐ LƯỢNG</th>
+                        <th>NHÀ CUNG CẤP</th>
+                        <th>GIÁ NHẬP</th>
+                        <th>GIÁ BÁN</th>
+                        <th>NGÀY NHẬP</th>
+                    </tr>
+                </thead>
+                <tbody id="inventoryBody">
+                    <tr>
+                        <td class="bold">#ORD-8821</td>
+                        <td>Hạt Cho Mèo Mọi Lứa Tuổi Catsrang</td>
+                        <td>50 túi</td>
+                        <td>Sen Food</td>
+                        <td class="price-in">80.000đ/Túi</td>
+                        <td class="price-out">90.000đ/Túi</td>
+                        <td>24/01/2026</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">#ORD-8822</td>
+                        <td>Cát Đậu Nành Cho Mèo Cature Tofu</td>
+                        <td>50 túi</td>
+                        <td>An Pet</td>
+                        <td class="price-in">140.000đ/Túi</td>
+                        <td class="price-out">150.000đ/Túi</td>
+                        <td>24/01/2026</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">#ORD-8823</td>
+                        <td>Hạt Cho Chó Trưởng Thành Giống Vừa Royal Canin Medium Adult</td>
+                        <td>50 túi</td>
+                        <td>Sen Food</td>
+                        <td class="price-in">669.000đ/Túi</td>
+                        <td class="price-out">679.000đ/Túi</td>
+                        <td>24/01/2026</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">#ORD-8824</td>
+                        <td>Xịt Thơm Miệng Chó Mèo Forcans Oral Refresher</td>
+                        <td>50 túi</td>
+                        <td>Việt Pet</td>
+                        <td class="price-in">155.000đ/Túi</td>
+                        <td class="price-out">165.000đ/Túi</td>
+                        <td>24/01/2026</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">#ORD-8825</td>
+                        <td>Thịt Sấy Snack Mèo Jinny Freeze Dried 40g</td>
+                        <td>50 túi</td>
+                        <td>Sen Food</td>
+                        <td class="price-in">70.000đ/Túi</td>
+                        <td class="price-out">82.000đ/Túi</td>
+                        <td>24/01/2026</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pagination">
+                <span>Hiển thị 1 - 5 trên 45 đơn hàng</span>
+                <div class="page-controls">
+                    <span class="p-arrow">&lt;</span>
+                    <span class="p-num active">1</span>
+                    <span class="p-num">2</span>
+                    <span class="p-num">3</span>
+                    <span class="p-arrow">&gt;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const supplierFilter = document.getElementById('supplierFilter');
+    const inventoryBody = document.getElementById('inventoryBody');
+    const rows = inventoryBody.getElementsByTagName('tr');
+
+    supplierFilter.addEventListener('change', function() {
+        const selectedValue = this.value.toLowerCase();
+
+        for (let i = 0; i < rows.length; i++) {
+            // Cột Nhà cung cấp nằm ở ô thứ 4 (index là 3)
+            const supplierCell = rows[i].getElementsByTagName('td')[3];
+            
+            if (supplierCell) {
+                const supplierText = supplierCell.textContent || supplierCell.innerText;
+                
+                // Nếu chọn "Tất cả" (chuỗi rỗng) hoặc khớp với nội dung trong ô
+                if (selectedValue === "" || supplierText.toLowerCase().indexOf(selectedValue) > -1) {
+                    rows[i].style.display = ""; // Hiện dòng
+                } else {
+                    rows[i].style.display = "none"; // Ẩn dòng
+                }
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>

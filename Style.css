@@ -1,0 +1,261 @@
+/* 1. THIẾT LẬP CHUNG */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+body {
+    background: url('Anh/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    zoom: 0.9;
+    background-color: #E1EEDD;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.login-container.active { display: block; animation: fadeIn 0.5s; }
+.error-text { color: red; font-size: 13px; text-align: center; margin-bottom: 10px; display: none; }
+
+/* 2. CĂN GIỮA KHUNG ĐĂNG NHẬP */
+.main-wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2); /* Phủ nhẹ lớp tối để nổi bật form */
+}
+
+.login-container {
+    background: white;
+    width: 400px;
+    height: 90vh; /* Giữ chiều cao cố định để không chạm mép màn hình */
+    border-radius: 25px;
+    border: 2.5px solid #ff5722;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    transition: all 0.4s ease;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+/* 3. HEADER VÀ FOOTER CỐ ĐỊNH */
+.fixed-header { 
+    padding: 25px 0 10px; 
+    text-align: center; 
+    flex-shrink: 0; 
+}
+
+.fixed-footer { 
+    color: white; 
+    padding: 12px 20px; 
+    display: flex; 
+    justify-content: space-between; 
+    font-size: 11px; 
+    flex-shrink: 0; 
+    font-weight: 500;
+}
+
+/* 4. VÙNG NỘI DUNG CÓ THANH CUỘN */
+.scroll-body {
+    flex-grow: 1;
+    overflow-y: auto; /* Hiện thanh cuộn khi nội dung dài */
+    padding: 10px 35px;
+  
+}
+
+/* Tùy chỉnh thanh cuộn đẹp hơn */
+.scroll-body::-webkit-scrollbar { 
+    width: 5px; 
+}
+.scroll-body::-webkit-scrollbar-thumb { 
+    background: #e0e0e0; 
+    border-radius: 10px; 
+}
+.scroll-body::-webkit-scrollbar-thumb:hover { 
+    background: #ff5722; 
+}
+
+/* 5. INPUT VÀ ICON MẬT KHẨU */
+.input-field { 
+    margin-bottom: 15px; 
+}
+
+.input-field label { 
+    display: block; 
+    font-size: 13px; 
+    font-weight: bold; 
+    margin-bottom: 5px; 
+    color: #444;
+}
+
+.input-field input {
+    width: 100%; 
+    padding: 12px 15px; 
+    border-radius: 10px;
+    border: 1px solid #ddd; 
+    background: #fdfdfd; 
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-field input:focus {
+    border-color: #ff5722;
+    box-shadow: 0 0 5px rgba(255, 87, 34, 0.2);
+}
+
+.pass-wrapper { 
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+}
+
+.icon-left { position: absolute; left: 12px; color: #aaa; }
+.icon-right { position: absolute; right: 12px; color: #aaa; cursor: pointer; }
+
+.pass-wrapper input {
+    padding: 12px 35px !important;
+}
+
+/* 6. NÚT BẤM */
+.submit-btn { 
+    width: 100%; 
+    padding: 14px; 
+    border: none; 
+    border-radius: 10px; 
+    color: white; 
+    font-weight: bold; 
+    cursor: pointer; 
+    margin-top: 10px;
+    transition: 0.3s;
+    font-size: 15px;
+}
+.submit-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+/* 7. PHẦN LIÊN KẾT (CĂN GIỮA) */
+.form-footer { 
+    padding: 25px 0; 
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-footer a { 
+    display: inline-block;
+    margin-top: 0px;
+    text-decoration: none; 
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+.link-heading { 
+    color: #ff5722; 
+    font-weight: bold; 
+    font-size: 10px; 
+    margin-bottom: 5x; 
+    letter-spacing: 1.5px;
+}
+
+/* 8. MÀU SẮC CHỦ ĐẠO */
+.btn-orange, .bg-orange { background: #ff5722; }
+.btn-green, .bg-green { background: #4CAF50; }
+.btn-blue, .bg-blue { background: #2196F3; }
+
+.text-blue { color: #2196F3; }
+.text-green { color: #4CAF50; }
+.text-orange { color: #ff5722; }
+
+/* 9. TRANG TRÍ LOGO & TÊN THƯƠNG HIỆU */
+.logo-circle { 
+    width: 70px; 
+    height: 70px; 
+    border-radius: 50%; 
+    margin: 0 auto 10px; 
+    border: 1px solid #eee; 
+    overflow: hidden; 
+    background: white;
+}
+.logo-circle img { width: 100%; height: 100%; object-fit: cover; }
+.brand-name { color: #4CAF50; font-size: 1.5rem; }
+.pet-text { color: #FF9800; }
+.system-label { color: #ff5722; font-size: 11px; font-weight: bold; }
+.blue-label { color: #2196F3 !important; }
+
+h2{
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Tùy chỉnh thêm để giống ảnh 100% */
+.fixed-header {
+    background: white;
+    border-radius: 25px 25px 0 0;
+}
+
+.scroll-body {
+    scrollbar-width: thin;
+    scrollbar-color: #ddd transparent;
+}
+
+/* Các màu text và button bạn đã định nghĩa rất tốt */
+.text-blue { color: #2196F3; }
+.text-green { color: #4CAF50; }
+.btn-orange { background: #ff5722; }
+.btn-green { background: #4CAF50; }
+.btn-blue { background: #2196F3; }
+
+
+/* 10.ẢNH BACKGROUND*/
+body {
+    /* Đường dẫn đến file ảnh của bạn */
+    background-image: url('Anh/Background.png'); 
+
+    /* Đảm bảo ảnh bao phủ toàn bộ không gian màn hình */
+    background-size: cover; 
+
+    /* Giữ ảnh cố định, không bị trôi khi bạn cuộn trang */
+    background-attachment: fixed; 
+
+    /* Căn giữa ảnh nền */
+    background-position: center; 
+
+    /* Không lặp lại ảnh nếu ảnh nhỏ hơn màn hình */
+    background-repeat: no-repeat; 
+
+    /* Màu nền dự phòng nếu ảnh chưa kịp tải */
+    background-color: #f4f7f6; 
+}
+
+/* Hiệu ứng rung khi sai mật khẩu */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.4s ease-in-out;
+  border: 1px solid #ff4d4d !important;
+}

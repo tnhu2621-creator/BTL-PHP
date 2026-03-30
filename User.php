@@ -1,0 +1,886 @@
+<?php include 'connect.php'; ?>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Mochi Pet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="User.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="logo">
+        <img src="Anh/LOGO.png" alt="logo">
+        <span class="logo-text">MOCHI PET</span>
+
+    </div>
+
+    <nav class="menu">
+        <a href="javascript:void(0)" id="btnDanhMuc">Danh mục sản phẩm</a>
+        <a href="#">Dịch vụ thú cưng</a>
+</nav>
+
+    </nav>
+
+    <div class="right-header">
+        <div class="search-box">
+            <input type="text" placeholder="Tìm kiếm...">
+            <button><i class="fa fa-search"></i></button>
+        </div>
+
+        <div class="icon-circle"><i class="fa fa-cart-shopping"></i></div>
+        <div class="icon-circle"><i class="fa fa-bell"></i></div>
+
+        <div class="user-box">
+            <button class="login-btn" id="authBtn"></button>
+            <span id="userName" class="user-name"></span>
+        </div>
+
+    </div>
+</header>
+
+<!-- MEGA MENU -->
+<div class="mega-menu" id="megaMenu">
+    <div class="mega-box">
+
+        <div class="mega-col food">
+    <button type="button" 
+            class="mega-title" 
+            onclick="window.location.href='sp.php'">
+        <span class="icon-wrap">
+            <i class="fa-solid fa-bowl-food"></i>
+        </span>
+        Thức ăn thú cưng
+    </button>
+    <ul>
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-dog"></i>
+            <span>Thức ăn cho chó</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-cat"></i>
+            <span>Thức ăn cho mèo</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-seedling"></i>
+            <span>Thức ăn khô / hạt</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-cookie-bite"></i>
+            <span>Snack - bánh thưởng</span>
+        </a>
+    </li>
+</ul>
+
+        </div>
+
+        <div class="mega-col toy">
+            <button class="mega-title">
+                <span class="icon-wrap">
+                    <i class="fa-solid fa-baseball"></i>
+                </span>
+                Đồ chơi thú cưng
+            </button>
+            <ul>
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-bone"></i>
+            <span>Đồ chơi gặm nhai</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-volume-high"></i>
+            <span>Đồ chơi phát âm</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-baseball-ball"></i>
+            <span>Bóng, dây kéo</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-brain"></i>
+            <span>Đồ chơi thông minh</span>
+        </a>
+    </li>
+</ul>
+
+        </div>
+
+        <div class="mega-col accessory">
+            <button class="mega-title">
+                <span class="icon-wrap">
+                    <i class="fa-solid fa-paw"></i>
+                </span>
+                Phụ kiện thú cưng
+            </button>
+            <ul>
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-link"></i>
+            <span>Vòng cổ - dây dắt</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-shirt"></i>
+            <span>Quần áo thú cưng</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-bowl-rice"></i>
+            <span>Bát ăn - bình nước</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-bed"></i>
+            <span>Chuồng - nệm</span>
+        </a>
+    </li>
+</ul>
+
+        </div>
+
+        <div class="mega-col care">
+            <button class="mega-title">
+                <span class="icon-wrap">
+                    <i class="fa-solid fa-soap"></i>
+                </span>
+                Chăm sóc - vệ sinh
+            </button>
+            <ul>
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-pump-soap"></i>
+            <span>Sữa tắm & dầu xả</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-brush"></i>
+            <span>Lược chải lông</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-scissors"></i>
+            <span>Dụng cụ cắt móng</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="#">
+            <i class="fa-solid fa-trash"></i>
+            <span>Cát vệ sinh</span>
+        </a>
+    </li>
+</ul>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- SERVICE MENU -->
+<div class="service-menu" id="serviceMenu">
+    <div class="service-box">
+
+        <div class="service-col">
+            <button class="service-title">🌿 Dịch vụ cơ bản</button>
+            <ul>
+                <li><i class="fa-solid fa-bath"></i> Tắm - Vệ sinh</li>
+                <li><i class="fa-solid fa-scissors"></i> Tỉa lông - tạo kiểu</li>
+                <li><i class="fa-solid fa-hand-sparkles"></i> Cắt móng - vệ sinh tai</li>
+                <li><i class="fa-solid fa-heart"></i> Chăm sóc trọn gói</li>
+            </ul>
+        </div>
+
+        <div class="service-col">
+            <button class="service-title">⭐ Dịch vụ nâng cao</button>
+            <ul>
+                <li><i class="fa-solid fa-hotel"></i> Khách sạn thú cưng</li>
+                <li><i class="fa-solid fa-clock"></i> Trông giữ theo giờ</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>Nâng niu thú cưng<br>theo tiêu chuẩn mới</h1>
+            <p>
+                Chúng tôi tin rằng mỗi người bạn bốn chân đều xứng đáng nhận được
+                sự chăm sóc tận tâm nhất từ tình yêu và chuyên môn kỹ thuật cao
+            </p>
+            <button class="hero-btn">Khám phá ngay ↓</button>
+        </div>
+    </div>
+
+    <!-- Wave nằm dưới hình -->
+    <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path fill="#fff"
+              d="M0,40 
+                 C200,120 500,0 800,40 
+                 1100,80 1300,20 1440,40 
+                 L1440,120 L0,120 Z"/>
+    </svg>
+</section>
+
+
+
+<section class="section">
+    <h2>Danh mục Sản phẩm</h2>
+
+    <div class="grid">
+
+        <!-- CARD 1 -->
+        <div class="category-item">
+            <div class="category-card">
+                <img src="Anh/phukien.png">
+
+                <!-- Thanh xám dưới -->
+                <div class="bottom-bar">
+                    <small>BST Phụ kiện</small>
+                </div>
+
+                <div class="overlay">
+                    <h3>Phụ kiện cao cấp</h3>
+                </div>
+            </div>
+
+            <div class="category-bottom">
+                <span>45+ Sản phẩm</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="category-item">
+            <div class="category-card">
+                <img src="Anh/dochoi.png">
+
+                <div class="bottom-bar">
+                    <small>Giải trí</small>
+                </div>
+
+                <div class="overlay">
+                    <h3>Đồ chơi thông minh</h3>
+                </div>
+            </div>
+
+            <div class="category-bottom">
+                <span>45+ Sản phẩm</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="category-item">
+            <div class="category-card">
+                <img src="Anh/thucan.png">
+
+                <div class="bottom-bar">
+                    <small>Dinh dưỡng</small>
+                </div>
+
+                <div class="overlay">
+                    <h3>Thực phẩm bổ sung</h3>
+                </div>
+            </div>
+
+            <div class="category-bottom">
+                <span>45+ Sản phẩm</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SERVICES ADVANCED -->
+<section class="services">
+    <h2 class="title">Dịch vụ thú cưng</h2>
+
+    <div class="grid">
+
+        <!-- SPA -->
+        <div class="service-card">
+            <img src="Anh/spa.png" class="service-img">
+
+            <div class="overlay">
+                <h3>Tắm - Spa thư giãn</h3>
+                <p>
+                    Quy trình 12 bước chăm sóc chuyên sâu với các dòng sữa tắm organic nhập khẩu từ Pháp.
+                </p>
+                <div class="bottom">
+                    <span>Từ 250.000đ</span>
+                    <a href="#">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CẮT LÔNG -->
+        <div class="service-card">
+            <img src="Anh/catlong.png" class="service-img">
+
+            <div class="overlay">
+                <h3>Cắt tỉa lông</h3>
+                <p>
+                    Được thực hiện bởi những nhân viên chuyên nghiệp, giúp thú cưng sở hữu diện mạo đẳng cấp nhất.
+                </p>
+                <div class="bottom">
+                    <span>Từ 250.000đ</span>
+                    <a href="#">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- KHÁCH SẠN -->
+        <div class="service-card">
+            <img src="Anh/hotel.png" class="service-img">
+
+            <div class="overlay">
+                <h3>Khách sạn cho bé</h3>
+                <p>
+                    Phòng nghỉ riêng biệt, camera theo dõi và chế độ dinh dưỡng cá nhân hóa.
+                </p>
+                <div class="bottom">
+                    <span>Từ 250.000đ</span>
+                    <a href="#">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- RELATED PRODUCTS -->
+<section class="related-products">
+    <h2>DÀNH CHO MÈO CỦA BẠN </h2>
+
+    <div class="product-list">
+
+        <div class="product-card">
+            <img src="Anh/CTSP(1).png" alt="">
+            <h3>Hạt Cho Mèo Mọi Lứa Tuổi Catsrang</h3>
+            <p class="price">90.000đ</p>
+            <button class="btn-detail" onclick="window.location.href='Chitietsp.php'">
+    <i class="fa fa-eye"></i> Xem chi tiết
+</button>
+
+            <button class="btn-cart"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <img src="Anh/sp2.png" alt="">
+            <h3>Súp Thưởng Cho Mèo Nắp Vặn Sunny Buddy</h3>
+            <p class="price">20.000đ</p>
+            <button class="btn-detail"><i class="fa fa-eye"></i> Xem chi tiết</button>
+            <button class="btn-cart"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <img src="Anh/sp3.png" alt="">
+            <h3>Hạt Mềm Cho Mèo Zenith Hairball Tiêu Búi Lông</h3>
+            <p class="price">65.000đ</p>
+            <button class="btn-detail"><i class="fa fa-eye"></i> Xem chi tiết</button>
+            <button class="btn-cart"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <img src="Anh/sp4.png" alt="">
+            <h3>Pate Cho Chó Mèo Phục Hồi Sức Khỏe Royal Canin Recovery Lon 195g</h3>
+            <p class="price">85.000đ</p>
+            <button class="btn-detail"><i class="fa fa-eye"></i> Xem chi tiết</button>
+            <button class="btn-cart"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+        </div>
+
+        <div class="product-card">
+            <img src="Anh/sp5.png" alt="">
+            <h3>Thức Ăn Cho Mèo Reflex Plus Hairball Tiêu Búi Lông (Nhập khẩu Thổ Nhĩ Kỳ)</h3>
+            <p class="price">230.000đ</p>
+            <button class="btn-detail"><i class="fa fa-eye"></i> Xem chi tiết</button>
+            <button class="btn-cart"><i class="fa fa-cart-plus"></i> Thêm vào giỏ</button>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- WHY CHOOSE -->
+<section class="why">
+    <h2>Tại sao chọn Mochi Pet?</h2>
+    <p class="why-desc">
+        Chúng tôi không chỉ là một cửa hàng, chúng tôi là mái nhà thứ hai cho thú cưng
+        của bạn với những cam kết chất lượng khắt khe nhất.
+    </p>
+
+    <div class="why-grid">
+        <div class="why-card">
+            <div class="why-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+            <h3>Thực phẩm Organic</h3>
+            <p>Nguồn thực phẩm 100% tự nhiên, không chất bảo quản, được chọn lọc từ các thương hiệu hàng đầu thế giới.</p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">
+                <i class="fa-solid fa-scissors"></i>
+            </div>
+            <h3>Chuyên gia Grooming</h3>
+            <p>Đội ngũ stylist được đào tạo bài bản, am hiểu từng giống loài để mang lại vẻ ngoài hoàn hảo nhất.</p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+            <h3>Hỗ trợ 24/7</h3>
+            <p>Luôn sẵn sàng nghe và tư vấn sản phẩm, dịch vụ phù hợp cho thú cưng của bạn bất cứ lúc nào.</p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">
+                <i class="fa-solid fa-shield-heart"></i>
+            </div>
+            <h3>An toàn tuyệt đối</h3>
+            <p>Quy trình vệ sinh chuẩn y khoa, môi trường thoáng mát và được giám sát camera 24/24.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICE DETAIL -->
+<section class="service-detail">
+
+<div class="service-left">
+
+  <div class="service-main-card">
+
+    <h3 class="title-top">MOCHI PET</h3>
+    <div class="title-line"></div>
+    <h2 class="title-main">MOCHI PET SERVICE</h2>
+
+
+    <p class="service-desc">
+      Dịch vụ chăm sóc và làm đẹp thú cưng chuyên nghiệp, an toàn theo từng giống loài,
+      mang lại sự sạch sẽ và thoải mái tối đa.
+    </p>
+
+    <div class="service-icons">
+      <div class="icon-item">
+        <i class="fa-solid fa-bath"></i>
+        <span>Tắm - Vệ sinh</span>
+      </div>
+
+    <div class="center-book">
+        <div class="paw-row">
+            <i class="fa-solid fa-paw"></i>
+            <i class="fa-solid fa-paw"></i>
+        </div>
+        <span>MOCHI PET</span>
+        <button>BOOK NOW</button>
+    </div>
+
+
+      <div class="icon-item">
+        <i class="fa-solid fa-paw"></i>
+        <span>Chăm sóc trọn gói</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="rate-box">
+    <i class="fa-solid fa-star"></i>
+    <div>
+      <b>5.000+</b>
+      <p>Khách hàng hài lòng</p>
+    </div>
+  </div>
+
+</div>
+
+
+  <div class="service-right">
+    <span class="service-tag">DỊCH VỤ CHĂM SÓC THÚ CƯNG</span>
+
+    <h2>Chăm sóc - làm đẹp toàn diện cho thú cưng</h2>
+
+    <p>
+      Dịch vụ chăm sóc thú cưng chuyên nghiệp với quy trình an toàn, phù hợp từng giống loài.
+      Đội ngũ nhân viên tận tâm giúp thú cưng luôn sạch sẽ, khỏe mạnh và thoải mái.
+    </p>
+
+    <ul class="service-list">
+      <li><i class="fa-solid fa-circle-check"></i> Tắm rửa - Vệ sinh thú cưng</li>
+      <li><i class="fa-solid fa-circle-check"></i> Tỉa lông - Tạo kiểu</li>
+      <li><i class="fa-solid fa-circle-check"></i> Cắt móng - Vệ sinh tai</li>
+      <li><i class="fa-solid fa-circle-check"></i> Chăm sóc trọn gói</li>
+    </ul>
+
+    <button class="btn-green">Đặt lịch chăm sóc ngay</button>
+  </div>
+
+</section>
+
+
+
+<!-- HOTEL -->
+<section class="hotel">
+
+  <div class="hotel-left">
+    <span class="hotel-tag">KHÁCH SẠN & TRÔNG GIỮ</span>
+    <h2>Khách sạn thú cưng - An toàn khi bạn bận rộn</h2>
+    <p>
+      Dịch vụ trông giữ và lưu trữ thú cưng trong môi trường sạch sẽ, an toàn.
+      Thú cưng được ăn uống đúng bữa, vận động và theo dõi tình trạng hàng ngày.
+    </p>
+
+    <div class="hotel-info">
+      <div><i class="fa-solid fa-camera"></i> Camera theo dõi 24/7</div>
+      <div><i class="fa-solid fa-broom"></i> Vệ sinh khu vực mỗi ngày</div>
+    </div>
+
+    <button class="btn-orange">Xem chi tiết dịch vụ</button>
+  </div>
+
+  <div class="hotel-right">
+    <div class="discount-badge">
+      ƯU ĐÃI THÁNG NÀY<br><b>GIẢM 20%</b>
+    </div>
+
+    <div class="hotel-circle">
+      <img src="Anh/LOGO.png">
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial">
+    <h2>Cộng đồng Mochi Pet nói gì?</h2>
+
+    <div class="testimonial-grid">
+
+        <div class="testimonial-card">
+            <div class="stars">
+                ⭐⭐⭐⭐⭐
+            </div>
+            <p class="testimonial-text">
+                “Dịch vụ spa ở đây thực sự tuyệt vời. Bé Corgi nhà mình rất thích,
+                lông mượt và thơm lâu. Nhân viên lại cực kì nhiệt tình.”
+            </p>
+            <div class="testimonial-user">
+                <img src="Anh/bebo.png" alt="">
+                <div>
+                    <b>Chị Mai Anh</b>
+                    <span>Chú Bé Bơ</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">
+                ⭐⭐⭐⭐⭐
+            </div>
+            <p class="testimonial-text">
+                “Mình hay đi công tác nên thường xuyên gửi bé ở Mochi Pet.
+                Có camera 24/7 xem rất an tâm, phòng sạch sẽ thoáng mát.”
+            </p>
+            <div class="testimonial-user">
+                <img src="Anh/belu.png" alt="">
+                <div>
+                    <b>Anh Tuấn</b>
+                    <span>Chú Bé Lu</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="stars">
+                ⭐⭐⭐⭐⭐
+            </div>
+            <p class="testimonial-text">
+                “Thức ăn rất chất lượng, date mới và giá cả hợp lý.
+                Giao hàng cũng rất nhanh. Sẽ ủng hộ dài dài!”
+            </p>
+            <div class="testimonial-user">
+                <img src="Anh/bemeo.png" alt="">
+                <div>
+                    <b>Minh Ngọc</b>
+                    <span>Chú Bé Meo</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="cta">
+    <h2>Bạn đã sẵn sàng mang đến điều tốt nhất cho thú cưng?</h2>
+    <p>
+        Tham gia cùng hơn 10.000 chủ thú cưng đã tin tưởng lựa chọn Mochi Pet
+        làm người đồng hành trong hành trình chăm sóc những người bạn bốn chân.
+    </p>
+
+    <div class="cta-buttons">
+        <button class="btn-white">Mua sắm sản phẩm</button>
+        <button class="btn-orange-cta">Đặt lịch dịch vụ</button>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- COL 1 -->
+        <div class="footer-col footer-brand">
+            <div class="footer-logo">
+                <img src="Anh/LOGO.png" alt="Mochi Pet">
+                <h3>MOCHI PET</h3>
+            </div>
+            <p>
+                Tự hào là hệ thống cửa hàng chăm sóc thú cưng chất lượng cao,
+                cung cấp sản phẩm và dịch vụ đạt chuẩn, giúp thú cưng luôn khỏe mạnh,
+                sạch sẽ và được yêu thương trọn vẹn.
+            </p>
+        </div>
+
+        <!-- COL 2 -->
+        <div class="footer-col">
+            <h4>Dịch vụ</h4>
+            <ul>
+                <li>Khách sạn thú cưng</li>
+                <li>Tắm - Vệ sinh</li>
+                <li>Chăm sóc trọn gói</li>
+            </ul>
+        </div>
+
+        <!-- COL 3 -->
+        <div class="footer-col">
+            <h4>Liên kết</h4>
+            <ul>
+                <li>Chính sách bảo mật</li>
+                <li>Về chúng tôi</li>
+                <li>Liên hệ</li>
+            </ul>
+        </div>
+
+        <!-- COL 4 -->
+        <div class="footer-col">
+            <h4>Đăng ký bản tin</h4>
+            <p>Nhận ngay thông báo về các chương trình ưu đãi mới nhất.</p>
+
+            <div class="footer-subscribe">
+                <input type="email" placeholder="Email của bạn">
+                <button>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<script>
+/* ================= MENU ================= */
+const btnDanhMuc = document.getElementById("btnDanhMuc");
+const megaMenu = document.getElementById("megaMenu");
+
+const btnDichVu = document.querySelector('.menu a:nth-child(2)');
+const serviceMenu = document.getElementById("serviceMenu");
+
+btnDanhMuc.addEventListener("click", (e) => {
+    e.stopPropagation();
+    megaMenu.classList.toggle("show");
+    serviceMenu.classList.remove("show");
+
+    btnDanhMuc.classList.toggle("active");
+    btnDichVu.classList.remove("active");
+});
+
+btnDichVu.addEventListener("click", (e) => {
+    e.stopPropagation();
+    serviceMenu.classList.toggle("show");
+    megaMenu.classList.remove("show");
+
+    btnDichVu.classList.toggle("active");
+    btnDanhMuc.classList.remove("active");
+});
+
+document.addEventListener("click", () => {
+    megaMenu.classList.remove("show");
+    serviceMenu.classList.remove("show");
+
+    btnDanhMuc.classList.remove("active");
+    btnDichVu.classList.remove("active");
+});
+
+
+/* ================= AUTH ================= */
+const authBtn = document.getElementById("authBtn");
+const userNameBox = document.getElementById("userName");
+
+const isLogin = localStorage.getItem("isLogin");
+
+// CHƯA ĐĂNG NHẬP
+if (isLogin !== "true") {
+    authBtn.textContent = "Đăng nhập";
+    authBtn.classList.remove("user-icon");
+    userNameBox.textContent = "";
+
+    authBtn.onclick = () => {
+        window.location.href = "Dangnhap.php";
+    };
+}
+
+// ĐÃ ĐĂNG NHẬP
+if (isLogin === "true") {
+
+    authBtn.innerHTML = '<i class="fa-solid fa-user"></i>';
+    authBtn.classList.add("user-icon");
+
+    // 🔥 HIỆN TÊN
+    const user = JSON.parse(localStorage.getItem("user"));
+    userNameBox.textContent = user ? user.name : "User";
+
+    authBtn.onclick = () => {
+        if (confirm("Bạn có muốn đăng xuất không?")) {
+            localStorage.clear();
+            window.location.href = "User.php";
+        }
+    };
+}
+
+
+// 1. Chuyển đổi Form
+function showForm(formId) {
+    document.querySelectorAll('.login-container')
+        .forEach(form => form.classList.remove('active'));
+    document.getElementById(formId).classList.add('active');
+}
+
+
+// 2. ĐĂNG NHẬP
+document.getElementById('loginBtn').addEventListener('click', function() {
+    const user = document.getElementById('username').value.trim();
+    const pass = document.getElementById('password').value.trim();
+    const errorBox = document.getElementById('login-error');
+
+    const validAdmin = "admin";
+    const validAdminPass = "123456";
+
+    if (user === "" || pass === "") {
+        errorBox.innerText = "Vui lòng nhập đầy đủ thông tin!";
+        errorBox.style.display = "block";
+        return;
+    }
+
+    // ADMIN
+    if (user === validAdmin && pass === validAdminPass) {
+        localStorage.setItem("isLogin", "true");
+        localStorage.setItem("role", "admin");
+        window.location.href = "Tongquan.php";
+        return;
+    }
+
+    // USER
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+
+    if (storedUser &&
+        (user === storedUser.name || user === storedUser.email) &&
+        pass === storedUser.password) {
+
+        localStorage.setItem("isLogin", "true");
+        localStorage.setItem("role", "user");
+        localStorage.setItem("userName", storedUser.name);
+        window.location.href = "User.php";
+    } else {
+        errorBox.innerText = "Tên đăng nhập hoặc mật khẩu không đúng!";
+        errorBox.style.display = "block";
+    }
+});
+
+
+// 3. ĐĂNG KÝ
+document.getElementById('registerBtn').addEventListener('click', function() {
+    const name = document.getElementById('admin-user').value.trim();
+    const email = document.getElementById('admin-email')?.value.trim();
+    const pass = document.getElementById('admin-pass').value.trim();
+    const code = document.getElementById('adminCode').value.trim();
+    const errorBox = document.getElementById('admin-error');
+
+    if (name === "" || pass === "") {
+        errorBox.innerText = "Không được để trống!";
+        errorBox.style.display = "block";
+        return;
+    }
+
+    // ADMIN REGISTER (GIỮ NGUYÊN)
+    if (code === "MOCHI2026") {
+        alert("Tạo tài khoản quản lý thành công!");
+        showForm('login-form');
+        return;
+    }
+
+    // USER REGISTER
+    const userData = {
+        name: name,
+        email: email || "",
+        pass: pass
+    };
+
+    localStorage.setItem("user", JSON.stringify({
+    name: name,
+    email: email || "",
+    password: pass
+}));
+    alert("Đăng ký thành công!");
+    showForm('login-form');
+});
+
+
+// 4. Ẩn / hiện mật khẩu
+document.getElementById('togglePassword').addEventListener('click', function() {
+    const passInput = document.getElementById('password');
+    passInput.type = passInput.type === 'password' ? 'text' : 'password';
+    this.classList.toggle('fa-eye-slash');
+});
+
+</script>
+
+</body>
+</html>
